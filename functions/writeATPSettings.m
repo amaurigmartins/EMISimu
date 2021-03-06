@@ -1,7 +1,7 @@
 function [out] = writeATPSettings(app)
 
-dT=app.deltaTsEditField.Value;
-Tmax=app.TmaxsEditField.Value;
+dT=app.deltaT.Value;
+Tmax=app.Tmax.Value;
 
 out1=blanks(80);
 out2='     500       1       1       1       1       0       0       1       0\n';

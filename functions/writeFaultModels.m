@@ -1,9 +1,9 @@
 function [out] = writeFaultModels(app)
 
-anginc=app.FaultincidenceangleSpinner.Value;
+anginc=app.Faultincidenceangle.Value;
 ftype=getFaultType(app);
-freq=app.FreqHzEditField.Value;
-npre=app.CyclesbeforefaultSpinner.Value;
+freq=app.Freq.Value;
+npre=app.Cyclesbeforefault.Value;
 
 out=[];
 

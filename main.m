@@ -10,9 +10,8 @@ addpath(project_name);
 addpath('functions');
 
 % define the problem
-define_source_line_data
-define_target_line_data
-define_resistivity
+define_ATPSettings;
+define_FaultParams;
 
 % build LCC cards
 

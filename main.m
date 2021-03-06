@@ -12,6 +12,7 @@ addpath('functions');
 % define the problem
 define_ATPSettings;
 define_FaultParams;
+define_LineParams;
 
 % build LCC cards
 

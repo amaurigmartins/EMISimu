@@ -2,6 +2,9 @@
 % Number of circuits (1 or 2):
 app.NumCircuits.Value = 1;
 
+% Number of sections:
+app.Numberofsections.Value = 50;
+
 
 %% Thevenin params:
 

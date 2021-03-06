@@ -24,7 +24,7 @@ out=strcat(out, 'C < n 1>< n 2><ref1><ref2><     R    ><    A     ><    B     ><
 out=strcat(out, writeThEqCard(app,T1,1));
 out=strcat(out, writeThEqCard(app,T2,2));
 out=strcat(out, '$VINTAGE,1\n');
-nsec=app.NumberofsectionsSpinner.Value;
+nsec=app.Numberofsections.Value;
      % tower ground impedances
 for i=1:nsec
     out=strcat(out, writeTowGroundCard(app,getGroundImpedance(app,i),i,fault_sec));

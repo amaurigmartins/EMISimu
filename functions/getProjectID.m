@@ -1,0 +1,10 @@
+function out = getProjectID(app)
+out=app.ProjectIDEditField.Value;
+end
+
+function out = getProjectDesc(app)
+out=app.ProjectdescriptionTextArea.Value;
+out=cellfun(@(x) (['C ' x(:,:) '\n']),out,'UniformOutput',false);
+out=join(out,"");
+out=char(out);
+end

@@ -1,6 +1,6 @@
 
 % Number of fault's section:
-fault_sec = 1;
+app.fault_sec = 1;
 
 % Fault incidence angle [rad or degress??]:
 app.Faultincidenceangle.Value = 90;

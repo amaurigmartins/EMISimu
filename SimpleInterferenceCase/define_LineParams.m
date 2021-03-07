@@ -2,9 +2,11 @@
 % Number of circuits (1 or 2):
 app.NumCircuits.Value = 1;
 
+
 % Number of sections:
 app.Numberofsections.Value = 50;
-
+%%% CUIDADO COM ISSO AQUI. O NÚMERO DE SEÇÕES SERÁ CALCULADO A PARTIR DO
+%%% CSV COM COORDENADAS DAS TORRES E NÃO DEFINIDO MANUALMENTE
 
 %% Thevenin params:
 

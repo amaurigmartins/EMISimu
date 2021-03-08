@@ -33,3 +33,13 @@ app.L0S2T2.Value = 6.0779; %L0 [mH/m]
 app.R1S2T2.Value = 0.151; %R+ [ohm/m]
 app.L1S2T2.Value = 1.8828; %L+ [mH/m]
 
+%% Ground impedances
+
+% Ground impedances data (.csv) per section (R L C) [Ohms mH uF]:
+app.UITableGroundImp.Data = load('ground_impedance_data.csv');
+
+
+
+
+
+

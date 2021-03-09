@@ -1,5 +1,5 @@
 function out = outputTow2GndCurr(app)
 
-out=app.TowertogroundcurrentsCheckBox.Value;
+out=app.Towertogroundcurrents.Value;
 
 end

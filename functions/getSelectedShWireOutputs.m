@@ -2,9 +2,9 @@ function out = getSelectedShWireOutputs(app,fault_sec)
 
 out=[];
 
-if app.OrsectionsbeforeandafterfaultShWireCurrCheckBox.Value
-    n=app.SpinnerSWCurr.Value;
-    numsec=app.NumberofsectionsSpinner.Value;
+if app.OrsectionsbeforeandafterfaultShWireCurr.Value
+    n=app.SWCurr.Value;
+    numsec=app.Numberofsections.Value;
     out=fault_sec-n:fault_sec+n;
     out=out((out>=1 & out<=numsec));
 else

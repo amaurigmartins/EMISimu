@@ -9,12 +9,12 @@ app.Towertogroundvoltages.Value = 1;
 app.Towertogroundcurrents.Value = 1;
 
 % Specify sections to Tower-to-ground outputs:
-Tow2Ground(1).from = 1;
-Tow2Ground(1).to = 3;
-Tow2Ground(2).from = 5;
-Tow2Ground(2).to = 6;
-Tow2Ground(3).from = 7;
-Tow2Ground(3).to = 7;
+app.Tow2Ground(1).From.Value = 1;
+app.Tow2Ground(1).To.Value = 3;
+app.Tow2Ground(2).From.Value = 5;
+app.Tow2Ground(2).To.Value = 6;
+app.Tow2Ground(3).From.Value = 7;
+app.Tow2Ground(3).To.Value = 7;
 
 % Or sections before and after fault:
 

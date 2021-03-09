@@ -1,5 +1,5 @@
 function out = outputTow2GndVolt(app)
 
-out=app.TowertogroundvoltagesCheckBox.Value;
+out=app.Towertogroundvoltages.Value;
 
 end

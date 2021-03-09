@@ -3,6 +3,9 @@ clear;
 close all; 
 clc;
 
+% enter working directory:
+app.Workingdirectory.Value = 'D:\Mestrado\EMISimu'
+
 % enter the project directory name here
 app.ProjectID.Value = 'SimpleInterferenceCase';
 

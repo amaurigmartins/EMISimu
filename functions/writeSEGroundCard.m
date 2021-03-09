@@ -12,7 +12,7 @@ out1(80)='3';
 if term==1
     termIdx=0;
 elseif term==2
-    termIdx=app.NumberofsectionsSpinner.Value;
+    termIdx=app.Numberofsections.Value;
 end
 
 out2(3:8)=sprintf('GNDSE%d',term);

@@ -44,3 +44,27 @@ app.OrsectionsbeforeandafterfaultShWireCurr.Value = 0;
 app.SWCurr.Value = 10;
 
 
+%% Fault branch phase outputs
+
+
+% Fault branch phase currents (Yes = 1 or No = 0):
+app.Faultbranchphasecurrents.Value = 1;
+
+% Fault branch phase voltage (Yes = 1 or No = 0):
+app.Faultbranchphasevoltages.Value = 1;
+
+%% Terminal outputs
+
+% Terminal 1 phase voltages (Yes = 1 or No = 0):
+app.Terminal1phasevoltages.Value = 1;
+
+% Terminal 1 phase currents (Yes = 1 or No = 0):
+
+
+% Terminal 2 phase voltages (Yes = 1 or No = 0):
+app.Terminal2phasevoltages.Value = 1;
+
+% Terminal 2 phase currents (Yes = 1 or No = 0):
+
+
+

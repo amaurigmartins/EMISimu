@@ -1,4 +1,7 @@
 
+% Faulted circuit: (Circuit 1 or Circuit 2)
+app.Faultedcircuit.SelectedObject.Text = 'Circuit 1';
+
 % Number of fault's section:
 app.fault_sec = 1;
 

@@ -1,7 +1,7 @@
 function out = writeFaultBranchConnections(app,fault_sec)
 
-measure_status=valIfTrue(app,app.FaultbranchphasecurrentsCheckBox.Value,1,0);
-circ_fault=valIfTrue(app, strcmp(app.FaultedcircuitButtonGroup.SelectedObject.Text,'Circuit 1'),1,2);
+measure_status=valIfTrue(app,app.Faultbranchphasecurrents.Value,1,0);
+circ_fault=valIfTrue(app, strcmp(app.Faultedcircuit.SelectedObject.Text,'Circuit 1'),1,2);
 seq='ABC';
 
 out1='13F_INC RFC                                                           CHC      0\n';

@@ -4,14 +4,19 @@
 
 % VOLTAGE SOURCE:
 % RMS LL amplitude [V]:
+app.RMSLLamplitudeC1T1.Value = 1000;
 
 % Frequency [Hz]:
+app.FrequencyC1T1.Value = 60;
 
 % Phase angle [deg]:
+app.PhaseangleC1T1.Value = 0;
 
 % Tstart [s]:
+app.TstartsC1T1.Value = -1;
 
 % Tstop [s]:
+app.TstopsC1T1.Value = 100;
 
 % Thevenin Eq.:
 
@@ -19,14 +24,20 @@
 
 % VOLTAGE SOURCE:
 % RMS LL amplitude [V]:
+app.RMSLLamplitudeC2T1.Value = 1000;
 
 % Frequency [Hz]:
+app.FrequencyC2T1.Value = 60;
 
 % Phase angle [deg]:
+app.PhaseangleC2T1.Value = 0;
 
 % Tstart [s]:
+app.TstartsC2T1.Value = -1;
 
 % Tstop [s]:
+app.TstopsC2T1.Value = 100;
+
 
 % TERMINAL 1 SE IMPEDANCES:
 % Substation grounding grid:
@@ -50,14 +61,19 @@ app.CNC1T1.Value = 0; % C [uF]
 
 % VOLTAGE SOURCE:
 % RMS LL amplitude [V]:
+app.RMSLLamplitudeC1T2.Value = 1000;
 
 % Frequency [Hz]:
+app.FrequencyC1T2.Value = 60;
 
 % Phase angle [deg]:
+app.PhaseangleC1T2.Value = 0;
 
 % Tstart [s]:
+app.TstartsC1T2.Value = -1;
 
 % Tstop [s]:
+app.TstopsC1T2.Value = 100;
 
 % Thevenin Eq.:
 
@@ -65,14 +81,19 @@ app.CNC1T1.Value = 0; % C [uF]
 
 % VOLTAGE SOURCE:
 % RMS LL amplitude [V]:
+app.RMSLLamplitudeC2T2.Value = 1000;
 
 % Frequency [Hz]:
+app.FrequencyC2T2.Value = 60;
 
 % Phase angle [deg]:
+app.PhaseangleC2T2.Value = 0;
 
 % Tstart [s]:
+app.TstartsC2T2.Value = -1;
 
 % Tstop [s]:
+app.TstopsC2T2.Value = 100;
 
 % TERMINAL 2 SE IMPEDANCES:
 % Substation grounding grid:

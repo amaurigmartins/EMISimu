@@ -1,5 +1,5 @@
 function out = outputFaultBranchVolt(app)
 
-out=app.FaultbranchphasevoltagesCheckBox.Value;
+out=app.Faultbranchphasevoltages.Value;
 
 end

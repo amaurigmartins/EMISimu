@@ -6,6 +6,8 @@ clc;
 % enter working directory:
 app.Workingdirectory.Value = 'D:\Mestrado\EMISimu'
 
+% enter path to ATP binaries
+
 % enter the project directory name here
 app.ProjectID.Value = 'SimpleInterferenceCase';
 

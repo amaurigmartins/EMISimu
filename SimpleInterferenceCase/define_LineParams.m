@@ -38,7 +38,16 @@ app.L1S2T2.Value = 1.8828; %L+ [mH/m]
 % Ground impedances data (.csv) per section (R L C) [Ohms mH uF]:
 app.UITableGroundImp.Data = load('ground_impedance_data.csv');
 
+%% Shield wires
 
+% None shield wires:
+app.NoneSW.Value = 0;
+
+% Single shield wires:
+app.SingleSW.Value = 1;
+
+% Doble shield wires:
+app.DoubleSW.value = 0;
 
 
 

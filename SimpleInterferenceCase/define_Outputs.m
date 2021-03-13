@@ -9,12 +9,12 @@ app.Towertogroundvoltages.Value = 1;
 app.Towertogroundcurrents.Value = 1;
 
 % Specify sections to Tower-to-ground outputs:
-Tow2Ground(1).from = 1;
-Tow2Ground(1).to = 3;
-Tow2Ground(2).from = 5;
-Tow2Ground(2).to = 6;
-Tow2Ground(3).from = 7;
-Tow2Ground(3).to = 7;
+app.Tow2Ground(1).From.Value = 1;
+app.Tow2Ground(1).To.Value = 3;
+app.Tow2Ground(2).From.Value = 5;
+app.Tow2Ground(2).To.Value = 6;
+app.Tow2Ground(3).From.Value = 7;
+app.Tow2Ground(3).To.Value = 7;
 
 % Or sections before and after fault:
 
@@ -23,3 +23,48 @@ app.OrsectionsbeforeandafterfaultTowShuntParam.Value = 0;
 
 % If "Yes" is selected, how many towers before and after fault:
 app.Tow2Ground.Value = 10;
+
+%% Shield wires outputs:
+
+% Shield wire return currents (Yes = 1 or No = 0):
+app.Shieldwirereturncurrents.Value = 1;
+
+% Specify sections to shield wire currents outputs:
+app.ShieldCurr(1).From.Value = 1;
+app.ShieldCurr(1).To.Value = 2;
+app.ShieldCurr(2).From.Value = 3;
+app.ShieldCurr(2).To.Value = 3;
+
+% Or sections before and after fault:
+
+% Yes -> 1 or No -> 0
+app.OrsectionsbeforeandafterfaultShWireCurr.Value = 0;
+
+% If "Yes" is selected, how many towers before and after fault:
+app.SWCurr.Value = 10;
+
+
+%% Fault branch phase outputs
+
+
+% Fault branch phase currents (Yes = 1 or No = 0):
+app.Faultbranchphasecurrents.Value = 1;
+
+% Fault branch phase voltage (Yes = 1 or No = 0):
+app.Faultbranchphasevoltages.Value = 1;
+
+%% Terminal outputs
+
+% Terminal 1 phase voltages (Yes = 1 or No = 0):
+app.Terminal1phasevoltages.Value = 1;
+
+% Terminal 1 phase currents (Yes = 1 or No = 0):
+
+
+% Terminal 2 phase voltages (Yes = 1 or No = 0):
+app.Terminal2phasevoltages.Value = 1;
+
+% Terminal 2 phase currents (Yes = 1 or No = 0):
+
+
+

@@ -1,5 +1,5 @@
 function out = outputShWireCurr(app)
 
-out=app.ShieldwirereturncurrentsCheckBox.Value && ~app.NoneSWButton.Value;
+out=app.Shieldwirereturncurrents.Value && ~app.NoneSW.Value;
 
 end

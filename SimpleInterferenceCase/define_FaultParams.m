@@ -1,4 +1,7 @@
 
+% Faulted circuit: (Circuit 1 or Circuit 2)
+app.Faultedcircuit.SelectedObject.Text = 'Circuit 1';
+
 % Number of fault's section:
 app.fault_sec = 1;
 
@@ -15,3 +18,9 @@ app.Freq.Value = 60;
 
 % Cycles before fault:
 app.Cyclesbeforefault.Value = 0.5;
+
+% Phase-to-phase resistance [Ohms]:
+app.Phasetophaseresistance.Value = 1e12;
+
+% Phase-to-ground resistance [Ohms]:
+app.Phasetogroundresistance.Value = 1e-5;

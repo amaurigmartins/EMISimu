@@ -7,8 +7,7 @@ out4=blanks(80);
 out5=blanks(80);
 out6=blanks(80);
 
-RG=app.PhasetogroundresistanceEditField.Value;
-RF=app.PhasetophaseresistanceEditField.Value;
+[RG, RF] = getFaultResistances(app);
 
 out1(3:6)='RG_C';
 out1(9:14)='FGOUTC';

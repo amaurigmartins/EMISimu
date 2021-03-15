@@ -8,31 +8,6 @@ app.Numberofsections.Value = 50;
 %%% CUIDADO COM ISSO AQUI. O NÚMERO DE SEÇÕES SERÁ CALCULADO A PARTIR DO
 %%% CSV COM COORDENADAS DAS TORRES E NÃO DEFINIDO MANUALMENTE
 
-%% Thevenin params:
-
-% First circuit:
-app.R0S1T1.Value = 0.4853; %R0 [ohm/m]
-app.L0S1T1.Value = 6.0779; %L0 [mH/m]
-app.R1S1T1.Value = 0.151; %R+ [ohm/m]
-app.L1S1T1.Value = 1.8828; %L+ [mH/m]
-
-app.R0S1T2.Value = 0.4853; %R0 [ohm/m]
-app.L0S1T2.Value = 6.0779; %L0 [mH/m]
-app.R1S1T2.Value = 0.151; %R+ [ohm/m]
-app.L1S1T2.Value = 1.8828; %L+ [mH/m]
-
-
-% Second circuit:
-app.R0S2T1.Value = 0.4853; %R0 [ohm/m]
-app.L0S2T1.Value = 6.0779; %L0 [mH/m]
-app.R1S2T1.Value = 0.151; %R+ [ohm/m]
-app.L1S2T1.Value = 1.8828; %L+ [mH/m]
-
-app.R0S2T2.Value = 0.4853; %R0 [ohm/m]
-app.L0S2T2.Value = 6.0779; %L0 [mH/m]
-app.R1S2T2.Value = 0.151; %R+ [ohm/m]
-app.L1S2T2.Value = 1.8828; %L+ [mH/m]
-
 %% Ground impedances
 
 % Ground impedances data (.csv) per section (R L C) [Ohms mH uF]:

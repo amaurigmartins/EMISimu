@@ -8,7 +8,7 @@ out=strcat(out,valIfTrue(app,strcmp(lmodel,'jmarti'),'JMARTI SETUP\n','LINE CONS
 out=strcat(out,'$ERASE\n');
 
 % branch
-out=strcat(out,writeLCCBranchCard(app,sec),'\n');
+out=strcat(out,writeLCCBranchCard(app,sec));
 if strcmp(lmodel,'jmarti')
     out=strcat(out,'LINE CONSTANTS\n');
 end

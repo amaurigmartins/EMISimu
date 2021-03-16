@@ -3,8 +3,11 @@ clear;
 close all; 
 clc;
 
+% ESCREVER O PATH DOS ARQUIVOS ATP!!!!!
+
+
 % enter working directory:
-app.Workingdirectory.Value = 'D:\Mestrado\EMISimu'
+app.Workingdirectory.Value = 'D:\Mestrado\EMISimu';
 
 % enter the project directory name here
 app.ProjectID.Value = 'SimpleInterferenceCase';

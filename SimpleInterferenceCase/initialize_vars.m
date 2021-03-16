@@ -20,6 +20,16 @@ ShieldCurr_Table(:,2) = SHCurr_transf(:,2,:);
 
 app.UITableSWCurr.Data = num2cell(ShieldCurr_Table);
 
+%% AttSet specify sections table convert:
+
+AttSet_transf = cell2mat(struct2cell(app.AttSet));
+AttSet_transf = struct2cell(AttSet_transf);
+
+AttSet_Table(:,1) = AttSet_transf(:,1,:);
+AttSet_Table(:,2) = AttSet_transf(:,2,:);
+
+app.UITableAttSetSec.Data = num2cell(AttSet_Table);
+
 %% Number of circuits:
 
 if app.NumberofCircuits.Value == 1
@@ -94,5 +104,16 @@ elseif app.FaulttypeFTYPEButtonGroup.Value == 11
     app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '11 - ABCG';
 end
 
+%% Line model:
 
+if strcmp(app.LineModel,'pi')
+    app.PiButton.Value = 1;
+    app.BergeronButton.Value = 0;
+elseif strcmp(app.LineModel,'bergeron')
+    app.PiButton.Value = 0;
+    app.BergeronButton.Value = 1;
+else
+    app.PiButton.Value = 0;
+    app.BergeronButton.Value = 0;
+end
 

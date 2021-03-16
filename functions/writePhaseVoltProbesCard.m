@@ -2,8 +2,8 @@ function out = writePhaseVoltProbesCard(app,thisterm)
 
 out=[];
 seq='ABC';
-% ncirc=valIfTrue(app,app.DoublecircuitButton.Value==1,2,1);
-ncirc = app.NumCircuits.Value;
+ncirc=valIfTrue(app,app.DoublecircuitButton.Value==1,2,1);
+
 
 for i=1:ncirc
     tmp_out=blanks(80);

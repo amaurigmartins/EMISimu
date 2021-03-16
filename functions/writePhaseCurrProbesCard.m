@@ -2,8 +2,8 @@ function out = writePhaseCurrProbesCard(app,thisterm)
 
 out=[];
 seq='ABC';
-% ncirc=valIfTrue(app,app.Doublecircuit.Value==1,2,1);
-ncirc = app.NumCircuits.Value;
+ncirc=valIfTrue(app,app.Doublecircuit.Value==1,2,1);
+
 
 if thisterm==1
     termIdx=0;

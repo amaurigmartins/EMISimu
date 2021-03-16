@@ -1,6 +1,6 @@
 
 % Faulted circuit: (Circuit 1 or Circuit 2)
-app.Faultedcircuit.SelectedObject.Text = 'Circuit 1';
+app.Faultedcircuit.Value = 1;
 
 % Number of fault's section:
 app.fault_sec = 1;
@@ -11,7 +11,7 @@ app.Faultincidenceangle.Value = 90;
 % Fault Type:
 % Types: 1 - AG, 2 - BG, 3 - CG, 4 - AB, 5 - BC, 
 % 6 - CA, 7 - ABG, 8 - BCG, 9 - CAG, 10 - ABC, 11 - ABCG.
-app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '1 - AG'; 
+app.FaulttypeFTYPEButtonGroup.Value = 1;
 
 % Frequency [Hz]:
 app.Freq.Value = 60;

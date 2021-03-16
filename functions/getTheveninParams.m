@@ -1,6 +1,6 @@
 function [term1, term2] = getTheveninParams(app)
-% ncirc=valIfTrue(app,app.DoublecircuitButton.Value==1,2,1);
-ncirc = app.NumCircuits.Value;
+ncirc=valIfTrue(app,app.DoublecircuitButton.Value==1,2,1);
+
 
 term1(1,1)=app.R0S1EditFieldT1.Value; %R0
 term1(1,2)=app.L0S1EditFieldT1.Value; %L0

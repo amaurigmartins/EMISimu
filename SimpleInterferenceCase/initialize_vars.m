@@ -22,11 +22,12 @@ app.UITableSWCurr.Data = num2cell(ShieldCurr_Table);
 
 %% AttSet specify sections table convert:
 
-AttSet_transf = cell2mat(struct2cell(app.AttSet));
+AttSet_transf = cell2mat(struct2cell(app.AttSetSec));
 AttSet_transf = struct2cell(AttSet_transf);
 
 AttSet_Table(:,1) = AttSet_transf(:,1,:);
 AttSet_Table(:,2) = AttSet_transf(:,2,:);
+AttSet_Table(:,3) = AttSet_transf(:,3,:);
 
 app.UITableAttSetSec.Data = num2cell(AttSet_Table);
 

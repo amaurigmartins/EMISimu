@@ -118,3 +118,49 @@ else
     app.BergeronButton.Value = 0;
 end
 
+%% Organize AttSet Data Table:
+
+numAttSets = length(app.AttSet(:));
+
+nph = getNumPhases(app);
+nsh = getNumShieldWires(app);
+ntg = getNumTargets(app);
+
+for thisattset = 1: numAttSets
+    
+    attsetdata = [];
+    
+    for j = 1: nph
+        attsetdata{j,1} = app.AttSet(thisattset).Phase(j).condID.Value;
+        attsetdata{j,2} = app.AttSet(thisattset).Phase(j).numberofCond.Value;
+        attsetdata{j,3} = app.AttSet(thisattset).Phase(j).spaceBetweenCond.Value;
+        attsetdata{j,4} = app.AttSet(thisattset).Phase(j).coordX.Value;
+        attsetdata{j,5} = app.AttSet(thisattset).Phase(j).coordY.Value;
+        attsetdata{j,6} = 'Phase'; % type
+    end
+    
+    if nsh > 0
+        for j = 1: nsh
+            attsetdata{j+nph,1} = app.AttSet(thisattset).ShieldWire(j).condID.Value;
+            attsetdata{j+nph,2} = 0; %one conductor per phase
+            attsetdata{j+nph,3} = 0; %one conductor per phase
+            attsetdata{j+nph,4} = app.AttSet(thisattset).ShieldWire(j).coordX.Value;
+            attsetdata{j+nph,5} = app.AttSet(thisattset).ShieldWire(j).coordY.Value;
+            attsetdata{j+nph,6} = 'ShieldWire'; % type
+        end
+    end
+    
+    if ntg > 0
+        for j = 1 : ntg
+            attsetdata{j+ nph + nsh,1} = app.AttSet(thisattset).Target(j).condID.Value;
+            attsetdata{j+ nph + nsh,2} = 0; %one conductor per phase
+            attsetdata{j+ nph + nsh,3} = 0; %one conductor per phase
+            attsetdata{j+ nph + nsh,4} = app.AttSet(thisattset).Target(j).coordX.Value;
+            attsetdata{j+ nph + nsh,5} = app.AttSet(thisattset).Target(j).coordY.Value;
+            attsetdata{j+ nph + nsh,6} = 'Target'; % type
+        end
+    end
+    
+    structArray = cell2struct(attsetdata, {'conductor', 'bundled', 'bundle_spac','horizontal','vertical','type'},2);
+    app.UITableAttSets.Data(thisattset)=cellstr(jsonencode(structArray));
+end

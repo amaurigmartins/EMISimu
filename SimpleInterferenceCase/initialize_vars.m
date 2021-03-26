@@ -142,7 +142,7 @@ for thisattset = 1: numAttSets
     if nsh > 0
         for j = 1: nsh
             attsetdata{j+nph,1} = app.AttSet(thisattset).ShieldWire(j).condID.Value;
-            attsetdata{j+nph,2} = 0; %one conductor per phase
+            attsetdata{j+nph,2} = 1; %one conductor per phase
             attsetdata{j+nph,3} = 0; %one conductor per phase
             attsetdata{j+nph,4} = app.AttSet(thisattset).ShieldWire(j).coordX.Value;
             attsetdata{j+nph,5} = app.AttSet(thisattset).ShieldWire(j).coordY.Value;
@@ -153,7 +153,7 @@ for thisattset = 1: numAttSets
     if ntg > 0
         for j = 1 : ntg
             attsetdata{j+ nph + nsh,1} = app.AttSet(thisattset).Target(j).condID.Value;
-            attsetdata{j+ nph + nsh,2} = 0; %one conductor per phase
+            attsetdata{j+ nph + nsh,2} = 1; %one conductor per phase
             attsetdata{j+ nph + nsh,3} = 0; %one conductor per phase
             attsetdata{j+ nph + nsh,4} = app.AttSet(thisattset).Target(j).coordX.Value;
             attsetdata{j+ nph + nsh,5} = app.AttSet(thisattset).Target(j).coordY.Value;

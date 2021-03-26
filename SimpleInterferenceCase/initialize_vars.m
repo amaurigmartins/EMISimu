@@ -164,3 +164,9 @@ for thisattset = 1: numAttSets
     structArray = cell2struct(attsetdata, {'conductor', 'bundled', 'bundle_spac','horizontal','vertical','type'},2);
     app.UITableAttSets.Data(thisattset)=cellstr(jsonencode(structArray));
 end
+
+%% Convert Soil Resistivity Table
+
+app.UITableSoilRes.Data = num2cell(app.UITableSoilRes.Data);
+
+

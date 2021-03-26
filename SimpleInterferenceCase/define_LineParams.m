@@ -17,6 +17,10 @@ app.UITableGroundImp.Data = load('ground_impedance_data.csv');
 % Number of shield wires (0, 1 or 2):
 app.NumberofShieldWires.Value = 1;
 
+%% Line model
+
+% Types: pi, bergeron and jmarti
+app.LineModel = 'jmarti';
 
 
 

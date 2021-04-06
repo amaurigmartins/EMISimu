@@ -58,3 +58,4 @@ app.AttSet(2).ShieldWire(1).coordY.Value = 22;
 app.AttSet(2).Target(1).condID.Value = 'Pipe 18" STD';
 app.AttSet(2).Target(1).coordX.Value = 0;
 app.AttSet(2).Target(1).coordY.Value = -1;
+

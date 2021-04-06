@@ -20,15 +20,16 @@ end
 
 if num_shield ~= 0
    strshield = sprintf('BRANCH  0%05d0%05d',sec-1,sec);
+   out = strcat(out,strshield,'\n');
 end
 
-out = strcat(out,strshield);
+
 
 for i = 1 : num_target
 
     strtarget = sprintf('BRANCH  T%d%04dT%d%04d',i,sec-1,i,sec);
     
-    out = strcat(out,'\n',strtarget);
+    out = strcat(out,strtarget,'\n');
     
 end
 

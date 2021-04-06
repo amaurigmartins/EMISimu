@@ -17,6 +17,27 @@ app.UITableGroundImp.Data = load('ground_impedance_data.csv');
 % Number of shield wires (0, 1 or 2):
 app.NumberofShieldWires.Value = 1;
 
+%% Line model
+
+% Types: pi, bergeron and jmarti
+app.LineModel = 'jmarti';
+
+% LCC frequency
+app.LCCfrequency.Value = 60;
+
+%% IF Line Model is JMarti:
+
+% Decades:
+app.Decades.Value = 1;
+
+% Points/Decade:
+app.PointsDecade.Value = 10;
+
+% Freq. Matrix [Hz]:
+app.Freqmatrix.Value = 60;
+
+% Freq. SS [Hz]:
+app.FreqSS.Value = 1e6;
 
 
 

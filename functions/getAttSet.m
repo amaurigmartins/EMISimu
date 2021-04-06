@@ -1,6 +1,6 @@
 function [out] = getAttSet(app,sec)
 
-defattset=str2double(app.DefaultattributesetDropDown.Value);
+defattset=str2double(app.Defaultattributeset.Value);
 
 attsetmap=app.UITableAttSetSec.Data;
 attsetmap(any(cellfun(@isempty,attsetmap),2),:) = [];

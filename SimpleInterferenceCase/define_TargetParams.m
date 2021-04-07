@@ -1,3 +1,3 @@
 %% Number of targets:
 
-app.NumTargets.Value = 3;
+app.NumTargets.Value = 5;

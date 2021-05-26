@@ -170,3 +170,14 @@ end
 app.UITableSoilRes.Data = num2cell(app.UITableSoilRes.Data);
 
 
+%% Convert Geometry Coordinates File
+
+target_coordinates_file= load(target_coordinates_file);
+source_coordinates_file=load(source_coordinates_file);
+
+app.SourceCoordX.Data = num2cell(source_coordinates_file(:,1));
+app.SourceCoordY.Data = num2cell(source_coordinates_file(:,2));
+
+app.TargetCoordX.Data = num2cell(target_coordinates_file(:,1));
+app.TargetCoordY.Data = num2cell(target_coordinates_file(:,2));
+

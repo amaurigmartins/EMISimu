@@ -8,10 +8,10 @@ app.MinTargetLength.Value = 50;
 
 
 % Coating resistivity in [ohm.m]
-app.CoatingResistivity = 1e8;
+app.CoatingResistivity.Value = 1e8;
 
 % Coating thickness in [m]
-app.CoatingThickness = 3e-3;
+app.CoatingThickness.Value = 3e-3;
 
 % Coating Relative permeability
-app.CoatingRelativePermeability = 1;
+app.CoatingRelativePermeability.Value = 1;

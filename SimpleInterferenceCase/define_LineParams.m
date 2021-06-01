@@ -2,6 +2,11 @@
 % Number of circuits (single or double):
 app.LineConfig.Text = 'single';
 
+%% Transposition
+
+% Type of transposition (untransposed, L/3 L/3 L/3 OR L/6 L/3 L/3 L/6)
+app.TranspositionScheme.Text = 'untransposed';
+
 %% Ground impedances
 
 app.GroundImpedanceFile.Text = 'D:\Mestrado\EMISimu\SimpleInterferenceCase\ground_impedance_data.csv';

@@ -1,26 +1,23 @@
 
-% Number of circuits (1 or 2):
-app.NumberofCircuits.Value = 1;
-
-% Number of sections:
-app.Numberofsections.Value = 50;
-%%% CUIDADO COM ISSO AQUI. O NÚMERO DE SEÇÕES SERÁ CALCULADO A PARTIR DO
-%%% CSV COM COORDENADAS DAS TORRES E NÃO DEFINIDO MANUALMENTE
+% Number of circuits (single or double):
+app.LineConfig.Text = 'single';
 
 %% Ground impedances
 
+app.GroundImpedanceFile.Text = 'D:\Mestrado\EMISimu\SimpleInterferenceCase\ground_impedance_data.csv';
+
 % Ground impedances data (.csv) per section (R L C) [Ohms mH uF]:
-app.UITableGroundImp.Data = load('ground_impedance_data.csv');
+app.UITableGroundImp.Data = load(app.GroundImpedanceFile.Text);
 
 %% Shield wires
 
-% Number of shield wires (0, 1 or 2):
-app.NumberofShieldWires.Value = 1;
+% Number of shield wires (none, single or double):
+app.NumberofShieldWires.Value = 'single';
 
 %% Line model
 
 % Types: pi, bergeron and jmarti
-app.LineModel = 'jmarti';
+app.LineModel.Text = 'jmarti';
 
 % LCC frequency
 app.LCCfrequency.Value = 60;

@@ -27,7 +27,7 @@ app.Projectdescription.Value = 'Simple interference case between a power line an
 
 %% Process
 
-addpath(project_name);
+addpath(app.ProjectID.Value);
 addpath('functions');
 
 % define the problem

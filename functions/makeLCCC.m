@@ -1,7 +1,7 @@
 function [out] = makeLCCC(app,sec)
 
 lmodel=getLineModel(app);
-
+ 
 % header
 out='BEGIN NEW DATA CASE\n';
 out=strcat(out,valIfTrue(app,strcmp(lmodel,'jmarti'),'JMARTI SETUP\n','LINE CONSTANTS\n'));

@@ -164,6 +164,22 @@ Faulted_Table(:,2) = Faulted_transf(:,2,:);
 
 app.UITableFaultSec.Data = num2cell(Faulted_Table);
 
+%% Transposition Button convert
 
+if strcmp(app.TranspositionScheme.Text,'untransposed')
+    app.UntransposedButton.Value=1;
+    app.L3L3L3Button.Value=0;
+    app.L6L3L3L6Button.Value=0;
+    
+elseif strcmp(app.TranspositionScheme.Text,'L/3 L/3 L/3')
+    app.UntransposedButton.Value=0;
+    app.L3L3L3Button.Value=1;
+    app.L6L3L3L6Button.Value=0;
+    
+else
+    app.UntransposedButton.Value=0;
+    app.L3L3L3Button.Value=0;
+    app.L6L3L3L6Button.Value=1;
+end
 
 

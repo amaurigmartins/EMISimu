@@ -9,7 +9,7 @@ end
 % 1 = L/3 L/3 L/3
 % 2 = L/6 L/3 L/3 L/6
 allspans=cell2mat(app.UITableSL.Data);
-numsec=app.NumberofsectionsSpinner.Value;
+numsec=app.Numberofsections.Value;
 L=cumsum(allspans)';
 totalLen=L(end);
 

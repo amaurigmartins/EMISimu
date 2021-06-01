@@ -34,6 +34,10 @@ app.AttSet(1).ShieldWire(1).coordY.Value = 22;
 app.AttSet(1).Target(1).condID.Value = 'Pipe 16" STD';
 app.AttSet(1).Target(1).coordX.Value = 0;
 app.AttSet(1).Target(1).coordY.Value = -1;
+app.AttSet(1).Target(1).CoatingResistivity.Value = 1e8;
+app.AttSet(1).Target(1).CoatingThickness.Value = 3e-3;
+app.AttSet(1).Target(1).CoatingRelativePermeability.Value = 1;
+
 
 %% AttSet 2:
 
@@ -58,4 +62,7 @@ app.AttSet(2).ShieldWire(1).coordY.Value = 22;
 app.AttSet(2).Target(1).condID.Value = 'Pipe 18" STD';
 app.AttSet(2).Target(1).coordX.Value = 0;
 app.AttSet(2).Target(1).coordY.Value = -1;
+app.AttSet(2).Target(1).CoatingResistivity.Value = 1e8;
+app.AttSet(2).Target(1).CoatingThickness.Value = 3e-3;
+app.AttSet(2).Target(1).CoatingRelativePermeability.Value = 1;
 

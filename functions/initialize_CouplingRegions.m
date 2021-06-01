@@ -6,7 +6,7 @@ minTargetLength = getMinTargetLength(app);
 
 [CoupRegionsTable, matrixLCC] = calcCouplingRegionsParams(srcCoord,tgtCoord,minTargetLength);
 
-app.UITableSL.Data = CoupRegionsTable(:,7);
+app.UITableSL.Data = num2cell(matrixLCC(:,2));
 
 app.CoupRegTable.EquivalentDistance.Data = matrixLCC(:,1);
 app.CoupRegTable.EquivalentLength.Data = matrixLCC(:,2);

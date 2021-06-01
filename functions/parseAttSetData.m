@@ -7,6 +7,8 @@ nph=getNumPhases(app);
 nsw=getNumShieldWires(app);
 ntg=getNumTargets(app);
 
+deq=getEquivalentDistance(app,sec);
+
 KTYPE=4; %see rule book, sectn 9, vol 2, pg 9-13
 
 out=[];
@@ -43,10 +45,7 @@ if ntg>0
         [Rout, Rin, Rdc, TD] = getConductorData(app,char(attdata(nph+nsw+i,1)));
         nc=str2double(attdata(nph+nsw+i,2));
         s=str2double(attdata(nph+nsw+i,3));
-        
-        
-        
-        x0=str2double(attdata(nph+nsw+i,4));
+        x0=str2double(attdata(nph+nsw+i,4)) + deq;
         y0=str2double(attdata(nph+nsw+i,5));
         tmpcoords=calcConductorCoords(app,x0,y0,nc,s);
         for k=1:nc

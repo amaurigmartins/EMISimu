@@ -1,3 +1,4 @@
 
 % Soil Resistivity per section .csv file [ohm.m]:
-app.UITableSoilRes.Data = load('soil_resistivity_data.csv');
+app.SoilResistivityFile.Text = 'D:\Mestrado\EMISimu\SimpleInterferenceCase\soil_resistivity_data.csv';
+app.UITableSoilRes.Data = load(app.SoilResistivityFile.Text);

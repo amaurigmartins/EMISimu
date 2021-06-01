@@ -33,17 +33,20 @@ app.UITableAttSetSec.Data = num2cell(AttSet_Table);
 
 %% Number of circuits:
 
-if app.NumberofCircuits.Value == 1
+if strcmp(app.LineConfig.Value,'single')
+    app.NumberofCircuits.Value = 1;
+    
     app.DoublecircuitButton.Value = 0;
     app.SinglecircuitButton.Value = 1;
 else
+    app.NumberofCircuits.Value = 2;
     app.DoublecircuitButton.Value = 1;
     app.SinglecircuitButton.Value = 0;
 end
 
 %% Number of shield wires:
 
-if app.NumberofShieldWires.Value == 1
+if strcmp(app.NumberofShieldWires.Value,'single')
    
     % None shield wires:
     app.NoneSW.Value = 0;
@@ -52,7 +55,7 @@ if app.NumberofShieldWires.Value == 1
     % Doble shield wires:
     app.DoubleSW.value = 0;
     
-elseif app.NumberofShieldWires.Value == 2
+elseif strcmp(app.NumberofShieldWires.Value,'double')
     
     % None shield wires:
     app.NoneSW.Value = 0;
@@ -61,7 +64,7 @@ elseif app.NumberofShieldWires.Value == 2
     % Doble shield wires:
     app.DoubleSW.value = 1;
     
-else % app.NumberofShieldWires.Value == 0
+else % app.NumberofShieldWires.Value = none
    
     % None shield wires:
     app.NoneSW.Value = 1;
@@ -69,40 +72,6 @@ else % app.NumberofShieldWires.Value == 0
     app.SingleSW.Value = 0;
     % Doble shield wires:
     app.DoubleSW.value = 0;
-end
-
-%% Faulted circuit number:
-
-if app.Faultedcircuit.Value == 1
-    app.Faultedcircuit.SelectedObject.Text = 'Circuit 1';
-else
-    app.Faultedcircuit.SelectedObject.Text = 'Circuit 2';
-end
-
-%% Fault type:
-
-if app.FaulttypeFTYPEButtonGroup.Value == 1
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '1 - AG';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 2
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '2 - BG';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 3
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '3 - CG';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 4
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '4 - AB';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 5
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '5 - BC';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 6
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '6 - CA';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 7
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '7 - ABG';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 8
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '8 - BCG';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 9
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '9 - CAG';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 10
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '10 - ABC';
-elseif app.FaulttypeFTYPEButtonGroup.Value == 11
-    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '11 - ABCG';
 end
 
 %% Line model:
@@ -172,8 +141,8 @@ app.UITableSoilRes.Data = num2cell(app.UITableSoilRes.Data);
 
 %% Convert Geometry Coordinates File
 
-target_coordinates_file= load(target_coordinates_file);
-source_coordinates_file=load(source_coordinates_file);
+target_coordinates_file= load(app.TargetCoordFile.Text);
+source_coordinates_file=load(app.SourceCoordFile.Text);
 
 app.SourceCoordX.Data = num2cell(source_coordinates_file(:,1));
 app.SourceCoordY.Data = num2cell(source_coordinates_file(:,2));
@@ -184,4 +153,17 @@ app.TargetCoordY.Data = num2cell(target_coordinates_file(:,2));
 %% Air Permeability constant
 
 app.AirPermeability.Value = 8.85e-12;
+
+%% Faulted specify sections table convert:
+
+Faulted_transf = cell2mat(struct2cell(app.FaultedSection));
+Faulted_transf = struct2cell(Faulted_transf);
+
+Faulted_Table(:,1) = Faulted_transf(:,1,:);
+Faulted_Table(:,2) = Faulted_transf(:,2,:);
+
+app.UITableFaultSec.Data = num2cell(Faulted_Table);
+
+
+
 

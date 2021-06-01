@@ -1,4 +1,4 @@
 %% Coordinates files [X Y] in meters:
 
-target_coordinates_file='C:\blablabla\tgt.csv';
-source_coordinates_file='C:\blablabla\tgt.csv';
+app.TargetCoordFile.Text ='D:\Mestrado\EMISimu\SimpleInterferenceCase\OSSP_RECAP.csv';
+app.SourceCoordFile.Text ='D:\Mestrado\EMISimu\SimpleInterferenceCase\LT_RECAP.csv';

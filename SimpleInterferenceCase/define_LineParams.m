@@ -9,7 +9,7 @@ app.TranspositionScheme.Text = 'untransposed';
 
 %% Ground impedances
 
-app.GroundImpedanceFile.Text = 'D:\Mestrado\EMISimu\SimpleInterferenceCase\ground_impedance_data.csv';
+app.GroundImpedanceFile.Text = 'D:\Caio\EMISimu\SimpleInterferenceCase\ground_impedance_data.csv';
 
 % Ground impedances data (.csv) per section (R L C) [Ohms mH uF]:
 app.UITableGroundImp.Data = load(app.GroundImpedanceFile.Text);

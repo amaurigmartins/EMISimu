@@ -36,7 +36,7 @@ function [ResultTable, LCC_matrix] = calcCouplingRegionsParams(src,tgt,span_leng
 
 %% PLOT
 
-set_plot_params;
+% set_plot_params;
 
 debugthis_closer_points = false; % FIGURE 1 - MACRO-REGIÕES
 debugthis = false; % FIGURE 2 = MICRO-REGIÕES
@@ -387,6 +387,25 @@ LCC_matrix = [deq Leq TR(:,11) TR(:,10) TR(:,8)];
 if ~isempty(idx_int)
     for i = 1: size(idx_int,1)
         LCC_matrix(idx_int(i,2)-1:end,1) = -LCC_matrix(idx_int(i,2)-1:end,1);
+    end
+end
+
+end
+
+function [Theta] = make_angle(src,tgt)
+% Função que calcula o angulo(radianos) entre os trechos
+
+if size(src,1) == 2
+    v_src = [src(2,1:2) 0] - [src(1,1:2) 0];
+    v_tgt = [tgt(2,1:2) 0] - [tgt(1,1:2) 0];
+    Theta(1,1) = atan2(norm(cross(v_src, v_tgt)), dot(v_src, v_tgt));
+else
+    for i = 1 : size(src,1)-1
+
+        v_src = [src(i+1,1:2) 0] - [src(i,1:2) 0];
+        v_tgt = [tgt(i+1,1:2) 0] - [tgt(i,1:2) 0];
+        Theta(i,1) = atan2(norm(cross(v_src, v_tgt)), dot(v_src, v_tgt));
+
     end
 end
 

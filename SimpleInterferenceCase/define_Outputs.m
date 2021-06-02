@@ -22,7 +22,7 @@ app.Tow2Ground(3).To.Value = 7;
 app.OrsectionsbeforeandafterfaultTowShuntParam.Value = 0;
 
 % If "Yes" is selected, how many towers before and after fault:
-app.Tow2Ground.Value = 10;
+app.Tow2GroundAfterBefore.Value = 10;
 
 %% Shield wires outputs:
 

@@ -29,11 +29,11 @@ AttSet_Table(:,1) = AttSet_transf(:,1,:);
 AttSet_Table(:,2) = AttSet_transf(:,2,:);
 AttSet_Table(:,3) = AttSet_transf(:,3,:);
 
-app.UITableAttSetSec.Data = num2cell(AttSet_Table);
+app.UITableAttSetSec.Data = string(AttSet_Table);
 
 %% Number of circuits:
 
-if strcmp(app.LineConfig.Value,'single')
+if strcmp(app.LineConfig.Text,'single')
     app.NumberofCircuits.Value = 1;
     
     app.DoublecircuitButton.Value = 0;

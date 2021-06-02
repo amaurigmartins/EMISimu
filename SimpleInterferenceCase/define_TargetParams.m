@@ -1,7 +1,7 @@
 %% Number of targets:
 
-app.NumTargets.Value = 5;
+app.NumTargets.Value = 1;
 
 % Minimum target length subdivision in [m]:
 
-app.MinTargetLength.Value = 50;
+app.MinTargetLength.Value = 100;

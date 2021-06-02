@@ -1,4 +1,5 @@
 function [out] = writeLCCBranchCard(app,sec)
+out = [];
 
 num_phase = getNumPhases(app);
 num_shield = getNumShieldWires(app);

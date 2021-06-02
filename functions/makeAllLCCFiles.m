@@ -1,8 +1,8 @@
 function out = makeAllLCCFiles(app)
             out=true;
-            atpsolver=app.ATPsolverEditField.Value;
-            projID=app.ProjectIDEditField.Value;
-            wdir=app.WorkingdirectoryEditField.Value;
+            atpsolver=app.ATPSolverPath.Value;
+            projID=app.ProjectID.Value;
+            wdir=app.Workingdirectory.Value;
             projdir=fullfile(wdir,projID);
             tgtdir=fullfile(wdir,projID,'LCC');
             
@@ -12,11 +12,11 @@ function out = makeAllLCCFiles(app)
             addpath(fullfile(pwd,'functions'));
             warning(orig_state);
             
-            num_sec=app.NumberofsectionsSpinner.Value;
-            app.ConsoleTextArea.Value=[app.ConsoleTextArea.Value;'Computing line parameters...'];
+            num_sec=app.Numberofsections.Value;
+            disp('Computing line parameters...');
             for k=1:num_sec
-                app.ConsoleTextArea.Value=[app.ConsoleTextArea.Value;sprintf('Processing LCC section %d...\n',k)];
-                fname=sprintf('lcc_sec%04d.atp',k);
+                fprintf('Processing LCC section %d...\n\n',k);
+                fname=fprintf('lcc_sec%04d.atp\n',k);
                 fid = fopen(fullfile(tgtdir,fname),'wt');
                 fprintf(fid, makeLCCC(app,k));
                 fclose(fid);
@@ -24,10 +24,10 @@ function out = makeAllLCCFiles(app)
                     runATPsolver(atpsolver,tgtdir,fname);
                 catch
                     f = msgbox('Unable to run ATP solver!','You lose, fella.','error');
-                    app.ConsoleTextArea.Value=[app.ConsoleTextArea.Value;sprintf('Error occurred while processing section %d!\n',k)];
+                    fprintf('Error occurred while processing section %d!\n',k);
                     out=false;
                     break;
                 end
             end
-            app.ConsoleTextArea.Value=[app.ConsoleTextArea.Value;'Computing line parameters... Done!'];
+            disp('Computing line parameters... Done!');
         end

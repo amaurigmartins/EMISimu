@@ -8,10 +8,10 @@ L=getSpanLen(app,sec)/1000;
 %12345678901234567890123456789012345678901234567890123456789012345678901234567890
 %RHO    >FMATRIX  >          >ICPRN> IZPRN>I>ALONG  > IPI>IM          MOIF
 %    100.       60.                         1      1.     0        44
-out(1:8)=modprin(app,8,rho);
-out(9:18)=modprin(app,10,f);
+out(1:8)=modprin(8,rho);
+out(9:18)=modprin(10,f);
 out(44)=sprintf('%d',1);
-out(45:52)=modprin(app,8,L);
+out(45:52)=modprin(8,L);
 out(67:68)=sprintf('%d',44);
 
 out=strcat(out,'\n','$PUNCH\n');

@@ -1,10 +1,10 @@
-function s = Pftoa(app,fmtstr,val) % floating point to ascii convertion - called by prin.m
+function s = Pftoa(fmtstr,val) % floating point to ascii convertion - called by prin.m
 %
 % Pftoa.m:  Alternative number conversion formatting - version 01Jan17
 % Author:   Paul Mennen (paul@mennen.org)
 %           Copyright (c) 2017, Paul Mennen
 %
-% function s = Pftoa(app,fmtstr,val)
+% function s = Pftoa(fmtstr,val)
 % returns a string representing the number val using the format specified by fmtstr
 %.
 % fmtstr: format description string
@@ -37,7 +37,7 @@ function s = Pftoa(app,fmtstr,val) % floating point to ascii convertion - called
 
 % If the format code is not one of the four characters VWvw then use
 % the sprintf c conventions: s=sprintf(fmtstr,number);
-% e.g.  Pftoa(app,'%7.2f',value) is identical to sprintf('%7.2f',value).
+% e.g.  Pftoa('%7.2f',value) is identical to sprintf('%7.2f',value).
 
 % Optional format modifiers are allowed between the % sign and the field width.
 % An optional modifier is one of the characters "+-jJkL". The + and - modifiers
@@ -46,7 +46,7 @@ function s = Pftoa(app,fmtstr,val) % floating point to ascii convertion - called
 % the prin.pdf help file.
 
 % BACKGROUND: ---------------------------------------------------------------
-% Pftoa(app,) expands on the number conversion capabilities of sprintf's d,f,e,g
+% Pftoa() expands on the number conversion capabilities of sprintf's d,f,e,g
 % conversion codes (which are identical to the c language conventions). These
 % formats are ideal for many situations, however the fact that these formats
 % will sometimes output more characters than the specified field width make
@@ -89,7 +89,7 @@ function s = Pftoa(app,fmtstr,val) % floating point to ascii convertion - called
 % since most GUIs are rendered using proportially spaced fonts, the w format
 % is used more often than the W format.
 %
-if nargin~=2 disp('Calling sequence: resultString = Pftoa(app,formatString,val)'); return; end;
+if nargin~=2 disp('Calling sequence: resultString = Pftoa(formatString,val)'); return; end;
 
 fmtstr = deblank(fmtstr);                 % make sure format code is the last character
 fcode = fmtstr(end);  fc = upper(fcode);  % extract format code. Convert to upper case
@@ -104,8 +104,8 @@ if lmf=='j'                               % is there a complex modifier?
   if mf=='J' | (rval*ival)~=0
               if ival<0 pp = '-'; ival = -ival; else pp = '+'; end;
               if rval==0 rval=abs(rval); end;
-              s = [Pftoa(app,fw,rval) sp pp sp Pftoa(app,fw,ival) 'i'];  % both real/imag parts
-  elseif ival s = [Pftoa(app,fw,ival) 'i']; else s = Pftoa(app,fw,rval); % only need one part
+              s = [Pftoa(fw,rval) sp pp sp Pftoa(fw,ival) 'i'];  % both real/imag parts
+  elseif ival s = [Pftoa(fw,ival) 'i']; else s = Pftoa(fw,rval); % only need one part
   end;
   return;
 end;

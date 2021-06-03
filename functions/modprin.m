@@ -1,12 +1,12 @@
-function [out] = modprin(app,len,num)
+function [out] = modprin(len,num)
 
-y=prin(app,['%' sprintf('%d',len) 'V'], num);
+y=prin(['%' sprintf('%d',len) 'V'], num);
 
 k = strfind(y,'e');
 
 if ~isempty(k)
     
-    y=prin(app,['%' sprintf('%d',len) 'v'], num);
+    y=prin(['%' sprintf('%d',len) 'v'], num);
     k = strfind(y,'e');
     substr=y(1:k-1);
     kk=strfind(substr,'.');
@@ -44,4 +44,3 @@ end
 out=y;
 
 end
-

@@ -1,12 +1,12 @@
-function s = prin(app,fmt,varargin)
+function s = prin(fmt,varargin)
 %
 % prin.m:  An alternative to sprintf() & fprintf() - version 16Feb17
 %          Calls Pftoa.m
 %
 % Calling sequence: ------------------------------
-% s = prin(app,FormatString,OptionalArguments)
+% s = prin(FormatString,OptionalArguments)
 %               or
-% s = prin(app,FileID,FormatString,OptionalArguments)
+% s = prin(FileID,FormatString,OptionalArguments)
 %
 % FormatString '%nV' uses exactly n characters
 % FormatString '%nW' uses at most n characters
@@ -39,10 +39,10 @@ if isnumeric(fmt)                                           % here if the first 
     v = fmt(:);  n = length(v);  pad = ceil(n/epr)*epr - n;  % number of pad elements to make a multiple of 10
     c = (n+pad)/epr;  head = epr*(1:c) - epr + 1;            % number of columns to print, header row
     v = [head; reshape([v; zeros(pad,1)],epr,c)];  v = v(:); % reshape input
-    s = prin(app,f,v(1:end-pad));
+    s = prin(f,v(1:end-pad));
     return;
   end;
-  s = prin(app,varargin{:});                                    % come here if the 1st arguement a FileID or a file name
+  s = prin(varargin{:});                                    % come here if the 1st arguement a FileID or a file name
   if length(fmt)>1                                          % is the first argument a file name?
        if fmt(1)>0 p = 'at'; else p = 'wt'; fmt=-fmt; end;  % yes, come here (+/- = append/write)
        fmt = char(fmt);  nc = fmt(1)==' ';  if nc fmt(1)=''; end; % don't close if space in filename
@@ -128,7 +128,7 @@ if cb<=nn c{n+1} = sprintf(fmt(cb:nn)); end;         % save format text that fol
 for k=1:n c{k} = sprintf(c{k}); end;                 % sprintf conversions (e.g. \t to tab character)
 s = c{1};  q = 1;                                    % q points to the next format string
 na = length(varargin);  k = 0;                       % k points to the argument being processed
-if na & ~n disp('prin(app,) warning: No format codes. Variables not converted.'); na=0; end;
+if na & ~n disp('prin() warning: No format codes. Variables not converted.'); na=0; end;
 while k < na                                         % cycle thru all the arguments
   k = k+1;  arg = varargin{k};                       % get next argument
   while iscell(arg)
@@ -138,7 +138,7 @@ while k < na                                         % cycle thru all the argume
   if e(q)>0
     arg = arg(:);  nb = length(arg);                 % bracket vector format comes here
     for j=1:nb                                       % loop thru each number in the vector
-      ft = Pftoa(app,f{q},arg(j));                       % convert the next number in the vector to ascii
+      ft = Pftoa(f{q},arg(j));                       % convert the next number in the vector to ascii
       if j<nb s = [s g{q} ft d{q}];                  % surround the number with left and right text (g,d)
       else    s = [s g{q} ft d{q}(1:e(q)-1) c{q+1}]; % for last vector element, don't include the delimiter
       end;
@@ -152,7 +152,7 @@ while k < na                                         % cycle thru all the argume
     else                                             % here for all other formats (except %s)
       arg = arg(:);  nb = length(arg);
       for j=1:nb                                     % cycle thru each element of next argument
-        s = [s Pftoa(app,f{q},arg(j)) c{q+1}];           % conversion with Pftoa
+        s = [s Pftoa(f{q},arg(j)) c{q+1}];           % conversion with Pftoa
         q = q + 1;                                   % advance to next format string
         if q>n & (j<nb | k<na) q=1; s=[s c{1}]; end; % reuse the format string from the beginning
       end;    % end for j=1:nb

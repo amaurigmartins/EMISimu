@@ -46,7 +46,7 @@ if ntg>0
         nc=str2double(attdata(nph+nsw+i,2));
         s=str2double(attdata(nph+nsw+i,3));
         x0=str2double(attdata(nph+nsw+i,4)) + deq;
-        y0=str2double(attdata(nph+nsw+i,5));
+        y0=abs(str2double(attdata(nph+nsw+i,5)));
         tmpcoords=calcConductorCoords(app,x0,y0,nc,s);
         for k=1:nc
             thisrow=[nph+nsw+1 TD Rdc KTYPE 2*Rout tmpcoords(k,1) tmpcoords(k,2) tmpcoords(k,2)];

@@ -6,28 +6,28 @@ clc;
 %% Paths to executables
 
 % ATP Solver path (%ATPPATH%\tools\runATP.exe):
-app.ATPSolverPath.Value = 'C:\ATP\tools\runATP.exe';
+app.ATPSolverPath.Text = 'C:\ATP\tools\runATP.exe';
 
 % GTPPLOT path (%ATPPATH%\tools\GTPPL32.exe):
-app.GTPPLOTPath.Value = 'C:\ATP\tools\GTPPL32.exe';
+app.GTPPLOTPath.Text = 'C:\ATP\tools\GTPPL32.exe';
 
 % PL42MAT path (%ATPPATH%\tools\Pl42mat.exe):
-app.PL42MATPath.Value = 'C:\ATP\tools\Pl42mat.exe';
+app.PL42MATPath.Text = 'C:\ATP\tools\Pl42mat.exe';
 
 %% Project data
 
 % enter working directory:
-app.Workingdirectory.Value = 'D:\Mestrado\EMISimu';
+app.Workingdirectory.Text = 'D:\Caio\EMISimu';
 
 % enter the project directory name here
-app.ProjectID.Value = 'SimpleInterferenceCase';
+app.ProjectID.Text = 'SimpleInterferenceCase';
 
 % Project description:
-app.Projectdescription.Value = 'Simple interference case between a power line and a pipeline.';
+app.Projectdescription.Text = 'Simple interference case between a power line and a pipeline.';
 
 %% Process
 
-addpath(app.ProjectID.Value);
+addpath(getProjectID(app));
 addpath('functions');
 
 % define the problem
@@ -47,6 +47,7 @@ initialize_Variables;
 initialize_CouplingRegions;
 
 % build LCC cards
+makeAllLCCFiles(app);
 
 % build main ATP card
 

@@ -36,9 +36,10 @@ end
 out=strcat(out,'BEGIN NEW DATA CASE\n');
 out=strcat(out,'BLANK CARD\n');
 
-fid = fopen('tmp_lcc.atp','wt');
-fprintf(fid, out);
-fclose(fid);
+% This is for debug purpose:
+% fid = fopen('tmp_lcc.atp','wt');
+% fprintf(fid, out);
+% fclose(fid);
 
 end
 

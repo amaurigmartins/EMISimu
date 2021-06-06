@@ -76,10 +76,10 @@ end
 
 %% Line model:
 
-if strcmp(app.LineModel,'pi')
+if strcmp(app.LineModel.Text,'pi')
     app.PiButton.Value = 1;
     app.BergeronButton.Value = 0;
-elseif strcmp(app.LineModel,'bergeron')
+elseif strcmp(app.LineModel.Text,'bergeron')
     app.PiButton.Value = 0;
     app.BergeronButton.Value = 1;
 else
@@ -101,20 +101,20 @@ for thisattset = 1: numAttSets
     
     for j = 1: nph
         attsetdata{j,1} = app.AttSet(thisattset).Phase(j).condID.Value;
-        attsetdata{j,2} = app.AttSet(thisattset).Phase(j).numberofCond.Value;
-        attsetdata{j,3} = app.AttSet(thisattset).Phase(j).spaceBetweenCond.Value;
-        attsetdata{j,4} = app.AttSet(thisattset).Phase(j).coordX.Value;
-        attsetdata{j,5} = app.AttSet(thisattset).Phase(j).coordY.Value;
+        attsetdata{j,2} = string(app.AttSet(thisattset).Phase(j).numberofCond.Value);
+        attsetdata{j,3} = string(app.AttSet(thisattset).Phase(j).spaceBetweenCond.Value);
+        attsetdata{j,4} = string(app.AttSet(thisattset).Phase(j).coordX.Value);
+        attsetdata{j,5} = string(app.AttSet(thisattset).Phase(j).coordY.Value);
         attsetdata{j,6} = 'Phase'; % type
     end
     
     if nsh > 0
         for j = 1: nsh
             attsetdata{j+nph,1} = app.AttSet(thisattset).ShieldWire(j).condID.Value;
-            attsetdata{j+nph,2} = 1; %one conductor per phase
-            attsetdata{j+nph,3} = 0; %one conductor per phase
-            attsetdata{j+nph,4} = app.AttSet(thisattset).ShieldWire(j).coordX.Value;
-            attsetdata{j+nph,5} = app.AttSet(thisattset).ShieldWire(j).coordY.Value;
+            attsetdata{j+nph,2} = string(1); %one conductor per phase
+            attsetdata{j+nph,3} = string(0); %one conductor per phase
+            attsetdata{j+nph,4} = string(app.AttSet(thisattset).ShieldWire(j).coordX.Value);
+            attsetdata{j+nph,5} = string(app.AttSet(thisattset).ShieldWire(j).coordY.Value);
             attsetdata{j+nph,6} = 'ShieldWire'; % type
         end
     end
@@ -122,10 +122,10 @@ for thisattset = 1: numAttSets
     if ntg > 0
         for j = 1 : ntg
             attsetdata{j+ nph + nsh,1} = app.AttSet(thisattset).Target(j).condID.Value;
-            attsetdata{j+ nph + nsh,2} = 1; %one conductor per phase
-            attsetdata{j+ nph + nsh,3} = 0; %one conductor per phase
-            attsetdata{j+ nph + nsh,4} = app.AttSet(thisattset).Target(j).coordX.Value;
-            attsetdata{j+ nph + nsh,5} = app.AttSet(thisattset).Target(j).coordY.Value;
+            attsetdata{j+ nph + nsh,2} = string(1); %one conductor per phase
+            attsetdata{j+ nph + nsh,3} = string(0); %one conductor per phase
+            attsetdata{j+ nph + nsh,4} = string(app.AttSet(thisattset).Target(j).coordX.Value);
+            attsetdata{j+ nph + nsh,5} = string(app.AttSet(thisattset).Target(j).coordY.Value);
             attsetdata{j+ nph + nsh,6} = 'Target'; % type
         end
     end

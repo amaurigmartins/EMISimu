@@ -41,17 +41,17 @@ app.AttSet(1).Target(1).CoatingRelativePermeability.Value = 1;
 
 %% AttSet 2:
 
-app.AttSet(2).Phase(1).condID.Value = 'Grosbeak';
+app.AttSet(2).Phase(1).condID.Value = 'ACAR900';
 app.AttSet(2).Phase(1).numberofCond.Value = 2;
 app.AttSet(2).Phase(1).spaceBetweenCond.Value = 0.4;
 app.AttSet(2).Phase(1).coordX.Value = -1;
 app.AttSet(2).Phase(1).coordY.Value = 20;
-app.AttSet(2).Phase(2).condID.Value = 'Grosbeak';
+app.AttSet(2).Phase(2).condID.Value = 'ACAR900';
 app.AttSet(2).Phase(2).numberofCond.Value = 2;
 app.AttSet(2).Phase(2).spaceBetweenCond.Value = 0.4;
 app.AttSet(2).Phase(2).coordX.Value = 0;
 app.AttSet(2).Phase(2).coordY.Value = 20;
-app.AttSet(2).Phase(3).condID.Value = 'Grosbeak';
+app.AttSet(2).Phase(3).condID.Value = 'ACAR900';
 app.AttSet(2).Phase(3).numberofCond.Value = 2;
 app.AttSet(2).Phase(3).spaceBetweenCond.Value = 0.4;
 app.AttSet(2).Phase(3).coordX.Value = 1;
@@ -65,4 +65,8 @@ app.AttSet(2).Target(1).coordY.Value = -1;
 app.AttSet(2).Target(1).CoatingResistivity.Value = 1e8;
 app.AttSet(2).Target(1).CoatingThickness.Value = 3e-3;
 app.AttSet(2).Target(1).CoatingRelativePermeability.Value = 1;
+
+
+
+
 

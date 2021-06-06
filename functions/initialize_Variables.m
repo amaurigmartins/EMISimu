@@ -182,4 +182,11 @@ else
     app.L6L3L3L6Button.Value=1;
 end
 
+%% Load Ground impedance table
+
+app.UITableGroundImp.Data = load(getGroundImpedancePath(app));
+
+%% Load Soil resistivity table
+app.UITableSoilRes.Data = load(getSoilResistivityPath(app));
+
 

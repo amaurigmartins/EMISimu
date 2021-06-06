@@ -9,10 +9,8 @@ app.TranspositionScheme.Text = 'untransposed';
 
 %% Ground impedances
 
-app.GroundImpedanceFile.Text = 'D:\Caio\EMISimu\SimpleInterferenceCase\ground_impedance_data.csv';
-
 % Ground impedances data (.csv) per section (R L C) [Ohms mH uF]:
-app.UITableGroundImp.Data = load(app.GroundImpedanceFile.Text);
+app.GroundImpedanceFile.Text = 'D:\Caio\EMISimu\SimpleInterferenceCase\ground_impedance_data.csv';
 
 %% Shield wires
 
@@ -22,7 +20,7 @@ app.NumberofShieldWires.Value = 'single';
 %% Line model
 
 % Types: pi, bergeron and jmarti
-app.LineModel.Text = 'jmarti';
+app.LineModel.Text = 'pi';
 
 % LCC frequency
 app.LCCfrequency.Value = 60;

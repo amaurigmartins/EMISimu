@@ -1,6 +1,6 @@
 function out = makeAllLCCFiles(app)
             out=true;
-            atpsolver=getATPsolver(app);
+            atpsolver=getATPsolverPath(app);
             projID=getProjectID(app);
             wdir=getWorkingDirectory(app);
             projdir=fullfile(wdir,projID);

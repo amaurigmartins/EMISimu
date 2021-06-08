@@ -1,3 +1,11 @@
+
+%% Load Ground impedance table
+
+app.UITableGroundImp.Data = load(getGroundImpedancePath(app));
+
+%% Load Soil resistivity table
+app.UITableSoilRes.Data = load(getSoilResistivityPath(app));
+
 %% Ground impedance data table convert:
 app.UITableGroundImp.Data = num2cell(app.UITableGroundImp.Data);
 
@@ -181,12 +189,5 @@ else
     app.L3L3L3Button.Value=0;
     app.L6L3L3L6Button.Value=1;
 end
-
-%% Load Ground impedance table
-
-app.UITableGroundImp.Data = load(getGroundImpedancePath(app));
-
-%% Load Soil resistivity table
-app.UITableSoilRes.Data = load(getSoilResistivityPath(app));
 
 

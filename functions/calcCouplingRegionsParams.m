@@ -19,7 +19,7 @@ function [ResultTable, LCC_matrix] = calcCouplingRegionsParams(src,tgt,span_leng
 %           Leq_tgt [m]: Comprimento equivalente com referência no circuito alvo
 %           idx_acop [adimensional]: índice que representa o tipo de acoplamento existente, de acordo com:
 %                   0 : acoplamento normal entre o vão do circuito fonte e
-%                   circuito alvoX
+%                   circuito alvo
 %                   1 : acoplamento subdividido dentro de um mesmo vão
 %           Theta [rad]: ângulo entre os trechos do circuito fonte e alvo
 %           Dist_acc_tgt[m]: Distância acumulada com relação ao circuito alvo
@@ -65,12 +65,12 @@ macro_regions_precision = 0.1; % Define a precisão para subdividir o duto e enco
 
 %% DETERMINANDO OS PARÂMETROS DE ACOPLAMENTO:
 
-[coord_XY_f,D1D2_f,Leq_src_f,Leq_tgt_f,Theta_f,IDX_f,dist_acc_f] = calculate_sub_params(src,tgt,minor_d,tgt_closer_points,debugthis);
+% [coord_XY_f,D1D2_f,Leq_src_f,Leq_tgt_f,Theta_f,IDX_f,dist_acc_f] = calculate_sub_params(src,tgt,minor_d,tgt_closer_points,debugthis);
+[coord_XY_f,D1D2_f,Leq_src_f,Leq_tgt_f,Theta_f,IDX_f,dist_acc_f,dist_acc_src_f] = calculate_sub_params(src,tgt,minor_d,tgt_closer_points,debugthis);
 
-ResultTable = [coord_XY_f D1D2_f Leq_src_f Leq_tgt_f Theta_f IDX_f dist_acc_f];
+ResultTable = [coord_XY_f D1D2_f Leq_src_f Leq_tgt_f Theta_f IDX_f dist_acc_f dist_acc_src_f];
 
 LCC_matrix = define_LCC_matrix(ResultTable,idx_int);
-
 
 
 end
@@ -141,9 +141,10 @@ lim = dist_total/src_row;
 
 if n_sub > lim
     n_sub = lim;
+     dist = linspace(0,dist_total,round(dist_total/n_sub));
+else
+    dist = linspace(0,dist_total,(round(dist_total/n_sub)+1));
 end
-
-dist = linspace(0,dist_total,round((dist_total/n_sub)+1));
 
 Y = line(:,2);
 X = line(:,1);
@@ -164,6 +165,7 @@ end
 
 
 end
+
 
 function [dist_acc,M_dist_acc,M_Leq] = dist_acum(line)
 % Função que calcula o valor total de comprimento da linha
@@ -191,59 +193,64 @@ end
 
 function [minor_d, tgt_closer_points] = closer_points2(new_src,new_tgt,P_int,debugthis)
 
-tgt_comp = new_tgt;
+if size(new_src,1) ~= size(new_tgt,1)
 
-new_tgt(end,:) = [];
+    tgt_comp = new_tgt;
 
-for i = 1: size(new_src,1)
-    X = new_src(i,1);
-    Y = new_src(i,2);
-    
-    if i == 1
-        tgt_closer_points(i,:) = new_tgt(1,:);
-        minor_d(i,1) = 1;
-    
-    elseif i == size(new_src,1)
-        tgt_closer_points(i,:) = tgt_comp(end,:);
-        minor_d(i,1) = size(tgt_comp,1);
-    
-    else
-  
-        alldistances= sqrt((X-new_tgt(:,1)).^2 + (Y-new_tgt(:,2)).^2);
-        [m,idx]=min(alldistances);       
-        tgt_closer_points(i,:) = new_tgt(idx,:);
-        
-        if new_tgt(idx,:) ~= P_int
-            new_tgt(1:idx(1),:) = [];
+    new_tgt(end,:) = [];
+
+    for i = 1: size(new_src,1)
+        X = new_src(i,1);
+        Y = new_src(i,2);
+
+        if i == 1
+            tgt_closer_points(i,:) = new_tgt(1,:);
+            minor_d(i,1) = 1;
+
+        elseif i == size(new_src,1)
+            tgt_closer_points(i,:) = tgt_comp(end,:);
+            minor_d(i,1) = size(tgt_comp,1);
+
+        else
+
+            alldistances= sqrt((X-new_tgt(:,1)).^2 + (Y-new_tgt(:,2)).^2);
+            [m,idx]=min(alldistances);       
+            tgt_closer_points(i,:) = new_tgt(idx,:);
+
+            if new_tgt(idx,:) ~= P_int
+                new_tgt(1:idx(1),:) = [];
+            end
+
+            [m,idx,alldistances] = minor_distance(tgt_closer_points(i,:),tgt_comp);
+            minor_d(i,1) = idx(1);
+
+
         end
-        
-        [m,idx,alldistances] = minor_distance(tgt_closer_points(i,:),tgt_comp);
-        minor_d(i,1) = idx(1);
-        
-        
+
+        if debugthis
+            figure(1)
+            plot(tgt_comp(:,1),tgt_comp(:,2),'b',new_src(:,1),new_src(:,2),'r')
+            xlabel('X [m]')
+            ylabel('Y [m]')
+            title('Macro-regiões')
+            axis equal
+            hold on
+            plot([new_src(i,1) tgt_closer_points(i,1)],[new_src(i,2) tgt_closer_points(i,2)],'k',new_src(:,1),new_src(:,2),'k^',tgt_closer_points(:,1),tgt_closer_points(:,2),'r^')
+            legend('DT','LT','Projeção Macro-região')
+        end
+
     end
-    
-    if debugthis
-        figure(1)
-        plot(tgt_comp(:,1),tgt_comp(:,2),'b',new_src(:,1),new_src(:,2),'r')
-        xlabel('X [m]')
-        ylabel('Y [m]')
-        title('Macro-regiões')
-        axis equal
-        hold on
-        plot([new_src(i,1) tgt_closer_points(i,1)],[new_src(i,2) tgt_closer_points(i,2)],'k',new_src(:,1),new_src(:,2),'k^',tgt_closer_points(:,1),tgt_closer_points(:,2),'r^')
-        legend('DT','LT','Projeção Macro-região')
-    end
-   
+
+    minor_d = sort(minor_d);
+else
+    minor_d = [1:1:size(new_src)];
+    tgt_closer_points = new_tgt;
 end
-
-minor_d = sort(minor_d);
-
 
 
 end
 
-function [coord_XY_f,D1D2_f,Leq_src_f,Leq_tgt_f,Theta_f,IDX_f,dist_acc_f] = calculate_sub_params(src,tgt,minor_d,tgt_closer_points,debugthis)
+function [coord_XY_f,D1D2_f,Leq_src_f,Leq_tgt_f,Theta_f,IDX_f,dist_acc_f,dist_acc_src_f] = calculate_sub_params(src,tgt,minor_d,tgt_closer_points,debugthis)
 
     D1D2_f = [];
     Leq_src_f = [];
@@ -251,8 +258,10 @@ function [coord_XY_f,D1D2_f,Leq_src_f,Leq_tgt_f,Theta_f,IDX_f,dist_acc_f] = calc
     Theta_f = [];
     IDX_f = [];
     dist_acc_tgt = 0;
+    dist_acc_src = 0;
     dist_acc_f = [];
     coord_XY_f = [];
+    dist_acc_src_f = [];
 
 for i = 1: size(src,1) - 1
     src_span = src(i:i+1,:);
@@ -286,6 +295,8 @@ for i = 1: size(src,1) - 1
         Theta(j,1) = make_angle(src_span_sub(j:j+1,:),tgt_span(j:j+1,:));
         dist_acc_tgt = dist_acc_tgt + Leq_tgt(j,1);
         dist_acc_f = [dist_acc_f;dist_acc_tgt];
+        dist_acc_src = dist_acc_src + Leq_src(j,1);
+        dist_acc_src_f = [dist_acc_src_f;dist_acc_src];
         
         if debugthis
            figure(2)
@@ -302,14 +313,16 @@ for i = 1: size(src,1) - 1
     D1D2 = [D(1:N-1) D(2:N)];
     
     if N ~= 1
-        if i == size(src,1) - 1
-            IDX = ones(N-1,1);
-            IDX(1) = 0;
-            IDX(end) = 0;
-        else
-            IDX = ones(N-1,1);
-            IDX(1) = 0;
-        end
+%         if i == size(src,1) - 1
+%             IDX = zeros(N-1,1);
+%             IDX(1) = 1;
+%             IDX(end) = 1;
+%         elseif i == 1 && size(src,1) ~= size(tgt,1)
+%             IDX = zeros(N-1,1);
+%         else
+            IDX = zeros(N-1,1);
+            IDX(end) = 1;
+%         end
     else
         IDX = [];
     end
@@ -382,7 +395,7 @@ deq = (TR(:,5) + TR(:,6))./2;
 
 Leq = sqrt(TR(:,7).*TR(:,8)).*abs(cos(TR(:,9)));
 
-LCC_matrix = [deq Leq TR(:,11) TR(:,10) TR(:,8)];
+LCC_matrix = [deq Leq TR(:,11) TR(:,10) TR(:,8) TR(:,12)];
 
 if ~isempty(idx_int)
     for i = 1: size(idx_int,1)

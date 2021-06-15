@@ -24,10 +24,12 @@ out=strcat(out, 'C < n 1>< n 2><ref1><ref2><     R    ><    A     ><    B     ><
 out=strcat(out, writeThEqCard(app,T1,1));
 out=strcat(out, writeThEqCard(app,T2,2));
 out=strcat(out, '$VINTAGE,1\n');
-nsec=getNumSections(app);
+ntw=getNumTowers(app);
+tower2LCCnum = getAllTowNum2LCC(app);
+nsec = getNumSections(app);
      % tower ground impedances
-for i=1:nsec
-    out=strcat(out, writeTowGroundCard(app,getGroundImpedance(app,i),i,fault_sec));
+for i=1:ntw
+    out=strcat(out, writeTowGroundCard(app,getGroundImpedance(app,tower2LCCnum(i)),tower2LCCnum(i),fault_sec));
 end
      % substation ground impedances + neutral connections
 out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,1),1));
@@ -58,13 +60,13 @@ out=strcat(out, writePhaseCurrProbesCard(app,1));
 out=strcat(out, writePhaseCurrProbesCard(app,2));
 
 if outputShWireCurr(app)
-    for i=1:nsec
-        if ismember(i,listOfShWires)
+    for i=1:ntw
+        if ismember(tower2LCCnum(i),listOfShWires)
             measure_status=1;
         else
             measure_status=0;
         end
-        out=strcat(out, writeShWireCurrProbesCard(app,i, measure_status, fault_sec));
+        out=strcat(out, writeShWireCurrProbesCard(app,tower2LCCnum(i), measure_status, fault_sec));
     end
 end
 out=strcat(out, writeFaultBranchConnections(app,fault_sec));

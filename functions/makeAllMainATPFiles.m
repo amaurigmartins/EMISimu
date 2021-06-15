@@ -7,7 +7,7 @@ function out = makeAllMainATPFiles(app)
             warning(orig_state);
 %             fault_sec=getFaultedSections(app);
             if isFaultStudy(app)
-                fault_sec = getTowNum2LCC(app);
+                fault_sec = getFaultedTowNum2LCC(app);
                 disp('Making ATP files...');
                 for k=1:length(fault_sec)
                     fprintf('Building fault model for section %d...\n',fault_sec(k));

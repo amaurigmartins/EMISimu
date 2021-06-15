@@ -167,6 +167,10 @@ app.SourceCoordY.Data = num2cell(source_coordinates_file(:,2));
 app.TargetCoordX.Data = num2cell(target_coordinates_file(:,1));
 app.TargetCoordY.Data = num2cell(target_coordinates_file(:,2));
 
+%% Number of towers
+
+app.NumTowers.Value = size(app.SourceCoordX.Data,1);
+
 %% Air Permeability constant
 
 app.AirPermeability.Value = 8.85e-12;

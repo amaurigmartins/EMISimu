@@ -12,9 +12,7 @@ end
 
 faltedTowers= sort(transpose(faltedTowers));
 
-[TowerLCCnumber,~] = find(app.CoupRegTable.SourceGroundingIndex.Data == 1);
-
-TowerLCCnumber = [0;TowerLCCnumber];
+TowerLCCnumber = getAllTowNum2LCC(app);
 
 out = TowerLCCnumber(faltedTowers);
 

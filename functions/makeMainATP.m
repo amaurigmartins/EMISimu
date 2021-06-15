@@ -35,11 +35,15 @@ out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,2),2));
      % fault components
 out=strcat(out, writeFaultBranchComponents(app));
 out=strcat(out, '$VINTAGE,0\n');
-     % target shunt admittances
+     % target terminal impedances
 ntg=getNumTargets(app);
+for i=1:ntg    
+    out = strcat(out, writeTargetTerminalGndCard(app,getTargetTerminalGndImpedance(app,i),i));
+end 
+     % target shunt admittances
 for i=1:nsec
     for j=1:ntg
-        out=strcat(out, writeTargetShuntAdmittance(app,j,i)) ;
+        out=strcat(out, writeTargetShuntAdmittance(app,j,i));
     end
 end
      % include LCC pch files

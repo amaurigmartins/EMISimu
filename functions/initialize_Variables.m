@@ -114,6 +114,9 @@ for thisattset = 1: numAttSets
         attsetdata{j,4} = string(app.AttSet(thisattset).Phase(j).coordX.Value);
         attsetdata{j,5} = string(app.AttSet(thisattset).Phase(j).coordY.Value);
         attsetdata{j,6} = 'Phase'; % type
+        attsetdata{j,7} = string(0);
+        attsetdata{j,8} = string(0);
+        attsetdata{j,9} = string(0);
     end
     
     if nsh > 0
@@ -124,6 +127,9 @@ for thisattset = 1: numAttSets
             attsetdata{j+nph,4} = string(app.AttSet(thisattset).ShieldWire(j).coordX.Value);
             attsetdata{j+nph,5} = string(app.AttSet(thisattset).ShieldWire(j).coordY.Value);
             attsetdata{j+nph,6} = 'ShieldWire'; % type
+            attsetdata{j+ nph,7} = string(0);
+            attsetdata{j+ nph,8} = string(0);
+            attsetdata{j+ nph,9} = string(0);
         end
     end
     
@@ -135,10 +141,13 @@ for thisattset = 1: numAttSets
             attsetdata{j+ nph + nsh,4} = string(app.AttSet(thisattset).Target(j).coordX.Value);
             attsetdata{j+ nph + nsh,5} = string(app.AttSet(thisattset).Target(j).coordY.Value);
             attsetdata{j+ nph + nsh,6} = 'Target'; % type
+            attsetdata{j+ nph + nsh,7} = string(app.AttSet(thisattset).Target(j).CoatingResistivity.Value);
+            attsetdata{j+ nph + nsh,8} = string(app.AttSet(thisattset).Target(j).CoatingThickness.Value);
+            attsetdata{j+ nph + nsh,9} = string(app.AttSet(thisattset).Target(j).CoatingRelativePermeability.Value);
         end
     end
     
-    structArray = cell2struct(attsetdata, {'conductor', 'bundled', 'bundle_spac','horizontal','vertical','type'},2);
+    structArray = cell2struct(attsetdata, {'conductor', 'bundled', 'bundle_spac','horizontal','vertical','type','coat_resistivity','coat_thickness','coat_relPermeability'},2);
     app.UITableAttSets.Data(thisattset)=cellstr(jsonencode(structArray));
 end
 

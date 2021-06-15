@@ -27,8 +27,8 @@ app.Projectdescription.Text = 'Simple interference case between a power line and
 
 %% Process
 
-addpath(getProjectID(app));
 addpath('functions');
+addpath(getProjectID(app));
 
 % define the problem
 define_ATPSettings;
@@ -50,6 +50,8 @@ initialize_CouplingRegions;
 makeAllLCCFiles(app);
 
 % build main ATP card
+makeAllMainATPFiles(app);
+
 
 % run stuff
 

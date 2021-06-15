@@ -24,7 +24,7 @@ out=strcat(out, 'C < n 1>< n 2><ref1><ref2><     R    ><    A     ><    B     ><
 out=strcat(out, writeThEqCard(app,T1,1));
 out=strcat(out, writeThEqCard(app,T2,2));
 out=strcat(out, '$VINTAGE,1\n');
-nsec=app.Numberofsections.Value;
+nsec=getNumSections(app);
      % tower ground impedances
 for i=1:nsec
     out=strcat(out, writeTowGroundCard(app,getGroundImpedance(app,i),i,fault_sec));
@@ -35,6 +35,13 @@ out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,2),2));
      % fault components
 out=strcat(out, writeFaultBranchComponents(app));
 out=strcat(out, '$VINTAGE,0\n');
+     % target shunt admittances
+ntg=getNumTargets(app);
+for i=1:nsec
+    for j=1:ntg
+        out=strcat(out, writeTargetShuntAdmittance(app,j,i)) ;
+    end
+end
      % include LCC pch files
 for i=1:nsec
     out=strcat(out, writeLCCPunchFile(app,i));

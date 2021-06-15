@@ -5,6 +5,10 @@ app.Faultedcircuit.SelectedObject.Text = 'Circuit 1';
 % Number of fault's section:
 app.FaultedSection(1).From.Value = 1;
 app.FaultedSection(1).To.Value = 3;
+app.FaultedSection(2).From.Value = 8;
+app.FaultedSection(2).To.Value = 9;
+app.FaultedSection(3).From.Value = 11;
+app.FaultedSection(3).To.Value = 13;
 
 
 % Fault incidence angle [degress]:

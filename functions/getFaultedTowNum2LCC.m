@@ -1,4 +1,4 @@
-function out = getTowNum2LCC(app)
+function out = getFaultedTowNum2LCC(app)
 
 
 faltedTowers = [];

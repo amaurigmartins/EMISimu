@@ -60,13 +60,13 @@ out=strcat(out, writePhaseCurrProbesCard(app,1));
 out=strcat(out, writePhaseCurrProbesCard(app,2));
 
 if outputShWireCurr(app)
-    for i=1:ntw
-        if ismember(tower2LCCnum(i),listOfShWires)
+    for i=1:nsec
+        if ismember(i,listOfShWires)
             measure_status=1;
         else
             measure_status=0;
         end
-        out=strcat(out, writeShWireCurrProbesCard(app,tower2LCCnum(i), measure_status, fault_sec));
+        out=strcat(out, writeShWireCurrProbesCard(app,i, measure_status, fault_sec));
     end
 end
 out=strcat(out, writeFaultBranchConnections(app,fault_sec));

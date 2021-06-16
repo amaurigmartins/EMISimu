@@ -71,6 +71,15 @@ if outputShWireCurr(app)
 end
 out=strcat(out, writeFaultBranchConnections(app,fault_sec));
 
+% target longitudinal current switch
+if outputTargetLongCurr(app)
+    for i=1:nsec
+        for j = 1:ntg
+            out = strcat(out, writeTargetLongCurrProbesCard(app,j,i));
+        end
+    end
+end
+
 %source
 out=strcat(out, '/SOURCE\n');
 out=strcat(out, 'C < n 1><>< Ampl.  >< Freq.  ><Phase/T0><   A1   ><   T1   >< TSTART >< TSTOP  >\n');

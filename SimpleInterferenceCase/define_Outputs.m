@@ -67,4 +67,10 @@ app.Terminal2phasevoltages.Value = 1;
 % Terminal 2 phase currents (Yes = 1 or No = 0):
 
 
+%% Target longitudinal current output
+
+app.TargetLongCurrOutput.Value = 1;
+
+
+
 

@@ -1,3 +1,3 @@
 function out = getNumTowers(app)
-out = app. NumTowers.Value;
+out = app.NumTowers.Value;
 end

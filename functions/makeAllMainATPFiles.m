@@ -6,6 +6,7 @@ function out = makeAllMainATPFiles(app)
             mkdir(projdir);
             warning(orig_state);
 %             fault_sec=getFaultedSections(app);
+            fault_sec=TowNum2LCC(app,getFaultedSections(app));
             if isFaultStudy(app)
                 fault_sec = getFaultedTowNum2LCC(app);
                 disp('Making ATP files...');

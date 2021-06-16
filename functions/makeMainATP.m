@@ -29,7 +29,7 @@ tower2LCCnum = TowNum2LCC(app,1:ntw);
 nsec = getNumSections(app);
      % tower ground impedances
 for i=1:ntw
-    out=strcat(out, writeTowGroundCard(app,getGroundImpedance(app,tower2LCCnum(i)),tower2LCCnum(i),fault_sec));
+    out=strcat(out, writeTowGroundCard(app,getGroundImpedance(app,i),tower2LCCnum(i),fault_sec));
 end
      % substation ground impedances + neutral connections
 out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,1),1));

@@ -17,8 +17,8 @@ for i=1:num_src
         tmp_out(1:2)=sprintf('%2d',cod(j));
         tmp_out(3:8)=sprintf('VS%dT%d%s',i,thisterm,seq(j));
         tmp_out(9:14)=sprintf('TH%dT%d%s',i,thisterm,seq(j));
-        tmp_out(27:32)=modprin(app,6,RR(j));
-        tmp_out(33:44)=modprin(app,12,LL(j));
+        tmp_out(27:32)=modprin(6,RR(j));
+        tmp_out(33:44)=modprin(12,LL(j));
         out=strcat(out,tmp_out,'\n');
     end
 end

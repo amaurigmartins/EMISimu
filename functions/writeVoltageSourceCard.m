@@ -15,11 +15,11 @@ for i=1:num_src
     for j=1:3
         tmp_out(1:2)=sprintf('%2d',14);
         tmp_out(3:8)=sprintf('VS%dT%d%s',i,thisterm,seq(j));
-        tmp_out(11:20)=modprin(app,10,amp);
-        tmp_out(21:30)=modprin(app,10,freq);
-        tmp_out(31:40)=modprin(app,10,ang(j));
-        tmp_out(61:70)=modprin(app,10,tstart);
-        tmp_out(71:80)=modprin(app,10,tstop);
+        tmp_out(11:20)=modprin(10,amp);
+        tmp_out(21:30)=modprin(10,freq);
+        tmp_out(31:40)=modprin(10,ang(j));
+        tmp_out(61:70)=modprin(10,tstart);
+        tmp_out(71:80)=modprin(10,tstop);
         out=strcat(out,tmp_out,'\n');
     end
 end

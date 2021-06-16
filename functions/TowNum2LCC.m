@@ -6,6 +6,8 @@ function out = TowNum2LCC(app,towers)
 
 out = [0;out];
 
+out = out(towers);
+
 % out é algum processamento desse vvetor que sai o numero do LCC
 
 end

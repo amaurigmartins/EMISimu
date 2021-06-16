@@ -5,6 +5,8 @@ num_phase = getNumPhases(app);
 num_shield = getNumShieldWires(app);
 num_target = getNumTargets(app);
 
+seq_target = 'ABCDEFGHIJKLMNOPQRSTUWVXYZ';
+
 seq_in='ABC';
 seq_out=valIfTrue(app,isTranspositionTower(app,sec),'CAB','ABC');
 
@@ -28,7 +30,7 @@ end
 
 for i = 1 : num_target
 
-    strtarget = sprintf('BRANCH  T%d%04dT%d%04d',i,sec-1,i,sec);
+    strtarget = sprintf('BRANCH  %s%05d%s%05d',seq_target(i),sec-1,seq_target(i),sec);
     
     out = strcat(out,strtarget,'\n');
     

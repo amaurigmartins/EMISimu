@@ -23,6 +23,6 @@ Y_shunt = Y_shunt*spanLength;
 
 R = real(1/Y_shunt)/2;
 Xc = imag(1/Y_shunt);
-C = -1/(2*pi*f*Xc)/(1e-6)/2;
+C = -1/(2*pi*f*Xc)/(2*1e-6);
 
 end

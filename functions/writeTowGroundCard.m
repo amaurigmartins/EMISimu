@@ -16,9 +16,9 @@ end
     
 out=blanks(80);
 out(9:13)=sprintf('0%04d',sec);
-out(27:42)=modprin(app,16,RLC(1));
-out(43:58)=modprin(app,16,RLC(2));
-out(59:74)=modprin(app,16,RLC(3));
+out(27:42)=modprin(16,RLC(1));
+out(43:58)=modprin(16,RLC(2));
+out(59:74)=modprin(16,RLC(3));
 out(80)=sprintf('%d',flag);
 out=strcat(out,'\n');
 

@@ -1,6 +1,6 @@
 function [term1, term2] = getSourceParams(app)
 % ncirc=valIfTrue(app,app.Doublecircuit.Value==1,2,1);
-ncirc = app.NumCircuits.Value; 
+ncirc = app.NumberofCircuits.Value; 
 
 term1(1,1)=2*app.RMSLLamplitudeC1T1.Value/(sqrt(2)*sqrt(3)); %amplitude
 term1(1,2)=app.FrequencyC1T1.Value; %freq

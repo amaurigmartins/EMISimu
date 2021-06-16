@@ -6,9 +6,8 @@ function out = makeAllMainATPFiles(app)
             mkdir(projdir);
             warning(orig_state);
 %             fault_sec=getFaultedSections(app);
-            fault_sec=TowNum2LCC(app,getFaultedSections(app));
             if isFaultStudy(app)
-                fault_sec = getFaultedTowNum2LCC(app);
+                fault_sec=TowNum2LCC(app,getFaultedSections(app));
                 disp('Making ATP files...');
                 for k=1:length(fault_sec)
                     fprintf('Building fault model for section %d...\n',fault_sec(k));

@@ -25,7 +25,7 @@ out=strcat(out, writeThEqCard(app,T1,1));
 out=strcat(out, writeThEqCard(app,T2,2));
 out=strcat(out, '$VINTAGE,1\n');
 ntw=getNumTowers(app);
-tower2LCCnum = getAllTowNum2LCC(app);
+tower2LCCnum = TowNum2LCC(app,1:ntw);
 nsec = getNumSections(app);
      % tower ground impedances
 for i=1:ntw

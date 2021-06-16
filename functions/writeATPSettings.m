@@ -1,12 +1,12 @@
 function [out] = writeATPSettings(app)
 
-dT=app.deltaT.Value;
-Tmax=app.Tmax.Value;
+dT=getATPdeltaT(app);
+Tmax=getATPTmax(app);
 
 out1=blanks(80);
 out2='     500       1       1       1       1       0       0       1       0\n';
-out1(1:8)=modprin(app,8,dT);
-out1(9:16)=modprin(app,8,Tmax);
+out1(1:8)=modprin(8,dT);
+out1(9:16)=modprin(8,Tmax);
 
 out=strcat(out1,'\n',out2);
 

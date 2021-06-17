@@ -1,5 +1,6 @@
         function out = getFaultedSections(app)
             
+        if isFaultStudy(app)
             out=[];
             outputmap=app.UITableFaultSec.Data;
             outputmap(any(cellfun(@isempty,outputmap),2),:) = [];
@@ -19,5 +20,8 @@
                 out=[out  outputmap(j,1):outputmap(j,2)];
             end
             out=unique(out);
-            
+        else % steady-state nominal load condition
+            out = 1;
         end
+            
+end

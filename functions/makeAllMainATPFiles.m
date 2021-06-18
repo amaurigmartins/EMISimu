@@ -6,8 +6,8 @@ function out = makeAllMainATPFiles(app)
             mkdir(projdir);
             warning(orig_state);
 %             fault_sec=getFaultedSections(app);
+            fault_sec=TowNum2LCC(app,getFaultedSections(app));
             if isFaultStudy(app)
-                fault_sec=TowNum2LCC(app,getFaultedSections(app));
                 disp('Making ATP files...');
                 for k=1:length(fault_sec)
                     fprintf('Building fault model for section %d...\n',fault_sec(k));
@@ -17,7 +17,7 @@ function out = makeAllMainATPFiles(app)
                     fclose(fid);
                 end
             else
-                fault_sec = 1;
+%                 fault_sec = 1;
                 disp('Making ATP file...');
                 disp('Building a nominal load induction model...');
                 fname=sprintf('nominal_load_study.atp');

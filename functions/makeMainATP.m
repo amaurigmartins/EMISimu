@@ -108,8 +108,9 @@ out=strcat(out, 'BLANK PLOT\n');
 out=strcat(out, 'BEGIN NEW DATA CASE\n');
 out=strcat(out, 'BLANK');
 
-fid = fopen('tmp_main.atp','wt');
-fprintf(fid, out);
-fclose(fid);
+% DEBUG
+% fid = fopen('tmp_main.atp','wt');
+% fprintf(fid, out);
+% fclose(fid);
 
 end

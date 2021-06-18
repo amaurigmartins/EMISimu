@@ -15,7 +15,7 @@ end
 out=strcat(out,'METRIC\n');
 
 % conductor
-all_conds=parseAttSetData(app,sec);
+all_conds=parseAttSetData(app,LCC2TowNum(app,sec));
 nc=size(all_conds,1);
 for i=1:nc
     con=all_conds(i,:);

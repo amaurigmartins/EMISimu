@@ -1,6 +1,6 @@
 function [out] = writePIFreqCard(app,sec)
 out=blanks(80);
-rho=getSoilRes(app,sec);
+rho=getSoilRes(app,LCC2TowNum(app,sec));
 lineparams=getLineModelParams(app);
 f=lineparams.frequency;
 L=getSpanLen(app,sec)/1000;

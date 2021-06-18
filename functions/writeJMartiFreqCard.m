@@ -1,6 +1,6 @@
 function [out] = writeJMartiFreqCard(app,sec)
 out1=blanks(80);out2=blanks(80);out3=blanks(80);
-rho=getSoilRes(app,sec);
+rho=getSoilRes(app,LCC2TowNum(app,sec));
 lineparams=getLineModelParams(app);
 f=lineparams.frequency;
 dec=lineparams.decades;

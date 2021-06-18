@@ -1,7 +1,7 @@
 function [R,C] = calcShuntAdmittance(app,ntg,sec)
 
 f = getFrequency(app);
-attnum=getAttSet(app,sec);
+attnum=getAttSet(app,LCC2TowNum(app,sec));
 attdata=getAttSetData(app,attnum);
 
 nph=getNumPhases(app);

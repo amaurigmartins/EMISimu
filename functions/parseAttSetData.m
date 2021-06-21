@@ -1,6 +1,6 @@
 function [out] = parseAttSetData(app,sec)
 
-attnum=getAttSet(app,sec);
+attnum=getAttSet(app,LCC2TowNum(app,sec));
 attdata=getAttSetData(app,attnum);
 
 nph=getNumPhases(app);

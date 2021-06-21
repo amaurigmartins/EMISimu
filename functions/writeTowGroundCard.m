@@ -1,6 +1,8 @@
 function out = writeTowGroundCard(app,RLC,sec,fault_sec)
 
 listOfTowers=getSelectedTow2GroundOutputs(app,fault_sec);
+listOfTowers=TowNum2LCC(app,listOfTowers);
+
 
 if outputTow2GndCurr(app)
     if ismember(sec,listOfTowers)

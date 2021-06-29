@@ -53,6 +53,8 @@ for i=1:nsec
     out=strcat(out, writeLCCPunchFile(app,i));
 end
 listOfShWires=getSelectedShWireOutputs(app,fault_sec);
+listOfShWires=TowNum2LCC(app,listOfShWires);
+
 %switch - current measurements
 out=strcat(out, '/SWITCH\n');
 out=strcat(out, 'C < n 1>< n 2>< Tclose ><Top/Tde ><   Ie   ><Vf/CLOP ><  type  >\n');

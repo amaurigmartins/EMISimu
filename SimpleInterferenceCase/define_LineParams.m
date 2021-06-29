@@ -20,7 +20,7 @@ app.NumberofShieldWires.Value = 'single';
 %% Line model
 
 % Types: pi, bergeron and jmarti
-app.LineModel.Text = 'bergeron';
+app.LineModel.Text = 'pi';
 
 % LCC frequency
 app.LCCfrequency.Value = 60;

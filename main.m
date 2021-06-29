@@ -55,7 +55,7 @@ initialize_Variables;
 initialize_CouplingRegions;
 
 % build LCC cards
-makeAllLCCFiles(app);
+% makeAllLCCFiles(app);
 
 % build main ATP card
 makeAllMainATPFiles(app);

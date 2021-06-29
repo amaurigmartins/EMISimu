@@ -4,7 +4,7 @@ app.NumTargets.Value = 1;
 
 % Minimum target length subdivision in [m]:
 
-app.MinTargetLength.Value = 50;
+app.MinTargetLength.Value = 100;
 
 %% TERMINAL 1 TARGET IMPEDANCES:
 

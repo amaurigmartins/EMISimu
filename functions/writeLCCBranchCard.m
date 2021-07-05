@@ -22,7 +22,7 @@ for i = 1: num_phase
 end
 
 if num_shield ~= 0
-   strshield = sprintf('BRANCH  0%05d0%05d',sec-1,sec);
+   strshield = sprintf('BRANCH  0%04d 0%04dM',sec-1,sec);
    out = strcat(out,strshield,'\n');
 end
 
@@ -30,7 +30,7 @@ end
 
 for i = 1 : num_target
 
-    strtarget = sprintf('BRANCH  %s%05d%s%05d',seq_target(i),sec-1,seq_target(i),sec);
+    strtarget = sprintf('BRANCH  %s%04d %s%04dM',seq_target(i),sec-1,seq_target(i),sec);
     
     out = strcat(out,strtarget,'\n');
     

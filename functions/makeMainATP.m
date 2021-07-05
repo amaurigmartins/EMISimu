@@ -62,7 +62,7 @@ out=strcat(out, writePhaseCurrProbesCard(app,1));
 out=strcat(out, writePhaseCurrProbesCard(app,2));
 
 if outputShWireCurr(app)
-    for i=1:nsec
+    for i=0:nsec
         if ismember(i,listOfShWires)
             measure_status=1;
         else
@@ -75,12 +75,16 @@ out=strcat(out, writeFaultBranchConnections(app,fault_sec));
 
 % target longitudinal current switch
 if outputTargetLongCurr(app)
-    for i=1:nsec
-        for j = 1:ntg
-            out = strcat(out, writeTargetLongCurrProbesCard(app,j,i));
-        end
+    measure_status = 1;
+else
+    measure_status = 0;
+end
+for i=1:nsec
+    for j = 1:ntg
+        out = strcat(out, writeTargetLongCurrProbesCard(app,j,measure_status,i));
     end
 end
+
 
 %source
 out=strcat(out, '/SOURCE\n');

@@ -1,5 +1,5 @@
 function out = outputShWireCurr(app)
 
-out=app.Shieldwirereturncurrents.Value && ~app.NoneSW.Value;
+out=~app.NoneSW.Value;
 
 end

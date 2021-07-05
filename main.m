@@ -17,7 +17,7 @@ app.PL42MATPath.Text = 'C:\ATP\tools\Pl42mat.exe';
 %% Project data
 
 % enter working directory:
-app.Workingdirectory.Text = 'D:\Caio\EMISimu';
+app.Workingdirectory.Text = 'D:\Mestrado\EMISimu';
 
 % enter the project directory name here
 app.ProjectID.Text = 'SimpleInterferenceCase';
@@ -55,7 +55,7 @@ initialize_Variables;
 initialize_CouplingRegions;
 
 % build LCC cards
-% makeAllLCCFiles(app);
+makeAllLCCFiles(app);
 
 % build main ATP card
 makeAllMainATPFiles(app);

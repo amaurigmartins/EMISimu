@@ -3,7 +3,7 @@
 %% CIRCUIT 1 DATA:
 
 % RMS LL amplitude [V]:
-app.RMSLLamplitudeC1T1.Value = 1000;
+app.RMSLLamplitudeC1T1.Value = 88000;
 
 % Frequency [Hz]:
 app.FrequencyC1T1.Value = 60;
@@ -18,10 +18,10 @@ app.TstartsC1T1.Value = -1;
 app.TstopsC1T1.Value = 100;
 
 % Thevenin Eq.:
-app.R0S1T1.Value = 0.4853; %R0 [ohm/m]
-app.L0S1T1.Value = 6.0779; %L0 [mH/m]
-app.R1S1T1.Value = 0.151; %R+ [ohm/m]
-app.L1S1T1.Value = 1.8828; %L+ [mH/m]
+app.R0S1T1.Value = 1e-5; %R0 [ohm/m]
+app.L0S1T1.Value = 0; %L0 [mH/m]
+app.R1S1T1.Value = 1e-5; %R+ [ohm/m]
+app.L1S1T1.Value = 0; %L+ [mH/m]
 
 
 %% CIRCUIT 2 DATA (IF EXIST):
@@ -50,12 +50,12 @@ app.L1S2T1.Value = 1.8828; %L+ [mH/m]
 %% TERMINAL 1 SE IMPEDANCES:
 
 % Substation grounding grid:
-app.RGG1T1.Value = 1e-5; % R [ohms]
+app.RGG1T1.Value = 1; % R [ohms]
 app.LGG1T1.Value = 0; % L [mH]
 app.CGG1T1.Value = 0; % C [uF]
 
 % Substation neutral connection:
-app.RNC1T1.Value = 1e-5; % R [ohms]
+app.RNC1T1.Value = 1; % R [ohms]
 app.LNC1T1.Value = 0; % L [mH]
 app.CNC1T1.Value = 0; % C [uF]
 

@@ -10,6 +10,8 @@ if outputTow2GndCurr(app)
     else
         flag=0;
     end
+else
+    flag=0;
 end
 
 if outputTow2GndVolt(app)

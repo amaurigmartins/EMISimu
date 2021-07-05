@@ -3,10 +3,10 @@
 %% Tower-to-ground outputs
 
 % Tower-to-ground voltages (Yes = 1 or No = 0):
-app.Towertogroundvoltages.Value = 1;
+app.Towertogroundvoltages.Value = 0;
 
 % Tower-to-ground currents (Yes = 1 or No = 0):
-app.Towertogroundcurrents.Value = 1;
+app.Towertogroundcurrents.Value = 0;
 
 % Specify sections to Tower-to-ground outputs:
 app.Tow2Ground(1).From.Value = 1;

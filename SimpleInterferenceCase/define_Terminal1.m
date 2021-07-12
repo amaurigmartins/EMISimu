@@ -2,6 +2,9 @@
 
 %% CIRCUIT 1 DATA:
 
+% Current or Voltage Source?
+app.typeSourceT1C1.Text = 'current';
+
 % RMS LL amplitude [V]:
 app.RMSLLamplitudeC1T1.Value = 88000;
 
@@ -25,6 +28,9 @@ app.L1S1T1.Value = 0; %L+ [mH/m]
 
 
 %% CIRCUIT 2 DATA (IF EXIST):
+
+% Current or Voltage Source?
+app.typeSourceT1C2.Text = 'current';
 
 % RMS LL amplitude [V]:
 app.RMSLLamplitudeC2T1.Value = 1000;
@@ -55,7 +61,7 @@ app.LGG1T1.Value = 0; % L [mH]
 app.CGG1T1.Value = 0; % C [uF]
 
 % Substation neutral connection:
-app.RNC1T1.Value = 1; % R [ohms]
+app.RNC1T1.Value = 1e-5; % R [ohms]
 app.LNC1T1.Value = 0; % L [mH]
 app.CNC1T1.Value = 0; % C [uF]
 

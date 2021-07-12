@@ -1,5 +1,5 @@
 lw=1.8;
-k_scaling = 1.5; %1.5          % scaling factor of the figure
+k_scaling = 2; %1.5          % scaling factor of the figure
 fnt_scaling = 1;          % scaling factor of the figure
 % (You need to plot a figure which has a width of (8.8 * k_scaling)
 % in MATLAB, so that when you paste it into your paper, the width will be

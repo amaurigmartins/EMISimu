@@ -49,7 +49,7 @@ app.L1S2T2.Value = 1.8828; %L+ [mH/m]
 
 %% TERMINAL 2 SE IMPEDANCES:
 % Substation grounding grid:
-app.RGG1T2.Value = 1e-5; % R [ohms]
+app.RGG1T2.Value = 1; % R [ohms]
 app.LGG1T2.Value = 0; % L [mH]
 app.CGG1T2.Value = 0; % C [uF]
 

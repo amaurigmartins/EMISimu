@@ -203,4 +203,25 @@ else
     app.L6L3L3L6Button.Value=1;
 end
 
+%% Type of Source
+
+
+% Terminal 1 - Circuit 1
+if strcmp(app.typeSourceT1C1.Text,'current')
+    app.typeSourceT1C1.Value = 0;
+else
+    app.typeSourceT1C1.Value = 1;
+end
+
+% Terminal 1 - Circuit 2
+if strcmp(app.typeSourceT1C2.Text,'current')
+    app.typeSourceT1C2.Value = 0;
+else
+    app.typeSourceT1C2.Value = 1;
+end
+
+
+
+
+
 

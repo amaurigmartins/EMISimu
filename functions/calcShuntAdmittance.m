@@ -21,8 +21,11 @@ Rout = Rout/100;
 Y_shunt = ((2*pi*Rout)/(RhoCoat*ThickCoat)) + 2i*pi*f*((e0*RelPermCoat*2*pi*Rout)/(ThickCoat));
 Y_shunt = Y_shunt*spanLength;
 
-R = real(1/Y_shunt)/2;
-Xc = imag(1/Y_shunt);
-C = -1/(2*pi*f*Xc)/(2*1e-6);
+Z_shunt = 1/Y_shunt;
+% Z_shunt = Z_shunt/2;
+
+R = real(Z_shunt);
+Xc = imag(Z_shunt);
+C = -1/(2*pi*f*Xc)/(1e-6);
 
 end

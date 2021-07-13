@@ -24,6 +24,11 @@ out=strcat(out, 'C < n 1>< n 2><ref1><ref2><     R    ><    A     ><    B     ><
 out=strcat(out, writeThEqCard(app,T1,1));
 out=strcat(out, writeThEqCard(app,T2,2));
 out=strcat(out, '$VINTAGE,1\n');
+    % Terminal 2 ground impedances (Only if current source)
+if ~isVoltageSource(app)
+    out = strcat(out, writeTerminalGroundCard(app));
+end
+
 ntw=getNumTowers(app);
 tower2LCCnum = TowNum2LCC(app,1:ntw);
 nsec = getNumSections(app);

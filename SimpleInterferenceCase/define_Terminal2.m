@@ -9,7 +9,7 @@ app.RMSLLamplitudeC1T2.Value = 88000;
 app.FrequencyC1T2.Value = 60;
 
 % Phase angle [deg]:
-app.PhaseangleC1T2.Value = 0.44;
+app.PhaseangleC1T2.Value = 1.72;
 
 % Tstart [s]:
 app.TstartsC1T2.Value = -1;
@@ -18,10 +18,10 @@ app.TstartsC1T2.Value = -1;
 app.TstopsC1T2.Value = 100;
 
 % Thevenin Eq.:
-app.R0S1T2.Value = 1e-5; %R0 [ohm/m]
-app.L0S1T2.Value = 0; %L0 [mH/m]
-app.R1S1T2.Value = 1e-5; %R+ [ohm/m]
-app.L1S1T2.Value = 0; %L+ [mH/m]
+app.R0S1T2.Value = 0.4853; %R0 [ohm/m]
+app.L0S1T2.Value = 6.0779; %L0 [mH/m]
+app.R1S1T2.Value = 0.151; %R+ [ohm/m]
+app.L1S1T2.Value = 1.8828; %L+ [mH/m]
 
 %% CIRCUIT 2 DATA (IF EXIST):
 

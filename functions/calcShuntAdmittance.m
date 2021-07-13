@@ -22,7 +22,7 @@ Y_shunt = ((2*pi*Rout)/(RhoCoat*ThickCoat)) + 2i*pi*f*((e0*RelPermCoat*2*pi*Rout
 Y_shunt = Y_shunt*spanLength;
 
 Z_shunt = 1/Y_shunt;
-% Z_shunt = Z_shunt/2;
+Z_shunt = Z_shunt/2;
 
 R = real(Z_shunt);
 Xc = imag(Z_shunt);

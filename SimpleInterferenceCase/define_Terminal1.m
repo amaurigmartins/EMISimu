@@ -1,9 +1,9 @@
 %% Terminal 1:
 
-%% CIRCUIT 1 DATA:
-
 % Current or Voltage Source?
-app.typeSourceT1C1.Text = 'current';
+app.typeSource.Text = 'voltage';
+
+%% CIRCUIT 1 DATA:
 
 % RMS LL amplitude [V]:
 app.RMSLLamplitudeC1T1.Value = 88000;
@@ -21,10 +21,10 @@ app.TstartsC1T1.Value = -1;
 app.TstopsC1T1.Value = 100;
 
 % Thevenin Eq.:
-app.R0S1T1.Value = 1e-5; %R0 [ohm/m]
-app.L0S1T1.Value = 0; %L0 [mH/m]
-app.R1S1T1.Value = 1e-5; %R+ [ohm/m]
-app.L1S1T1.Value = 0; %L+ [mH/m]
+app.R0S1T1.Value = 0.4853; %R0 [ohm/m]
+app.L0S1T1.Value = 6.0779; %L0 [mH/m]
+app.R1S1T1.Value = 0.151; %R+ [ohm/m]
+app.L1S1T1.Value = 1.8828; %L+ [mH/m]
 
 
 %% CIRCUIT 2 DATA (IF EXIST):

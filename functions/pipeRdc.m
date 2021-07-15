@@ -3,7 +3,7 @@ function Rdc = pipeRdc(Rin,Rout,relRho,L)
 % DESCRIPTION:
 % Rin - internal radius [m]
 % Rout - external radius [m]
-% relRho - metal relative resistivitty
+% relRho - metal relative resistivity [p.u.]
 % L - Pipe length [m]
 %
 % OUT: Rdc - DC resistance [ohms]

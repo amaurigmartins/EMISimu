@@ -8,8 +8,6 @@ nph=getNumPhases(app);
 nsw=getNumShieldWires(app);
 % ntg=getNumTargets(app);
 
-e0 = 8.8542e-12;
-
 spanLength = getTargetSpanLength(app,sec);
 
 
@@ -18,10 +16,9 @@ RhoCoat = str2double(attdata(nph+nsw+ntg,7));
 ThickCoat = str2double(attdata(nph+nsw+ntg,8));
 RelPermCoat = str2double(attdata(nph+nsw+ntg,9));
 Rout = Rout/100;
-Y_shunt = ((2*pi*Rout)/(RhoCoat*ThickCoat)) + 2i*pi*f*((e0*RelPermCoat*2*pi*Rout)/(ThickCoat));
-Y_shunt = Y_shunt*spanLength;
 
-Z_shunt = 1/Y_shunt;
+%Z_shunt = shuntImpedanceCIGRE(f,Rout,RhoCoat,ThickCoat,RelPermCoat,spanLength);
+Z_shunt = shuntImpedanceSES(f,Rout,RhoCoat,ThickCoat,RelPermCoat,spanLength);
 Z_shunt = Z_shunt/2;
 
 R = real(Z_shunt);

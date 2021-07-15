@@ -7,7 +7,7 @@ app.typeSource.Text = 'voltage';
 
 % RMS LL amplitude [V]:
 app.RMSLLamplitudeC1T1.Value = 88000;
-
+% app.RMSLLamplitudeC1T1.Value = 955.3;
 % Frequency [Hz]:
 app.FrequencyC1T1.Value = 60;
 

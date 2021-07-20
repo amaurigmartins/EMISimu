@@ -12,9 +12,9 @@ app.Towertogroundcurrents.Value = 0;
 app.Tow2Ground(1).From.Value = 1;
 app.Tow2Ground(1).To.Value = 3;
 app.Tow2Ground(2).From.Value = 5;
-app.Tow2Ground(2).To.Value = 6;
-app.Tow2Ground(3).From.Value = 7;
-app.Tow2Ground(3).To.Value = 7;
+app.Tow2Ground(2).To.Value = 5;
+% app.Tow2Ground(3).From.Value = 7;
+% app.Tow2Ground(3).To.Value = 7;
 
 % Or sections before and after fault:
 

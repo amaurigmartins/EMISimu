@@ -15,7 +15,7 @@ app.GroundImpedanceFile.Text = 'D:\Mestrado\EMISimu\NGK\ground_impedance_data.cs
 %% Shield wires
 
 % Number of shield wires (none, single or double):
-app.NumberofShieldWires.Value = 'none';
+app.NumberofShieldWires.Value = 'double';
 
 %% Line model
 

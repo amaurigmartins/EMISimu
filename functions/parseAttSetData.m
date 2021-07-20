@@ -49,8 +49,13 @@ if ntg>0
         y0=abs(str2double(attdata(nph+nsw+i,5)));
         tmpcoords=calcConductorCoords(app,x0,y0,nc,s);
         Rdc = pipeRdc(Rin,Rout,10,1000);
+        if nsw > 0
+            ind_nsw = 1;
+        else
+            ind_nsw = 0;
+        end
         for k=1:nc
-            thisrow=[nph+nsw+1 TD Rdc KTYPE 2*Rout tmpcoords(k,1) tmpcoords(k,2) tmpcoords(k,2)];
+            thisrow=[nph+ind_nsw+1 TD Rdc KTYPE 2*Rout tmpcoords(k,1) tmpcoords(k,2) tmpcoords(k,2)];
             out=vertcat(out,thisrow);
         end
     end

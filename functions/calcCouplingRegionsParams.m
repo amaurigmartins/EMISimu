@@ -38,8 +38,8 @@ function [ResultTable, LCC_matrix] = calcCouplingRegionsParams(src,tgt,span_leng
 
 % set_plot_params;
 
-debugthis_closer_points = false; % FIGURE 1 - MACRO-REGIÕES
-debugthis = false; % FIGURE 2 = MICRO-REGIÕES
+debugthis_closer_points = true; % FIGURE 1 - MACRO-REGIÕES
+debugthis = true; % FIGURE 2 = MICRO-REGIÕES
 
 %% PRÉ-PROCESSAMENTO:
 
@@ -133,7 +133,7 @@ function [new_line] = sub_line(src,line,n_sub)
 
 src_row = size(src,1);
 
-debugthis = false;
+debugthis = true;
 
 [dist_total,M_dist_acc] = dist_acum(line);
 

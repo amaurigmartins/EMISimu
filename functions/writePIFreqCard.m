@@ -1,9 +1,10 @@
-function [out] = writePIFreqCard(app,sec)
+function [out] = writePIFreqCard(app,sec,L)
+
 out=blanks(80);
 rho=getSoilRes(app,LCC2TowNum(app,sec));
 lineparams=getLineModelParams(app);
 f=lineparams.frequency;
-L=getSpanLen(app,sec)/1000;
+% L=getSpanLen(app,sec)/1000;
 %         1         2         3         4         5         6         7         8
 %12345678901234567890123456789012345678901234567890123456789012345678901234567890
 %RHO    >FMATRIX  >          >ICPRN> IZPRN>I>ALONG  > IPI>IM          MOIF

@@ -1,4 +1,4 @@
-function [out] = writeJMartiFreqCard(app,sec)
+function [out] = writeJMartiFreqCard(app,sec,L)
 out1=blanks(80);out2=blanks(80);out3=blanks(80);
 rho=getSoilRes(app,LCC2TowNum(app,sec));
 lineparams=getLineModelParams(app);
@@ -7,7 +7,7 @@ dec=lineparams.decades;
 pdec=lineparams.points_per_decade;
 fmat=lineparams.freq_matrix;
 fss=lineparams.freq_ss;
-L=getSpanLen(app,sec)/1000;
+% L=getSpanLen(app,sec)/1000;
 %         1         2         3         4         5         6         7         8
 %12345678901234567890123456789012345678901234567890123456789012345678901234567890
 %RHO    >FMATRIX  >          >ICPRN> IZPRN>I>ALONG  > IPI>IM          MOIF

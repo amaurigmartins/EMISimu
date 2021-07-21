@@ -15,6 +15,7 @@ end
 out=strcat(out,'METRIC\n');
 
 % conductor
+
 all_conds=parseAttSetData(app,sec);
 nc=size(all_conds,1);
 for i=1:nc
@@ -24,12 +25,13 @@ end
 out=strcat(out,'BLANK CARD ENDING CONDUCTOR CARDS\n');
 
 % frequency
+thisL = all_conds(1,9);
 if strcmp(lmodel,'pi')
-    out=strcat(out,writePIFreqCard(app,sec),'\n');
+    out=strcat(out,writePIFreqCard(app,sec,thisL),'\n');
 elseif strcmp(lmodel,'bergeron')
-    out=strcat(out,writeBergFreqCard(app,sec),'\n');
+    out=strcat(out,writeBergFreqCard(app,sec,thisL),'\n');
 elseif strcmp(lmodel,'jmarti')
-    out=strcat(out,writeJMartiFreqCard(app,sec),'\n');
+    out=strcat(out,writeJMartiFreqCard(app,sec,thisL),'\n');
 end
 
 % footer

@@ -1,0 +1,53 @@
+
+dt=app.deltaT.Value;
+tw=1/app.LCCfrequency.Value/dt;
+
+nsec = getNumSections(app);
+
+seq_target = 'ABCDEFGHIJKLMNOPQRSTUWVXYZ';
+
+ntg = 1;
+
+fname=sprintf('nominal_load_study.mat');
+load(fname);
+for k=0:nsec
+varname=sprintf('vTerra%s%04d',seq_target(ntg),k);
+% phasordata=sineFit(t(end-2*tw:end),eval(sprintf('%s(end-2*tw:end)',varname)));
+phasordata = max(eval(varname));
+vTarget(k+1)=phasordata;
+end
+
+CDEGS = [0,0.827700000000000;50,0.789400000000000;100,0.902100000000000;150,1.12100000000000;200,1.39700000000000;250,1.70300000000000;300,2.02500000000000;350,2.35700000000000;400,2.69500000000000;450,3.03600000000000;500,3.38100000000000;550,3.38400000000000;600,3.38700000000000;650,2.82800000000000;700,2.27900000000000;750,1.75000000000000;800,1.26400000000000;850,0.897900000000000;900,0.827400000000000]
+x = app.CoupRegTable.AccTargetDistance.Data(end) - [0;app.CoupRegTable.AccTargetDistance.Data];
+
+EstimateVoltage = interp1(CDEGS(:,1),CDEGS(:,2),x);
+
+NRMSE_error = NRMSE(flip(vTarget),transpose(EstimateVoltage));
+
+set_plot_params;
+
+figure;
+plot(app.CoupRegTable.AccTargetDistance.Data(end) - [0;app.CoupRegTable.AccTargetDistance.Data],vTarget)
+title(sprintf('Nominal Load Ind. Voltage (%s), NRMSE = %.1f',seq_target(ntg),NRMSE_error));
+ylabel('Voltage [V]')
+xlabel('Distance along pipeline [m]')
+legend('EMISimu','CDEGS')
+xlim([0 app.CoupRegTable.AccTargetDistance.Data(end)])
+% ylim([0 max(vTarget)])
+
+% figure;
+% plot([0;app.CoupRegTable.AccTargetDistance.Data],vTarget,'r',CDEGS(:,1),CDEGS(:,2),'k^')
+% title(sprintf('Nominal Load Ind. Voltage (%s), NRMSE = %.1f',seq_target(ntg),NRMSE_error));
+% ylabel('Voltage [V]')
+% xlabel('Distance along pipeline [m]')
+% legend('EMISimu','CDEGS')
+% xlim([0 app.CoupRegTable.AccTargetDistance.Data(end)])
+
+figure;
+plot([0;app.CoupRegTable.AccTargetDistance.Data],vTarget)
+title(sprintf('Nominal Load Ind. Voltage (%s), NRMSE = %.1f',seq_target(ntg),NRMSE_error));
+ylabel('Voltage [V]')
+xlabel('Distance along pipeline [m]')
+legend('EMISimu','CDEGS')
+xlim([0 app.CoupRegTable.AccTargetDistance.Data(end)])
+

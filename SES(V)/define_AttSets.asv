@@ -68,7 +68,35 @@ app.AttSet(1).Target(1).CoatingResistivity.Value = 1e8;
 app.AttSet(1).Target(1).CoatingThickness.Value = 3e-3;
 app.AttSet(1).Target(1).CoatingRelativePermeability.Value = 1;
 
+%% AttSet VERTICAL:
 
+app.AttSet(1).Phase(1).condID.Value = 'Grosbeak';
+app.AttSet(1).Phase(1).numberofCond.Value = 1;
+app.AttSet(1).Phase(1).spaceBetweenCond.Value = 0.4;
+app.AttSet(1).Phase(1).coordX.Value = 2.65;
+app.AttSet(1).Phase(1).coordY.Value = 27.8;
+app.AttSet(1).Phase(2).condID.Value = 'Grosbeak';
+app.AttSet(1).Phase(2).numberofCond.Value = 1;
+app.AttSet(1).Phase(2).spaceBetweenCond.Value = 0.4;
+app.AttSet(1).Phase(2).coordX.Value = 2.65;
+app.AttSet(1).Phase(2).coordY.Value = 22.;
+app.AttSet(1).Phase(3).condID.Value = 'Grosbeak';
+app.AttSet(1).Phase(3).numberofCond.Value = 1;
+app.AttSet(1).Phase(3).spaceBetweenCond.Value = 0.4;
+app.AttSet(1).Phase(3).coordX.Value = 2.65;
+app.AttSet(1).Phase(3).coordY.Value = 18;
+app.AttSet(1).ShieldWire(1).condID.Value = 'Steel 3/8 EHS-CG';
+app.AttSet(1).ShieldWire(1).coordX.Value = -2.45;
+app.AttSet(1).ShieldWire(1).coordY.Value = 20;
+app.AttSet(1).ShieldWire(2).condID.Value = 'Steel 3/8 EHS-CG';
+app.AttSet(1).ShieldWire(2).coordX.Value = 2.45;
+app.AttSet(1).ShieldWire(2).coordY.Value = 20;
+app.AttSet(1).Target(1).condID.Value = 'Pipe 14" STD';
+app.AttSet(1).Target(1).coordX.Value = 0;
+app.AttSet(1).Target(1).coordY.Value = -1.2;
+app.AttSet(1).Target(1).CoatingResistivity.Value = 1e8;
+app.AttSet(1).Target(1).CoatingThickness.Value = 3e-3;
+app.AttSet(1).Target(1).CoatingRelativePermeability.Value = 1;
 
 
 

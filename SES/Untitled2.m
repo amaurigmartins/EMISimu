@@ -12,11 +12,18 @@ fname=sprintf('nominal_load_study.mat');
 load(fname);
 for k=0:nsec
 varname=sprintf('vTerra%s%04d',seq_target(ntg),k);
-phasordata=sineFit(t(end-2*tw:end),eval(sprintf('%s(end-2*tw:end)',varname)));
-vTarget(k+1)=phasordata(2);
+% phasordata=sineFit(t(end-2*tw:end),eval(sprintf('%s(end-2*tw:end)',varname)));
+phasordata = max(eval(varname));
+vTarget(k+1)=phasordata;
 end
 
-CDEGS = [0,0.546321232478559;479.050000000000,0.570033376097463;796.130000000000,0.570745490315115;1270.76000000000,0.628610497710254;1501.16000000000,0.520453904206519;1643.38000000000,0.435561465605483;1837.08000000000,0.329887938357224;2020.96000000000,0.241375225330000;2061.09000000000,0.216305332978903;2116.98000000000,0.182511640701437;2195.10000000000,0.143727200026423;2299.76000000000,0.0955260461875909;2413.29000000000,0.0435310426654388;2565.80000000000,0.353333755094168;2684.53000000000,0.498037751292553;2946.97000000000,0.574305725770856;3160.78000000000,0.560158650572119;3233.86000000000,0.553239946342086;3432.43000000000,0.546699380698172;3515.88000000000,0.546302231526258];
+%% Vertical
+% NO TRANSPOSITION:
+% CDEGS = [0,0.827700000000000;50,0.789400000000000;100,0.902100000000000;150,1.12100000000000;200,1.39700000000000;250,1.70300000000000;300,2.02500000000000;350,2.35700000000000;400,2.69500000000000;450,3.03600000000000;500,3.38100000000000;550,3.38400000000000;600,3.38700000000000;650,2.82800000000000;700,2.27900000000000;750,1.75000000000000;800,1.26400000000000;850,0.897900000000000;900,0.827400000000000];
+% TRANSPOSITION:
+CDEGS = [0,0.938300000000000;50,0.483700000000000;100,0.0433200000000000;150,0.429000000000000;200,0.883400000000000;250,1.33800000000000;300,1.79300000000000;350,2.24800000000000;400,2.70300000000000;450,3.15900000000000;500,3.61400000000000;550,3.61300000000000;600,3.61300000000000;650,3.15600000000000;700,2.70000000000000;750,2.24300000000000;800,1.78700000000000;850,1.33100000000000;900,0.875000000000000];
+
+
 
 x = app.CoupRegTable.AccTargetDistance.Data(end) - [0;app.CoupRegTable.AccTargetDistance.Data];
 
@@ -26,23 +33,23 @@ NRMSE_error = NRMSE(flip(vTarget),transpose(EstimateVoltage));
 
 set_plot_params;
 
-figure;
-plot(app.CoupRegTable.AccTargetDistance.Data(end) - [0;app.CoupRegTable.AccTargetDistance.Data],vTarget)
-title(sprintf('Nominal Load Ind. Voltage (%s), NRMSE = %.1f',seq_target(ntg),NRMSE_error));
-ylabel('Voltage [V]')
-xlabel('Distance along pipeline [m]')
-legend('EMISimu','CDEGS')
-xlim([0 app.CoupRegTable.AccTargetDistance.Data(end)])
-% ylim([0 max(vTarget)])
-
 % figure;
-% plot([0;app.CoupRegTable.AccTargetDistance.Data],vTarget,'r',CDEGS(:,1),CDEGS(:,2),'k^')
+% plot(app.CoupRegTable.AccTargetDistance.Data(end) - [0;app.CoupRegTable.AccTargetDistance.Data],vTarget,'r',CDEGS(:,1),CDEGS(:,2),'k^')
 % title(sprintf('Nominal Load Ind. Voltage (%s), NRMSE = %.1f',seq_target(ntg),NRMSE_error));
 % ylabel('Voltage [V]')
 % xlabel('Distance along pipeline [m]')
 % legend('EMISimu','CDEGS')
 % xlim([0 app.CoupRegTable.AccTargetDistance.Data(end)])
+% ylim([0 max(vTarget)])
 
+figure;
+plot([0;app.CoupRegTable.AccTargetDistance.Data],vTarget,'r',CDEGS(:,1),CDEGS(:,2),'k^')
+title(sprintf('Nominal Load Ind. Voltage (%s), NRMSE = %.1f',seq_target(ntg),NRMSE_error));
+ylabel('Voltage [V]')
+xlabel('Distance along pipeline [m]')
+legend('EMISimu','CDEGS')
+xlim([0 app.CoupRegTable.AccTargetDistance.Data(end)])
+% 
 figure;
 plot([0;app.CoupRegTable.AccTargetDistance.Data],vTarget)
 title(sprintf('Nominal Load Ind. Voltage (%s), NRMSE = %.1f',seq_target(ntg),NRMSE_error));

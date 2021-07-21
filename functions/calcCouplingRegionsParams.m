@@ -390,16 +390,10 @@ function LCC_matrix = define_LCC_matrix(TR,idx_int)
 %                   1 : acoplamento subdividido dentro de um mesmo vão
 %           Leq_tgt [m]: Comprimento equivalente com referência no circuito alvo
 
-deq = [];
-Leq = [];
 
-for i = 1: size(TR,1)
+deq = (TR(:,5) + TR(:,6))./2;
 
-    deq(i,1) = (TR(i,5) + TR(i,6))/2;
-
-    Leq(i,1) = sqrt(TR(i,7)*TR(i,8))*abs(cos(TR(i,9)));
-
-end
+Leq = sqrt(TR(:,7).*TR(:,8)).*abs(cos(TR(:,9)));
 
 LCC_matrix = [deq Leq TR(:,11) TR(:,10) TR(:,8) TR(:,12)];
 

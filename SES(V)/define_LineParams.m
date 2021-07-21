@@ -5,7 +5,7 @@ app.LineConfig.Text = 'single';
 %% Transposition
 
 % Type of transposition (untransposed, L/3 L/3 L/3 OR L/6 L/3 L/3 L/6)
-app.TranspositionScheme.Text = 'untransposed';
+app.TranspositionScheme.Text = 'L/3 L/3 L/3';
 
 %% Ground impedances
 

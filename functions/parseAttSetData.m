@@ -11,9 +11,17 @@ nsw=getNumShieldWires(app);
 ntg=getNumTargets(app);
 
 % test condition on Leq and set deq/Leq appropriately
-% A GAMBIARRA PARA MODELAR O ACOPLAMENTO DE 90 RGAUS SÓ EXISTE AQUI!!!!1
+% A GAMBIARRA PARA MODELAR O ACOPLAMENTO DE 90 RGAUS Sï¿½ EXISTE AQUI!!!!1
 deq=getEquivalentDistance(app,sec);
-Leq = max(TOL, );
+Leq = max(TOL, getSpanLen(app,sec));
+
+if Leq == TOL
+    L1 = getSourceSpanLength(app,sec);
+    L2 = getTargetSpanLength(app,sec);
+    deq = INF_DIST;
+    Leq = sqrt(L1*L2);
+end
+    
 
 KTYPE=4; %see rule book, sectn 9, vol 2, pg 9-13
 

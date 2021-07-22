@@ -49,16 +49,18 @@ define_TargetParams;
 define_AttSets;
 define_Soil;
 define_Outputs;
+define_Benchmark;
 
 % initialize program variables and initial calculations
 initialize_Variables;
 initialize_CouplingRegions;
 
 % build LCC cards
-makeAllLCCFiles(app);
+% makeAllLCCFiles(app);
 
 % build main ATP card
-makeAllMainATPFiles(app);
+% makeAllMainATPFiles(app);
+
 
 % run stuff
 flist=dir(fullfile(getWorkingDirectory(app),getProjectID(app),'*.atp'));
@@ -71,7 +73,7 @@ else
 end
 
 % Results
-
+makeAllInducedVoltagePlots(app)
 
 
 

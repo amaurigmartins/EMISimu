@@ -16,3 +16,8 @@ app.Target(1).GroundImpedanceT1.Value = 10; % R [ohms]
 
 % Terminal grounding impedance:
 app.Target(1).GroundImpedanceT2.Value = 10; % R [ohms]
+
+
+%% TARGET DISPLAY NAME
+
+app.Target(1).DisplayName.Text = 'Horizontal SES 14"';

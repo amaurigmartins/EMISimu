@@ -20,7 +20,7 @@ app.PL42MATPath.Text = 'C:\ATP\tools\Pl42mat.exe';
 app.Workingdirectory.Text = 'D:\Mestrado\EMISimu';
 
 % enter the project directory name here
-app.ProjectID.Text = 'SES(V)';
+app.ProjectID.Text = 'SES';
 
 % Project description:
 app.Projectdescription.Text = 'Simple interference case between a power line and a pipeline.';

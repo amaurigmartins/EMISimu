@@ -1,6 +1,6 @@
 function [out] = parseAttSetData(app,sec)
 
-INF_DIST=1e7;
+INF_DIST=1e10;
 TOL=1e-5;
 
 attnum=getAttSet(app,LCC2TowNum(app,sec));
@@ -13,11 +13,11 @@ ntg=getNumTargets(app);
 % test condition on Leq and set deq/Leq appropriately
 % A GAMBIARRA PARA MODELAR O ACOPLAMENTO DE 90 RGAUS S� EXISTE AQUI!!!!1
 deq=getEquivalentDistance(app,sec);
-Leq = max(TOL, getSpanLen(app,sec));
+Leq = max(TOL, getSpanLen(app,sec)/1000);
 
 if Leq == TOL
-    L1 = getSourceSpanLength(app,sec);
-    L2 = getTargetSpanLength(app,sec);
+    L1 = getSourceSpanLength(app,sec)/1000;
+    L2 = getTargetSpanLength(app,sec)/1000;
     deq = INF_DIST;
     Leq = sqrt(L1*L2);
 end

@@ -20,7 +20,7 @@ function out = makeAllMainATPFiles(app)
 %                 fault_sec = 1;
                 disp('Making ATP file...');
                 disp('Building a nominal load induction model...');
-                fname=sprintf('nominal_load_study.atp');
+                fname=sprintf('%s_nominal_load_study.atp',projID);
                 fid = fopen(fullfile(projdir,fname),'wt');
                 fprintf(fid, makeMainATP(app,fault_sec));
                 fclose(fid);

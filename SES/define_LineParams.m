@@ -10,12 +10,12 @@ app.TranspositionScheme.Text = 'untransposed';
 %% Ground impedances
 
 % Ground impedances data (.csv) per section (R L C) [Ohms mH uF]:
-app.GroundImpedanceFile.Text = 'D:\Mestrado\EMISimu\NGK\ground_impedance_data.csv';
+app.GroundImpedanceFile.Text = 'D:\Mestrado\EMISimu\SES\ground_impedance_data.csv';
 
 %% Shield wires
 
 % Number of shield wires (none, single or double):
-app.NumberofShieldWires.Value = 'double';
+app.NumberofShieldWires.Value = 'single';
 
 %% Line model
 

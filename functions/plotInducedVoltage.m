@@ -21,19 +21,27 @@ warning(orig_state);
 
 if ~isempty(benchmark.file)
     
+    InducedVoltage = indVoltage(:,1);
     EstimateVoltage = interp1(benchmark.file(:,1),benchmark.file(:,2),AccDistance);
-    error = NRMSE(transpose(indVoltage(:,1)),transpose(EstimateVoltage));
+    
+    [nan_row, ~] = find(isnan(EstimateVoltage));
+    if ~isempty(nan_row)
+        EstimateVoltage(nan_row,:) = [];
+        InducedVoltage(nan_row,:) = [];
+    end
+    
+    error = NRMSE(transpose(InducedVoltage),transpose(EstimateVoltage));
     
     figure;
-    h = plot(AccDistance,indVoltage(:,1),'r',benchmark.file(:,1),benchmark.file(:,2),'k^',AccDistance,nan(size(AccDistance)));
+    h = plot(AccDistance,indVoltage(:,1),'r',benchmark.file(:,1),benchmark.file(:,2),'k:',AccDistance,nan(size(AccDistance)));
     title(plot_title)
-    ylabel('Induced Voltage [V]')
+    ylabel('Induced voltage [V]')
     xlabel('Distance along pipeline [m]')
     xlim([0 AccDistance(end)])
     [~, objH] = legend(h([1 2 3]), 'EMISimu', benchmark.name, 'junk');  % Reorder handles
     set(findobj(objH, 'Tag', 'junk'), 'Vis', 'off');           % Make "junk" lines invisible
     pos = get(objH(3), 'Pos');                                 % Get text box position
-    set(objH(3), 'Pos', [0.1 pos(2:3)], 'String', [sprintf('e_{NRMS} = %.2f',error) '%']);  % Stretch box and change text
+    set(objH(3), 'Pos', [0.05 pos(2:3)], 'String', [sprintf('e_{NRMS} = %.2f',error) '%']);  % Stretch box and change text
     
 else
     error = 0;
@@ -41,7 +49,7 @@ else
     figure;
     plot(AccDistance,indVoltage(:,1),'r');
     title(plot_title)
-    ylabel('Induced Voltage [V]')
+    ylabel('Induced voltage [V]')
     xlabel('Distance along pipeline [m]')
     xlim([0 AccDistance(end)])
 end

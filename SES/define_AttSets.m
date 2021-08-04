@@ -5,7 +5,7 @@ app.Defaultattributeset.Value = 1;
 %% Specify AttSets sections:
 
 app.AttSetSec(1).From.Value = 1;
-app.AttSetSec(1).To.Value = 5;
+app.AttSetSec(1).To.Value = 17;
 app.AttSetSec(1).AttSetNumber.Value = 1;
 % app.AttSetSec(2).From.Value = 6;
 % app.AttSetSec(2).To.Value = 13;
@@ -56,11 +56,11 @@ app.AttSet(1).Phase(3).spaceBetweenCond.Value = 0.4;
 app.AttSet(1).Phase(3).coordX.Value = 4.9;
 app.AttSet(1).Phase(3).coordY.Value = 18;
 app.AttSet(1).ShieldWire(1).condID.Value = 'Steel 3/8 EHS-CG';
-app.AttSet(1).ShieldWire(1).coordX.Value = -2.45;
+app.AttSet(1).ShieldWire(1).coordX.Value = 0;
 app.AttSet(1).ShieldWire(1).coordY.Value = 20;
-app.AttSet(1).ShieldWire(2).condID.Value = 'Steel 3/8 EHS-CG';
-app.AttSet(1).ShieldWire(2).coordX.Value = 2.45;
-app.AttSet(1).ShieldWire(2).coordY.Value = 20;
+% app.AttSet(1).ShieldWire(2).condID.Value = 'Steel 3/8 EHS-CG';
+% app.AttSet(1).ShieldWire(2).coordX.Value = 2.45;
+% app.AttSet(1).ShieldWire(2).coordY.Value = 20;
 app.AttSet(1).Target(1).condID.Value = 'Pipe 14" STD';
 app.AttSet(1).Target(1).coordX.Value = 0;
 app.AttSet(1).Target(1).coordY.Value = -1.2;

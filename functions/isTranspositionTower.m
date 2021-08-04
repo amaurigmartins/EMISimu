@@ -10,7 +10,8 @@ end
 % 2 = L/6 L/3 L/3 L/6
 allspans=cell2mat(app.UITableSL.Data);
 numsec=app.Numberofsections.Value;
-L=cumsum(allspans)';
+L=cumsum(vpa(allspans))';
+L = double(L);
 totalLen=L(end);
 
 if tscheme==1

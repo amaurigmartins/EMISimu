@@ -1,7 +1,7 @@
 %% NOMINAL LOAD INDUCED VOLTAGE BENCHMARK
 
 % Benchmark file:
-app.Target(1).Benchmark.NLInducedVoltageFile.Text = 'Result_CDEGS.csv';
+app.Target(1).Benchmark.NLInducedVoltageFile.Text = 'RECAP_Horizontal_ROW.csv';
 
 % Benchmark Program (SESTLC or ROW)
 app.Target(1).Benchmark.NLInducedVoltageProgram.Text = 'ROW';

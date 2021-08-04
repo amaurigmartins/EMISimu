@@ -19,4 +19,4 @@ app.Target(1).GroundImpedanceT2.Value = 10; % R [ohms]
 
 %% TARGET DISPLAY NAME
 
-app.Target(1).DisplayName.Text = 'RECAP Triangular';
+app.Target(1).DisplayName.Text = 'RECAP Horizontal';

@@ -43,6 +43,15 @@ if ~isempty(benchmark.file)
     pos = get(objH(3), 'Pos');                                 % Get text box position
     set(objH(3), 'Pos', [0.05 pos(2:3)], 'String', [sprintf('e_{NRMS} = %.2f',error) '%']);  % Stretch box and change text
     
+    figure;
+    h2 = plot(AccDistance,rad2deg(indVoltage(:,2)),'b',benchmark.file(:,1),benchmark.file(:,3),'k:');
+    title(plot_title)
+    ylabel('Induced voltage angle [°]')
+    xlabel('Distance along pipeline [m]')
+    xlim([0 AccDistance(end)])
+    legend('EMISimu',benchmark.name)
+    
+    
 else
     error = 0;
     
@@ -50,6 +59,13 @@ else
     plot(AccDistance,indVoltage(:,1),'r');
     title(plot_title)
     ylabel('Induced voltage [V]')
+    xlabel('Distance along pipeline [m]')
+    xlim([0 AccDistance(end)])
+    
+    figure;
+    plot(AccDistance,rad2deg(indVoltage(:,2)),'b')
+    title(plot_title)
+    ylabel('Induced voltage angle [°]')
     xlabel('Distance along pipeline [m]')
     xlim([0 AccDistance(end)])
 end

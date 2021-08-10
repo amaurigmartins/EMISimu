@@ -59,7 +59,7 @@ if ntg>0
         [Rout, Rin, ~, TD] = getConductorData(app,char(attdata(nph+nsw+i,1)));
         nc=str2double(attdata(nph+nsw+i,2));
         s=str2double(attdata(nph+nsw+i,3));
-        x0=str2double(attdata(nph+nsw+i,4)) + deq;
+        x0=sign(deq)*(str2double(attdata(nph+nsw+i,4))) + deq;
         y0=abs(str2double(attdata(nph+nsw+i,5)));
         tmpcoords=calcConductorCoords(app,x0,y0,nc,s);
         Rdc = pipeRdc(Rin,Rout,10,1000);

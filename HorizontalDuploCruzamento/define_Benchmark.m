@@ -1,10 +1,10 @@
 %% NOMINAL LOAD INDUCED VOLTAGE BENCHMARK
 
 % Benchmark file:
-app.Target(1).Benchmark.NLInducedVoltageFile.Text = '2Cruz90_Horizontal_SESTLC.csv';
+app.Target(1).Benchmark.NLInducedVoltageFile.Text = '2Cruz90_Horizontal_ROW.csv';
 
 % Benchmark Program (SESTLC or ROW)
-app.Target(1).Benchmark.NLInducedVoltageProgram.Text = 'SESTLC';
+app.Target(1).Benchmark.NLInducedVoltageProgram.Text = 'ROW';
 % % Benchmark file:
 % app.Target(1).Benchmark.NLInducedVoltageFile.Text = [];
 % 

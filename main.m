@@ -56,17 +56,17 @@ initialize_Variables;
 initialize_CouplingRegions;
 
 % build LCC cards
-% makeAllLCCFiles(app);
+makeAllLCCFiles(app);
 
 % build main ATP card
-% makeAllMainATPFiles(app);
+makeAllMainATPFiles(app);
 
 
 % run stuff
 flist=dir(fullfile(getWorkingDirectory(app),getProjectID(app),'*.atp'));
 if ~isempty(flist)
     disp('The ATP solver will be launched now. You may monitor progress from the MATLAB Command Window.');
-%     runAllCases(getProjectID(app),getWorkingDirectory(app),getATPsolverPath(app),getPL42MATPath(app),TowNum2LCC(app,getFaultedSections(app)),isParallelComputing(app),getNumParallelWorks(app),isFaultStudy(app));
+    runAllCases(getProjectID(app),getWorkingDirectory(app),getATPsolverPath(app),getPL42MATPath(app),TowNum2LCC(app,getFaultedSections(app)),isParallelComputing(app),getNumParallelWorks(app),isFaultStudy(app));
     disp('All ATP cases ran!');
 else
     error('No ATP files found in the working directory. First generate the circuit models and try again. You lose, fella.');

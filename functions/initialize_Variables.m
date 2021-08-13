@@ -211,8 +211,12 @@ else
     app.typeSource.Value = 1;
 end
 
+%% Type of Transient Study
 
+if ~strcmp(app.TransientType.Text,'fault') % Nominal Load Conditions
+    app.FaulttypeFTYPEButtonGroup.SelectedObject.Text = '0 - NONE';
+end
 
-
+%% Source time
 
 

@@ -15,7 +15,7 @@ app.FrequencyC1T1.Value = 60;
 app.PhaseangleC1T1.Value = 0;
 
 % Tstart [s]:
-app.TstartsC1T1.Value = -1;
+app.TstartsC1T1.Value = 15e-3;
 
 % Tstop [s]:
 app.TstopsC1T1.Value = 100;

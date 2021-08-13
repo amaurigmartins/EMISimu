@@ -1,4 +1,4 @@
-function out = runAllCases(projID,wdir,atpsolver,postproc,fault_sections,par,numwork,isfault_study)
+function out = runAllCases(app,projID,wdir,atpsolver,postproc,fault_sections,par,numwork)
 numfiles=length(fault_sections);
 out=[];
 if par
@@ -12,8 +12,10 @@ if par
         poolsize = poolobj.NumWorkers;
     end
     parfor k=1:numfiles
-        if isfault_study
+        if isFaultStudy(app)
             fname=strcat(projID,'_fault_sec',sprintf('%d',fault_sections(k)),'.atp');
+        elseif isEnergizationStudy(app)
+            fname=strcat(projID,'_energization_study','.atp');
         else
             fname=strcat(projID,'_nominal_load_study','.atp');
         end
@@ -22,8 +24,10 @@ if par
             end
     end
     parfor k=1:numfiles
-        if isfault_study
+        if isFaultStudy(app)
             fname=strcat(projID,'_fault_sec',sprintf('%d',fault_sections(k)),'.pl4');
+        elseif isEnergizationStudy(app)
+            fname=strcat(projID,'_energization_study','.pl4');
         else
             fname=strcat(projID,'_nominal_load_study','.pl4');
         end
@@ -33,8 +37,10 @@ if par
     end
 else
     for k=1:numfiles
-        if isfault_study
+        if isFaultStudy(app)
             fname=strcat(projID,'_fault_sec',sprintf('%d',fault_sections(k)),'.atp');
+        elseif isEnergizationStudy(app)
+            fname=strcat(projID,'_energization_study','.atp');
         else
             fname=strcat(projID,'_nominal_load_study','.atp');
         end
@@ -43,8 +49,10 @@ else
         end
     end
     for k=1:numfiles
-        if isfault_study
+        if isFaultStudy(app)
             fname=strcat(projID,'_fault_sec',sprintf('%d',fault_sections(k)),'.pl4');
+        elseif isEnergizationStudy(app)
+            fname=strcat(projID,'_energization_study','.pl4');
         else
             fname=strcat(projID,'_nominal_load_study','.pl4');
         end

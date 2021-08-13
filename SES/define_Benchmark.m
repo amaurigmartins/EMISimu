@@ -21,3 +21,14 @@ app.Target(1).Benchmark.InducedVoltageProgram(1).Text = 'SESTLC'; % Benchmark Pr
 % Fault at Tower 2:
 app.Target(1).Benchmark.InducedVoltageFile(2).Text = 'resp_SES_H.txt'; % Benchmark file:
 app.Target(1).Benchmark.InducedVoltageProgram(2).Text = 'SESTLC'; % Benchmark Program (SESTLC or ROW)
+
+
+%% ENERGIZATION INDUCED VOLTAGE BENCHMARK
+
+% Benchmark file:
+app.Target(1).Benchmark.EnergizationInducedVoltageFile.Text = []';
+
+% Benchmark Program (SESTLC or ROW)
+app.Target(1).Benchmark.EnergizationInducedVoltageProgram.Text = [];
+
+

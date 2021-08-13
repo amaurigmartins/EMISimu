@@ -14,6 +14,7 @@ for k=0:nsec
     varname=sprintf('vTerra%s%04d',seq_target(ntg),k);
     orig_state = warning;warning('off','all')
     phasorData=sineFit(t(end-2*tw:end),eval(sprintf('%s(end-2*tw:end)',varname)));
+    phasorData(2) = max(eval(sprintf('%s(end-2*tw:end)',varname)));
     indVoltage(k+1,1)= phasorData(2);
     indVoltage(k+1,2)= phasorData(4);
 end

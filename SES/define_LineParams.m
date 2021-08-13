@@ -2,6 +2,10 @@
 % Number of circuits (single or double):
 app.LineConfig.Text = 'single';
 
+%% Type of Transient
+% (none, fault, energization)
+app.TransientType.Text = 'energization';
+
 %% Transposition
 
 % Type of transposition (untransposed, L/3 L/3 L/3 OR L/6 L/3 L/3 L/6)

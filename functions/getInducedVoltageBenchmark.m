@@ -9,6 +9,14 @@ if isFaultStudy(app)
         file = file(:,2:4);
         programName = app.Target(ntg).Benchmark.InducedVoltageProgram(faulted_tower).Text;
     end
+elseif isEnergizationStudy(app)
+    % Benchmark file:
+    if exist(app.Target(ntg).Benchmark.EnergizationInducedVoltageFile.Text)
+        file = load(app.Target(ntg).Benchmark.EnergizationInducedVoltageFile.Text);
+        file = file(:,2:4);
+        % Benchmark Program (SESTLC or ROW)
+        programName = app.Target(ntg).Benchmark.EnergizationInducedVoltageProgram.Text;
+    end
 else
     % Benchmark file:
     if exist(app.Target(ntg).Benchmark.NLInducedVoltageFile.Text)

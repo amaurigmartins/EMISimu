@@ -1,8 +1,5 @@
 %% Terminal 1:
 
-% Current or Voltage Source?
-app.typeSource.Text = 'current';
-
 %% CIRCUIT 1 DATA:
 
 % RMS LL amplitude [V]:
@@ -13,12 +10,6 @@ app.FrequencyC1T1.Value = 60;
 
 % Phase angle [deg]:
 app.PhaseangleC1T1.Value = 0;
-
-% Tstart [s]:
-app.TstartsC1T1.Value = 15e-3;
-
-% Tstop [s]:
-app.TstopsC1T1.Value = 100;
 
 % Thevenin Eq.:
 % app.R0S1T1.Value = 0.4853; %R0 [ohm/m]
@@ -32,9 +23,6 @@ app.L1S1T1.Value = 0; %L+ [mH/m]
 
 %% CIRCUIT 2 DATA (IF EXIST):
 
-% Current or Voltage Source?
-app.typeSourceT1C2.Text = 'current';
-
 % RMS LL amplitude [V]:
 app.RMSLLamplitudeC2T1.Value = 1000;
 
@@ -43,12 +31,6 @@ app.FrequencyC2T1.Value = 60;
 
 % Phase angle [deg]:
 app.PhaseangleC2T1.Value = 0;
-
-% Tstart [s]:
-app.TstartsC2T1.Value = -1;
-
-% Tstop [s]:
-app.TstopsC2T1.Value = 100;
 
 % Thevenin Eq.:
 % app.R0S2T1.Value = 0.4853; %R0 [ohm/m]

@@ -39,7 +39,7 @@ addpath('functions');
 addpath(getProjectID(app));
 
 % define the problem
-define_ATPSettings;
+define_GeneralSettings;
 define_Geometry;
 define_LineParams;
 define_FaultParams;
@@ -50,13 +50,14 @@ define_AttSets;
 define_Soil;
 define_Outputs;
 define_Benchmark;
+define_EnergizationStudyParams;
 
 % initialize program variables and initial calculations
 initialize_Variables;
 initialize_CouplingRegions;
 
 % build LCC cards
-makeAllLCCFiles(app);
+% makeAllLCCFiles(app);
 
 % build main ATP card
 makeAllMainATPFiles(app);

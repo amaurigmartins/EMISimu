@@ -205,10 +205,15 @@ end
 
 %% Type of Source
 
-if strcmp(app.typeSource.Text,'current')
-    app.typeSource.Value = 0;
+if strcmp(app.TransientType.Text,'energization')
+    app.SourceType.Text = 'voltage';
+    warning('Source type changed to VOLTAGE')
+end
+
+if strcmp(app.SourceType.Text,'current')
+    app.SourceType.Value = 0;
 else
-    app.typeSource.Value = 1;
+    app.SourceType.Value = 1;
 end
 
 %% Type of Transient Study
@@ -218,5 +223,59 @@ if ~strcmp(app.TransientType.Text,'fault') % Nominal Load Conditions
 end
 
 %% Source time
+
+% Circuit 1, Terminal 1:
+% Tstart [s]:
+app.TstartsC1T1.Value = DEFAULT_SOURCE_START;
+% Tstop [s]:
+app.TstopsC1T1.Value = DEFAULT_SOURCE_STOP;
+
+% Circuit 2, Terminal 1:
+% Tstart [s]:
+app.TstartsC2T1.Value = DEFAULT_SOURCE_START;
+% Tstop [s]:
+app.TstopsC2T1.Value = DEFAULT_SOURCE_STOP;
+
+% Circuit 1, Terminal 2:
+% Tstart [s]:
+app.TstartsC1T2.Value = DEFAULT_SOURCE_START;
+% Tstop [s]:
+app.TstopsC1T2.Value = DEFAULT_SOURCE_STOP;
+
+% Circuit 2, Terminal 2:
+% Tstart [s]:
+app.TstartsC2T2.Value = DEFAULT_SOURCE_START;
+% Tstop [s]:
+app.TstopsC2T2.Value = DEFAULT_SOURCE_STOP;
+
+%% Energization switch time:
+
+if strcmp(app.TransientType.Text,'energization') % Energization Study
+    if strcmp(app.EnergizedCircuit.Text,'Circuit 1')
+        app.SWStartC2T1A.Value = DEFAULT_SOURCE_START;
+        app.SWStartC2T1B.Value = DEFAULT_SOURCE_START;
+        app.SWStartC2T1C.Value = DEFAULT_SOURCE_START;
+        
+    elseif strcmp(app.EnergizedCircuit.Text,'Circuit 2')
+        app.SWStartC1T1A.Value = DEFAULT_SOURCE_START;
+        app.SWStartC1T1B.Value = DEFAULT_SOURCE_START;
+        app.SWStartC1T1C.Value = DEFAULT_SOURCE_START;  
+    end
+else  % Other Studies
+        app.SWStartC2T1A.Value = DEFAULT_SOURCE_START;
+        app.SWStartC2T1B.Value = DEFAULT_SOURCE_START;
+        app.SWStartC2T1C.Value = DEFAULT_SOURCE_START;
+
+        app.SWStartC1T1A.Value = DEFAULT_SOURCE_START;
+        app.SWStartC1T1B.Value = DEFAULT_SOURCE_START;
+        app.SWStartC1T1C.Value = DEFAULT_SOURCE_START; 
+end
+
+
+
+
+
+
+
 
 

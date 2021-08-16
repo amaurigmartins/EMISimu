@@ -1,4 +1,4 @@
 function out = isVoltageSource(app)
- out = app.typeSource.Value;
+ out = app.SourceType.Value;
 end
     

@@ -25,9 +25,9 @@ out=strcat(out, writeThEqCard(app,T1,1));
 out=strcat(out, writeThEqCard(app,T2,2));
 out=strcat(out, '$VINTAGE,1\n');
     % Terminal 2 ground impedances (Only if current source)
-if ~isVoltageSource(app)
-    out = strcat(out, writeTerminalGroundCard(app));
-end
+% if ~isVoltageSource(app)
+%     out = strcat(out, writeTerminalGroundCard(app));
+% end
 
 ntw=getNumTowers(app);
 tower2LCCnum = TowNum2LCC(app,1:ntw);
@@ -39,8 +39,12 @@ end
      % substation ground impedances + neutral connections
 out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,1),1));
 out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,2),2));
+
      % fault components
 out=strcat(out, writeFaultBranchComponents(app));
+    % Load impedances (if exist)
+out = strcat(out, writeLoadCard(app));
+
 out=strcat(out, '$VINTAGE,0\n');
      % target terminal impedances
 ntg=getNumTargets(app);

@@ -16,6 +16,8 @@ if par
             fname=strcat(projID,'_fault_sec',sprintf('%d',fault_sections(k)),'.atp');
         elseif isEnergizationStudy(app)
             fname=strcat(projID,'_energization_study','.atp');
+        elseif isCBSwitchingStudy(app)
+            fname=strcat(projID,'_CBswitching_study','.atp');
         else
             fname=strcat(projID,'_nominal_load_study','.atp');
         end
@@ -28,6 +30,8 @@ if par
             fname=strcat(projID,'_fault_sec',sprintf('%d',fault_sections(k)),'.pl4');
         elseif isEnergizationStudy(app)
             fname=strcat(projID,'_energization_study','.pl4');
+        elseif isCBSwitchingStudy(app)
+            fname=strcat(projID,'_CBswitching_study','.pl4');
         else
             fname=strcat(projID,'_nominal_load_study','.pl4');
         end
@@ -41,6 +45,8 @@ else
             fname=strcat(projID,'_fault_sec',sprintf('%d',fault_sections(k)),'.atp');
         elseif isEnergizationStudy(app)
             fname=strcat(projID,'_energization_study','.atp');
+        elseif isCBSwitchingStudy(app)
+            fname=strcat(projID,'_CBswitching_study','.atp');
         else
             fname=strcat(projID,'_nominal_load_study','.atp');
         end
@@ -53,6 +59,8 @@ else
             fname=strcat(projID,'_fault_sec',sprintf('%d',fault_sections(k)),'.pl4');
         elseif isEnergizationStudy(app)
             fname=strcat(projID,'_energization_study','.pl4');
+        elseif isCBSwitchingStudy(app)
+            fname=strcat(projID,'_CBswitching_study','.pl4');
         else
             fname=strcat(projID,'_nominal_load_study','.pl4');
         end

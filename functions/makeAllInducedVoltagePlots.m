@@ -34,6 +34,15 @@ for i=1:ntg
                 app.Target(i).Results.EnergizationInducedVoltage.Amplitude.Data = indVoltage(:,1);
                 app.Target(i).Results.EnergizationInducedVoltage.Angle.Data = indVoltage(:,2);
                 app.Target(i).Results.EnergizationInducedVoltage.Error.Value = error;
+            elseif isCBSwitchingStudy(app)
+                fname=strcat(projID,'_CBswitching_study','.mat');
+                DisplayName = getTargetDisplayName(app,ntg);
+                fprintf('Plotting induced voltages on target %s under capacitor bank switching transient conditions...\n',DisplayName);
+                Benchmark = getInducedVoltageBenchmark(app,i,faulted_towers(j));
+                [indVoltage, error] = plotInducedVoltage(fname,AccDistance,dT,f,Benchmark,i,DisplayName);
+                app.Target(i).Results.EnergizationInducedVoltage.Amplitude.Data = indVoltage(:,1);
+                app.Target(i).Results.EnergizationInducedVoltage.Angle.Data = indVoltage(:,2);
+                app.Target(i).Results.EnergizationInducedVoltage.Error.Value = error;
             else
                 fname=strcat(projID,'_nominal_load_study','.mat');
                 DisplayName = getTargetDisplayName(app,ntg);

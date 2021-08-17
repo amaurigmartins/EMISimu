@@ -44,6 +44,8 @@ out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,2),2));
 out=strcat(out, writeFaultBranchComponents(app));
     % Load impedances (if exist)
 out = strcat(out, writeLoadCard(app));
+    % CB impedances (if exists)
+out = strcat(out, writeCBImpedanceCard(app));
 
 out=strcat(out, '$VINTAGE,0\n');
      % target terminal impedances
@@ -69,6 +71,8 @@ out=strcat(out, '/SWITCH\n');
 out=strcat(out, 'C < n 1>< n 2>< Tclose ><Top/Tde ><   Ie   ><Vf/CLOP ><  type  >\n');
 out=strcat(out, writePhaseCurrProbesCard(app,1));
 out=strcat(out, writePhaseCurrProbesCard(app,2));
+% CB Switch (if exist)
+out=strcat(out, writeCBSwitch(app));
 
 if outputShWireCurr(app)
     for i=0:nsec
@@ -110,9 +114,13 @@ end
 if outputPhaseVolt(app,2)
     out=strcat(out, writePhaseVoltProbesCard(app,2));
 end
+
 if outputFaultBranchVolt(app)
     out=strcat(out, writeFaultBranchVoltProbesCard(app));
 end
+
+out = strcat(out, writeCBPhaseVoltProbesCard(app));
+
 %footer
 out=strcat(out, 'BLANK MODELS\n');
 out=strcat(out, 'BLANK BRANCH\n');

@@ -51,6 +51,7 @@ define_Soil;
 define_Outputs;
 define_Benchmark;
 define_EnergizationStudyParams;
+define_CBSwitchingStudyParams;
 
 % initialize program variables and initial calculations
 initialize_Variables;
@@ -75,7 +76,7 @@ end
 
 % Results
 makeAllInducedVoltagePlots(app)
-plotTLCurrent('SES_energization_study.mat',1,1,'Energization Circuit 1')
+plotTLCurrent('SES_CBswitching_study.mat',1,1,'Energization Circuit 1')
 
 disp('All done!');
 

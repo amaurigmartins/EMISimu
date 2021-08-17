@@ -15,7 +15,7 @@ out(1,3,1) = app.LoadR3C1T2.Value;
 out(1,3,2) = app.LoadL3C1T2.Value; 
 out(1,3,3) = app.LoadC3C1T2.Value;
 
-if getNumCircuits(app) == 2
+if getNumCircuits(app) == 2 && isT2Load(app,2) 
     % If Delta Connection (AB)
     out(2,1,1) = app.LoadR1C2T2.Value;
     out(2,1,2) = app.LoadL1C2T2.Value; 

@@ -22,6 +22,12 @@ function out = makeAllMainATPFiles(app)
                 fid = fopen(fullfile(projdir,fname),'wt');
                 fprintf(fid, makeMainATP(app,fault_sec));
                 fclose(fid);
+            elseif isCBSwitchingStudy(app)
+                disp('Building a switched capacitor bank transient induction model...');
+                fname=sprintf('%s_CBswitching_study.atp',projID);
+                fid = fopen(fullfile(projdir,fname),'wt');
+                fprintf(fid, makeMainATP(app,fault_sec));
+                fclose(fid);                
             else
 %                 fault_sec = 1;
                 disp('Building a nominal load induction model...');

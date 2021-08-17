@@ -205,7 +205,7 @@ end
 
 %% Type of Source
 
-if strcmp(app.TransientType.Text,'energization')
+if strcmp(app.TransientType.Text,'energization') || strcmp(app.TransientType.Text,'CB switching')
     app.SourceType.Text = 'voltage';
     warning('Source type changed to VOLTAGE')
 end

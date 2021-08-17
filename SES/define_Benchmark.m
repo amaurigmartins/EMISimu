@@ -31,4 +31,11 @@ app.Target(1).Benchmark.EnergizationInducedVoltageFile.Text = []';
 % Benchmark Program (SESTLC or ROW)
 app.Target(1).Benchmark.EnergizationInducedVoltageProgram.Text = [];
 
+%% CB SWITCHING INDUCED VOLTAGE BENCHMARK
+
+% Benchmark file:
+app.Target(1).Benchmark.CBSwithingInducedVoltageFile.Text = []';
+
+% Benchmark Program (SESTLC or ROW)
+app.Target(1).Benchmark.CBSwithingInducedVoltageProgram.Text = [];
 

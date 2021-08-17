@@ -17,6 +17,14 @@ elseif isEnergizationStudy(app)
         % Benchmark Program (SESTLC or ROW)
         programName = app.Target(ntg).Benchmark.EnergizationInducedVoltageProgram.Text;
     end
+elseif isCBSwitchingStudy(app)
+    % Benchmark file:
+    if exist(app.Target(ntg).Benchmark.CBSwithingInducedVoltageFile.Text)
+        file = load(app.Target(ntg).Benchmark.CBSwithingInducedVoltageFile.Text);
+        file = file(:,2:4);
+        % Benchmark Program (SESTLC or ROW)
+        programName = app.Target(ntg).Benchmark.CBSwithingInducedVoltageProgram.Text;
+    end
 else
     % Benchmark file:
     if exist(app.Target(ntg).Benchmark.NLInducedVoltageFile.Text)

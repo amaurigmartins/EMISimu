@@ -9,9 +9,9 @@ function out = makeAllMainATPFiles(app)
             fault_sec=TowNum2LCC(app,getFaultedSections(app));
             disp('Making ATP files...');
             if isFaultStudy(app)
-                for k=1:length(fault_sec)
-                    fprintf('Building fault model for tower %d...\n',fault_tower(k));
-                    fname=sprintf('%s_fault_sec%d.atp',projID,fault_tower(k));
+                for k=1:length(fault_sec) 
+                    fprintf('Building %s fault model for tower %d...\n',getFaultTypeName(app),fault_tower(k));
+                    fname=sprintf('%s_%sfault_sec%d.atp',projID,getFaultTypeName(app),fault_tower(k));
                     fid = fopen(fullfile(projdir,fname),'wt');
                     fprintf(fid, makeMainATP(app,fault_sec(k)));
                     fclose(fid);

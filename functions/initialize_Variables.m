@@ -183,7 +183,7 @@ Faulted_transf = struct2cell(Faulted_transf);
 Faulted_Table(:,1) = Faulted_transf(:,1,:);
 Faulted_Table(:,2) = Faulted_transf(:,2,:);
 
-app.UITableFaultSec.Data = string(Faulted_Table);
+app.UITableFaultSec.Data = (Faulted_Table);
 
 %% Transposition Button convert
 

@@ -15,9 +15,9 @@ disp('Running induced voltage plots...');
 for i=1:ntg
     for j=1:numfiles
             if isFaultStudy(app)
-                fname=strcat(projID,'_fault_sec',sprintf('%d',faulted_towers(j)),'.mat');
+                fname=strcat(projID,sprintf('_%sfault_sec',getFaultTypeName(app)),sprintf('%d',faulted_towers(j)),'.mat');
                 DisplayName = getTargetDisplayName(app,ntg);
-                fprintf('Plotting induced voltages on target %s for fault at tower %d...\n',faulted_towers(j),DisplayName);
+                fprintf('Plotting induced voltages on target %s for fault at tower %d...\n',DisplayName,faulted_towers(j));
                 DisplayName = strcat(DisplayName,sprintf(', Faulted tower = %d',faulted_towers(j)));
                 Benchmark = getInducedVoltageBenchmark(app,i,faulted_towers(j));
                 [indVoltage, error] = plotInducedVoltage(fname,AccDistance,dT,f,Benchmark,i,DisplayName);

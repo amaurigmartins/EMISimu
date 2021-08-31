@@ -1,11 +1,11 @@
 function out = isFaultStudy(app)
 
-fault_type = getFaultType(app);
+out = strcmp(app.TransientType.Text,'fault');
 
-if fault_type == 0
-    out = false;
-else
-    out = true;
-end
+% if fault_type == 0
+%     out = false;
+% else
+%     out = true;
+% end
 
 end

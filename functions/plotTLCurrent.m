@@ -20,7 +20,9 @@ currentPhaseB = eval(varnamePhaseB);
 currentPhaseC = eval(varnamePhaseC);
 
 figure;
-plot(t*1e3,currentPhaseA,'r',t*1e3,currentPhaseB,'g',t*1e3,currentPhaseC,'b');
+plot(t*1e3,currentPhaseA,'r'); hold on
+plot(t*1e3,currentPhaseB,'color',rgb('kelly green')); hold on
+plot(t*1e3,currentPhaseC,'b');
 title(plot_title)
 ylabel('Current [A]')
 xlabel('Time [ms]')
@@ -36,7 +38,9 @@ voltagePhaseB = eval(varnamePhaseB);
 voltagePhaseC = eval(varnamePhaseC);
 
 figure;
-plot(t*1e3,voltagePhaseA,'r',t*1e3,voltagePhaseB,'g',t*1e3,voltagePhaseC,'b');
+plot(t*1e3,voltagePhaseA,'r'); hold on
+plot(t*1e3,voltagePhaseB,'color',rgb('kelly green')); hold on
+plot(t*1e3,voltagePhaseC,'b'); hold on
 title(plot_title)
 ylabel('Voltage [V]')
 xlabel('Time [ms]')

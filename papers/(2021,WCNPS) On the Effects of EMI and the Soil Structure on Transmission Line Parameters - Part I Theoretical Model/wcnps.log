@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.30)  22 SEP 2021 10:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.30)  22 SEP 2021 15:47
 entering extended mode
 **./wcnps.tex
 (wcnps.tex
@@ -1200,7 +1200,13 @@ File: fig/soilmodel.pdf Graphic file (type pdf)
 <use fig/soilmodel.pdf>
 Package pdftex.def Info: fig/soilmodel.pdf  used on input line 485.
 (pdftex.def)             Requested size: 201.60077pt x 113.52531pt.
- [5 <./fig/SistTesteCorte.pdf> <./fig/soilmodel.pdf>] (wcnps.bbl)
+ [5 <./fig/SistTesteCorte.pdf> <./fig/soilmodel.pdf>]
+<fig/Impedance.pdf, id=292, 500.87125pt x 417.56pt>
+File: fig/Impedance.pdf Graphic file (type pdf)
+<use fig/Impedance.pdf>
+Package pdftex.def Info: fig/Impedance.pdf  used on input line 540.
+(pdftex.def)             Requested size: 201.60077pt x 168.06595pt.
+ (wcnps.bbl [6 <./fig/Impedance.pdf>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1212,16 +1218,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6] (wcnps.aux)
+[7
+
+] (wcnps.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 27000 strings out of 478864
- 485286 string characters out of 2858517
- 914931 words of memory out of 3000000
- 44351 multiletter control sequences out of 15000+600000
+ 27010 strings out of 478864
+ 485494 string characters out of 2858517
+ 915013 words of memory out of 3000000
+ 44358 multiletter control sequences out of 15000+600000
  534233 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,89p,1026b,923s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1245,9 +1253,9 @@ om/AppData/Roaming/MiKTeX/fonts/type1/bera/fveb8a.pfb><C:/Users/caiom/AppData/R
 oaming/MiKTeX/fonts/type1/bera/fver8a.pfb><C:/Users/caiom/AppData/Roaming/MiKTe
 X/fonts/type1/bera/fver8a.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb>
-Output written on wcnps.pdf (6 pages, 323188 bytes).
+Output written on wcnps.pdf (7 pages, 407743 bytes).
 PDF statistics:
- 416 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 447 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: elsarticle-template.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+The style file: elsarticle-num.bst
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+Database file #1: library.bib
+Warning--can't use both volume and number fields in IEEE1993
+Warning--empty publisher in IEEE1993
+You've used 13 entries,
+            2937 wiz_defined-function locations,
+            778 strings with 8546 characters,
+and the built_in function-call counts, 3744 in all, are:
+= -- 374
+> -- 118
+< -- 1
++ -- 48
+- -- 35
+* -- 293
+:= -- 534
+add.period$ -- 21
+call.type$ -- 13
+change.case$ -- 12
+chr.to.int$ -- 0
+cite$ -- 15
+duplicate$ -- 102
+empty$ -- 401
+format.name$ -- 45
+if$ -- 948
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 12
+newline$ -- 59
+num.names$ -- 13
+pop$ -- 73
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 237
+stack$ -- 0
+substring$ -- 169
+swap$ -- 33
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 27
+width$ -- 15
+write$ -- 129
+(There were 2 warnings)

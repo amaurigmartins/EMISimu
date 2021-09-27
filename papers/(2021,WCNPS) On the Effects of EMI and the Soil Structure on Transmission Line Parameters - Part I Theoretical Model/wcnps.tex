@@ -149,7 +149,7 @@ Elements $Z_{i,j}$ outside the main diagonal of the matrix $\mathbf{Z}$ correspo
 		& \frac{j\omega\mu_{0}}{2\pi}\int_{0}^{\infty}\frac{2e^{-H\lambda}}{\lambda+\sqrt{\lambda^2+j\frac{\omega\mu_{0}}{\rho}-\omega^2\mu_{0}\varepsilon_{0}\varepsilon_{r}}}\cos\left( \lambda D \right) d\lambda,
 	\end{aligned}
 \end{equation}
-where $\mu_{0}=4\pi\times10^{-7}$ H/m is the magnetic permeability constant in free space, $\varepsilon_{0}\approx 8.85\times10^{-12}$ F/m is the vacuum electrical permittivity, $\rho$ is the local soil electrical resistivity, in $\Omega$.m, $\varepsilon_{r}$ is the local soil relative electrical permittivity, $H$, $D$, $D_{i,j}$ and ${D}'_{i,j}$ are the relative distances represented in Fig. \ref{fig:VistaTorreDuto}, in meters, with: $H=y_i+y_j$, $D=x_j-x_i$, $D_{i,j}=\sqrt{(x_j-x_i)^2+(y_i-y_j)^2}$ and $D'_{i,j}=\sqrt{(x_j-x_i)^2+(y_i+y_j)^2}$, being $[x_q,y_q]$, $q=i,~j,...$ are the coordinates of $q$-th conductor/pipeline.
+in which $\mu_{0}=4\pi\times10^{-7}$ H/m is the magnetic permeability constant in free space, $\varepsilon_{0}\approx 8.85\times10^{-12}$ F/m is the vacuum electrical permittivity, $\rho$ is the local soil electrical resistivity, in $\Omega$.m, $\varepsilon_{r}$ is the local soil relative electrical permittivity, $H$, $D$, $D_{i,j}$ and ${D}'_{i,j}$ are the relative distances represented in Fig. \ref{fig:VistaTorreDuto}, in meters, with: $H=y_i+y_j$, $D=x_j-x_i$, $D_{i,j}=\sqrt{(x_j-x_i)^2+(y_i-y_j)^2}$ and $D'_{i,j}=\sqrt{(x_j-x_i)^2+(y_i+y_j)^2}$, being $[x_q,y_q]$, $q=i,~j,...$ are the coordinates of $q$-th conductor/pipeline.
 
 Elements $Z_{i,i}$ in the main diagonal are the self impedances of the aboveground conductors, calculated as in \eqref{eq:CarsonSelf}:
 \begin{equation}\label{eq:CarsonSelf}
@@ -159,7 +159,7 @@ Elements $Z_{i,i}$ in the main diagonal are the self impedances of the abovegrou
 		\frac{j\omega\mu_{0}}{2\pi}\int_{0}^{\infty}\frac{2e^{-2|y_j|\lambda}}{\lambda+\sqrt{\lambda^2+j\frac{\omega\mu_{0}}{\rho}-\omega^2\mu_{0}\varepsilon_{0}\varepsilon_{r}}} d\lambda,
 	\end{aligned}
 \end{equation}
-where $R_{AC}$ is the conductor AC ohmic resistance (supplied by the manufacturer) corrected to the operating temperature, given in ohms per unit length, and $GMR$ is the geometric mean radius of the conductor, as reported by the manufacturer or calculated according to the geometry of the cable bundle, expressed in meters. For the case of a tubular conductor, such as the pipeline depicted in Fig. \ref{fig:Pipe}, the geometric mean radius, denoted by $GMR_{TU}$ is determined using \eqref{eq:GMR} \cite{Seneff1947}:
+in which $R_{AC}$ is the conductor AC ohmic resistance (supplied by the manufacturer) corrected to the operating temperature, given in ohms per unit length, and $GMR$ is the geometric mean radius of the conductor, as reported by the manufacturer or calculated according to the geometry of the cable bundle, expressed in meters. For the case of a tubular conductor, such as the pipeline depicted in Fig. \ref{fig:Pipe}, the geometric mean radius, denoted by $GMR_{TU}$ is determined using \eqref{eq:GMR} \cite{Seneff1947}:
 %\begin{figure}[!t]
 %	\begin{center}
 %		\includegraphics[width=.8\columnwidth]{ModeloLT.pdf}
@@ -187,7 +187,7 @@ where $R_{AC}$ is the conductor AC ohmic resistance (supplied by the manufacture
 		&\frac{r_{int}^4[\frac{3}{4}+ln(\frac{r_{int}}{r_{int}})]}{(r_{ext}^2-r_{int}^2)^2},
 	\end{aligned}
 \end{equation}
-where $r_{ext}$ and $r_{int}$ express, respectively, the external and the internal radius of the tubular pipeline structure, in meters.
+in which $r_{ext}$ and $r_{int}$ express, respectively, the external and the internal radius of the tubular pipeline structure, in meters.
 
 The first term in \eqref{eq:CarsonMutual} and the second term in \eqref{eq:CarsonSelf} correspond to the ground return impedance for a perfectly conductive soil. The improper integrals, known as Carson's integrals, represent the effects of the soil with finite resistivity, including losses caused by current return. The Carson's integral solution has been assessed by several researchers using numerical techniques based on quadratures, power series expansion or deduction of simplified expressions, being worth mentioning the formulas derived by Carson-Clem, Deri, Lucca and Ametani \cite{CIGREWG36,DeriA.Tevan1981,Lucca1994,Ametani2009}. The use of simplified formulas is convenient, but may introduce significant errors if the particularities of the interference problem under study are not well understood. In general, these expressions produce satisfactory results for low frequencies and relatively small spacings between conductors, which imposes a limitation to the calculation model.
 
@@ -212,7 +212,7 @@ In \cite{Theodoulidis2015}, Theodoulidis shows that the Carson's integral can be
 		u_2=(H+jD)\sqrt{j\frac{\omega\mu_0}{\rho}-\omega^2\mu_0\varepsilon_0\varepsilon_r},
 	\end{aligned}
 \end{equation}
-where $\widehat{H_1}$ is the Struve function and $\widehat{Y_1}$ is the Bessel function of the second type, both of first order \cite{Theodoulidis2015}.
+in which $\widehat{H_1}$ is the Struve function and $\widehat{Y_1}$ is the Bessel function of the second type, both of first order \cite{Theodoulidis2015}.
 
 Since the interfering pipeline is not energized by the power system, it can be treated in the same way as the neutral conductors in the calculation model. Therefore, nodes related to the neutral conductors and the pipeline can be eliminated from \eqref{eq:MatrizImpSerie} using Kron reduction. For a 3-phase system, considering neutral conductors and the pipeline grounded on both extremities, one can write the following equivalent series impedance matrix:
 \begin{equation}\label{eq:MatrizZEq}
@@ -294,7 +294,7 @@ Assuming the transmission line is transposed, the matrix \eqref{eq:MatrizZEq} is
 		\end{bmatrix}.
 	\end{aligned} 
 \end{equation}
-where$Z_{P}$ and $Z_{M}$ are computed using:
+in which $Z_{P}$ and $Z_{M}$ are computed using:
 \begin{equation}\label{eq:scalarZP}
 	\begin{aligned}
 		&Z_{P}=\frac{\mathbf{Z_{EQ}}(1,1)+\mathbf{Z_{EQ}}(2,2)+\mathbf{Z_{EQ}}(3,3)}{3},
@@ -334,10 +334,10 @@ being
 			1 & 1 & 1  \\
 			1 & a & a^2 \\
 			1 & a^2 & a \\
-		\end{bmatrix}, \textrm{where}~ a=1\angle 120^\circ,
+		\end{bmatrix}, \textrm{with}~ a=1\angle 120^\circ,
 	\end{aligned} 
 \end{equation}
-where $Z_0$, $Z_1$ and $Z_2$ are, respectively, the zero, positive and negative sequence impedances of the transmission line, in ohms per unit length.
+in which $Z_0$, $Z_1$ and $Z_2$ are, respectively, the zero, positive and negative sequence impedances of the transmission line, in ohms per unit length.
 
 A similar procedure is performed to determine the transmission line admittances. Referring again to the dimensions shown in Figs. \ref{fig:VistaTorreDuto} and \ref{fig:Pipe}, and using the same notation as in the calculations shown so far, the matrix $\mathbf{P}$ is formed with the Maxwell's potential coefficients defined in \eqref{eq:Pij} and \eqref{eq:Pii}.
 \begin{equation}\label{eq:MatrizAdm}
@@ -437,11 +437,11 @@ The transmission system is composed of a 200 km long power line which shares the
 	\end{center}
 \end{figure}
 
-The specifications of the transmission line conductors and pipeline are given in Table \ref{table:LTCond}.
+The specifications of the transmission line conductors  are given in Table \ref{table:LTCond}. The pipeline characteristics are provided in Table \ref{table:PipeParam}.
 
 \begin{table}[!hbt]
 	\renewcommand{\arraystretch}{1.3}
-	\caption{Specifications of conductors and pipeline}
+	\caption{Specifications of transmission line conductors}
 	\label{table:LTCond}
 	\centering
 	\begin{tabular}{|c|c|c|}
@@ -452,7 +452,25 @@ The specifications of the transmission line conductors and pipeline are given in
 		\hline
 		Neutral & Steel 3/8” HS & 50 °C\\
 		\hline
-		Pipe & 8" diameter Carbon-Steel & 50 °C\\
+	\end{tabular}
+\end{table}
+
+\begin{table}[!hbt]
+	\renewcommand{\arraystretch}{1.3}
+	\caption{Pipeline characteristics}
+	\label{table:PipeParam}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Parameter} & \textbf{Value} \\
+		\hline
+		Internal radius [m] & 0.1014\\
+		\hline
+		External radius [m] & 0.1095\\
+		\hline
+		Electrical resistivity [$\Omega$.m] & $1.72\times10^{-7}$\\
+		\hline
+		Magnetic permeability [H/m] & $3.77\times10^{-4}$\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -478,62 +496,53 @@ The specifications of the transmission line conductors and pipeline are given in
 %	\end{tabular}
 %\end{table}
 
-In order to exemplify the effect of the soil resistivity, it is used the apparent resistivity data available in Annex B.3 of the standard ABNT NBR 7117, which represent a soil model stratified in five layers, whose parameters are summarized in Fig. \ref{fig:SoilModel} \cite{NBR7117}.
-
-\begin{figure}[hbt]
-	\begin{center}
-		\includegraphics[width=.8\columnwidth]{fig/soilmodel.pdf}
-		\caption{Five-layered soil model as in \cite{NBR7117}.}
-		\label{fig:SoilModel}
-	\end{center}
-\end{figure}
+%\begin{figure}[hbt]
+%	\begin{center}
+%		\includegraphics[width=.8\columnwidth]{fig/soilmodel.pdf}
+%		\caption{Five-layered soil model as in \cite{NBR7117}.}
+%		\label{fig:SoilModel}
+%	\end{center}
+%\end{figure}
 
 
-\begin{table}[!hbt]
-	\renewcommand{\arraystretch}{1.3}
-	\caption{Resistivity values from uniform models}
-	\label{table:ResistivityValues}
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		\textbf{Model} & \textbf{Resistivity [$\Omega$.m]} \\
-		\hline
-		IEEE Std. 80 uniform & 10815\\
-		\hline
-		RESAP uniform & 9401.48\\
-		\hline
-		Equivalent uniform & 3160.89\\
-		\hline
-	\end{tabular}
-\end{table}
+%\begin{table}[!hbt]
+%	\renewcommand{\arraystretch}{1.3}
+%	\caption{Resistivity values from uniform models}
+%	\label{table:ResistivityValues}
+%	\centering
+%	\begin{tabular}{|c|c|}
+%		\hline
+%		\textbf{Model} & \textbf{Resistivity [$\Omega$.m]} \\
+%		\hline
+%		IEEE Std. 80 uniform & 10815\\
+%		\hline
+%		RESAP uniform & 9401.48\\
+%		\hline
+%		Equivalent uniform & 3160.89\\
+%		\hline
+%	\end{tabular}
+%\end{table}
 
-Table \ref{table:ResistivityValues} contains a comparison between three different uniform soil models: 1) the equivalent uniform model, determined using (\ref{eq:sigma_recursive_1})-(\ref{eq:sigma_recursive_3}) and the data presented in \cite{NBR7117}; 2) the conventional uniform model, established under IEEE Std. 80 as the simple arithmetic mean of the apparent resistivity values \cite{IEEEStd80}; and 3) the uniform model obtained using the RESAP module from software CDEGS, which is based on the curve-fitting technique reported in \cite{Dawalibi1984a}.
+%\begin{table}[!hbt]
+%	\renewcommand{\arraystretch}{1.3}
+%	\centering
+%	\caption{Line parameters of the case study for each scenario}
+%	\begin{tabular}{|c|c|c|}
+%		\hline
+%		\textbf{Cases} & \multicolumn{1}{c|}{\textbf{\boldmath{$Z_{1}$ {[}$\Omega$/m{]}}}} & \multicolumn{1}{c|}{\textbf{\boldmath{$Z_{0}$ {[}$\Omega$/m{]}}}} \\ \hline
+%		1              & 0.1107 + j0.5337                              & 0.5834+j1.8263                                \\ \hline
+%		2              & 0.1107 + j0.5337                              & 0.5775+j1.8146                                \\ \hline
+%		3              & 0.1107 + j0.5337                              & 0.5335+j1.722                                 \\ \hline
+%		4              & 0.1108 + j0.5336                              & 0.3819+j1.3669                                \\ \hline
+%		5              & 0.1108 + j0.5336                              & 0.38+j1.3628                                  \\ \hline
+%		6              & 0.1108 + j0.5336                              & 0.3648+j1.329                                 \\ \hline
+%	\end{tabular}\label{table:LineParam}
+%\end{table}
 
-Applying (\ref{eq:sigma_recursive_1})-(\ref{eq:sigma_recursive_3}) to the parameters of the stratified soil, a uniform equivalent soil model with resistivity 3160.89 $\Omega$.m is obtained, about 29\% of the result for a uniform model obtained directly from the apparent resistivity measurements. It should also be noted that the uniform equivalent resistivity is very close to the value indicated for the deep soil resistivity, which confirms, numerically, reports in the literature that the deep soil resistivity is predominant in studies involving ground return path, and for calculations of mutual couplings in large systems, such as transmission line parameters, the use of the average values of the deep layers often yields satisfactory results for practical purposes \cite{Southey2005}.
+Intended to study interference and soil influences on line parameters is calculated zero and positive sequence varying  equivalent distance ($D_{eq}$) between the facilities, from 0 to 100 meters, and soil resistivity, from 0.01 to 10000 ohms.meter. Fig. \ref{fig:Impedance} present the result in a colormap.
 
-In purpose to compare the three types of soil models and the influence of interference to calculate TL parameters, six scenarios are studied: 1) considering IEEE Std. 80 uniform soil and no interferences; 2) considering RESAP uniform soil and no interferences; 3) considering equivalent uniform soil and no interferences; 4) considering IEEE Std. 80 uniform soil and interference caused by a 10 m parallel pipeline; 5) considering RESAP uniform soil and interference caused by a 10 m parallel pipeline; and 6) considering equivalent uniform soil and interference caused by a 10 m parallel pipeline,
-
-Finally, Table \ref{table:LineParam} shows the comparison between the scenarious of line parameters calculation.
-
-\begin{table}[!hbt]
-	\renewcommand{\arraystretch}{1.3}
-	\centering
-	\caption{Line parameters of the case study for each scenario}
-	\begin{tabular}{|c|c|c|}
-		\hline
-		\textbf{Cases} & \multicolumn{1}{c|}{\textbf{\boldmath{$Z_{1}$ {[}$\Omega$/m{]}}}} & \multicolumn{1}{c|}{\textbf{\boldmath{$Z_{0}$ {[}$\Omega$/m{]}}}} \\ \hline
-		1              & 0.1107 + j0.5337                              & 0.5834+j1.8263                                \\ \hline
-		2              & 0.1107 + j0.5337                              & 0.5775+j1.8146                                \\ \hline
-		3              & 0.1107 + j0.5337                              & 0.5335+j1.722                                 \\ \hline
-		4              & 0.1108 + j0.5336                              & 0.3819+j1.3669                                \\ \hline
-		5              & 0.1108 + j0.5336                              & 0.38+j1.3628                                  \\ \hline
-		6              & 0.1108 + j0.5336                              & 0.3648+j1.329                                 \\ \hline
-	\end{tabular}\label{table:LineParam}
-\end{table}
-
-Shunt admittances result in the same values for both calculation methods, with $Y_1$=3.1034j $\mu$S/km and $Y_0$=2.2324j $\mu$S/km. This is explained by the fact that the capacitance is independent of the soil resistivity and that the interfering pipeline is buried beneath the ground, that is, immersed in a conductive medium and, consequently, absent of electrostatic couplings with the energized conductors of the transmission line. It is relevant to note that the positive sequence parameters do not present considerable differences, with an error of less than 1\%. The soil models represents an insignificant influence in line parameters, which presents less than 3\% of deviation in zero sequence. However, the zero sequence impedance is shown to be significantly influenced by interference conditions, in which a discrepancy of 30.81\% is observed between the same soil models with different interference conditions.
-
-Furthermore, intended to study interference influences on line parameters is calculated zero and positive sequence varying distance between the facilities and soil resistivity, as shown in Fig. \ref{fig:Impedance}. 
+Shunt admittances result in the same values for all scenarios. This is explained by the fact that the capacitance is independent of the soil resistivity and that the interfering pipeline is buried beneath the ground, that is, immersed in a conductive medium and, consequently, absent of electrostatic couplings with the energized conductors of the transmission line. It is relevant to note that the positive sequence parameters do not present considerable differences, with an error of less than 1\%. However, the zero sequence impedance is shown to be significantly influenced by interference conditions, in which a discrepancy of 37.5\% is observed between the same resistivity with different interference conditions (0 and 100 meters). Also, an interesting point is the presence of interference presents impedances smaller than neglecting interferences.
+ 
 
 \begin{figure}[hbt]
 	\begin{center}
@@ -547,11 +556,11 @@ Fig. \ref{fig:Impedance} presents that zero sequence is more affected by presenc
 
 \section{CONCLUSIONS}
 
-Results discussed indicate that the zero sequence line parameters are sensitive to the soil model and the presence of interferences, presenting an error 30.809\% smaller in relation to the calculation procedure in which these variables are ignored. The positive sequence parameters are little affected by the soil resistivity and the inductive coupling with other installations.
+Results discussed indicate that the zero sequence line parameters are sensitive to the soil model and the presence of interferences, presenting an error 37.5\% smaller in relation to the extremities value of distance (0 and 10 meters), representing distinct conditions of interferences. The positive sequence parameters are little affected by the soil resistivity and the inductive coupling with other installations.
 
 From the above, it is considered of fundamental importance that, in transmission line design, short-circuit studies, dimensioning and calibration of protection and fault location devices, precise numerical methods are used to calculate the electrical parameters. However, it is also necessary to ensure the quality of the field gathered information, especially soil resistivity measurements and the survey of interferences with other facilities. 
 
-In a companion paper, the effects on transmission line parameters due to interferences and different soil models are further investigated, with numerical analyses of short-circuits and fault location studies on a transmission system.  
+In a companion paper \cite{Moraes2021}, the effects on transmission line parameters due to interferences and different soil models are further investigated, with numerical analyses of short-circuits and fault location studies on a transmission system.  
 
 
 

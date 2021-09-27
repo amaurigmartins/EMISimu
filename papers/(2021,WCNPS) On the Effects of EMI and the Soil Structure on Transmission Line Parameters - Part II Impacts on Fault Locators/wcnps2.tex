@@ -283,6 +283,8 @@ Table \ref{table:ResistivityValues} contains three different soil models. In \ci
 
 Six scenarios are described in order to study the soil models and interferences influences:  1) considering IEEE Std. 80 uniform soil and no interferences; 2) considering RESAP uniform soil and no interferences; 3) considering equivalent uniform soil and no interferences; 4) considering IEEE Std. 80 uniform soil and interference caused by a 10 m parallel pipeline; 5) considering RESAP uniform soil and interference caused by a 10 m parallel pipeline; and 6) considering equivalent uniform soil and interference caused by a 10 m parallel pipeline. The case with equivalent soil model and electromagnetic interferences is considered the most complete case and, for this reason, is the case reference in this paper.
 
+Applying the method, described in \cite{Martins-Britto2019}, to the parameters of the stratified soil, a uniform equivalent soil model with resistivity 3160.89 $\Omega$.m is obtained, about 29\% of the result for a uniform model obtained directly from the apparent resistivity measurements. It should also be noted that the uniform equivalent resistivity is very close to the value indicated for the deep soil resistivity, which confirms, numerically, reports in the literature that the deep soil resistivity is predominant in studies involving ground return path, and for calculations of mutual couplings in large systems, such as transmission line parameters, the use of the average values of the deep layers often yields satisfactory results for practical purposes \cite{Southey2005}.
+
 Then, the transmission line parameters are calculated and presented in Table \ref{table:LineParam}, for each scenario.
 
 \begin{table}[!hbt]
@@ -301,7 +303,7 @@ Then, the transmission line parameters are calculated and presented in Table \re
 	\end{tabular}\label{table:LineParam}
 \end{table}
 
-Is observed there is a relevant deviation in zero sequence impedance due to the pipeline presence in scenario. The positive sequence impedance do not present a considerable deviation in relation with interferences conditions. The soil model represents less than 3\% of error in line parameters. Then, short-circuits and fault locations are simulated, in order to study the impact of impedance deviation \cite{Moraes2021}.
+Shunt admittances result in the same values for both calculation methods, with $Y_1$=3.1034j $\mu$S/km and $Y_0$=2.2324j $\mu$S/km, as expected \cite{Moraes2021}. However, is observed there is a relevant deviation in zero sequence impedance due to the pipeline presence in scenario, presenting an error of 30.81\%. The positive sequence impedance do not present a considerable deviation in relation with interferences conditions. The soil model represents less than 3\% of error in line parameters. Then, short-circuits and fault locations are simulated, in order to study the impact of impedance deviation \cite{Moraes2021}.
 
 \subsection{Short-circuits}
 
@@ -379,7 +381,7 @@ Results show that discrepancies between the values of short-circuit currents occ
 
 Figure \ref{fig:ConvUniform_NoInterf} and \ref{fig:Conv_StratWithInterf} show the convergence of the fault location algorithms under study, applied to the simulation of a phase-to-ground short-circuit, considering the algorithms set-up in the conventional way, i.e. not including the effects of interferences and soil stratification, for the following scenarios: 1) transmission line with uniform soil and disregarding the interfering pipeline; and 2) transmission line with stratified soil in the presence of interferences.
 
-\begin{figure}[hbt]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=1.1\columnwidth]{./fig/FaultInterfError.pdf}
 		\caption{Estimates of fault location for uniform soil model and disregarding the interfering pipeline, for phase-to-ground fault at: (a) 40 km, (b) 80 km, (c) 120 km and (d) 160 km.}
@@ -387,7 +389,7 @@ Figure \ref{fig:ConvUniform_NoInterf} and \ref{fig:Conv_StratWithInterf} show th
 	\end{center}
 \end{figure}
 
-\begin{figure}[hbt]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=1.1\columnwidth]{./fig/FaultInterf.pdf}
 		\caption{Estimates of fault location for stratified soil model and accounting for the interfering pipeline, for phase-to-ground fault at: (a) 40 km, (b) 80 km, (c) 120 km and (d) 160 km.}

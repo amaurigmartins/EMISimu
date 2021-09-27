@@ -62,4 +62,13 @@ F.~Dawalibi and C.~Blattner, ``{Earth Resistivity Measurement Interpretation
   \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4112522}
 \BIBentrySTDinterwordspacing
 
+\bibitem{Southey2005}
+\BIBentryALTinterwordspacing
+R.~Southey and F.~Dawalibi, ``{Improving the Reliability of Power Systems with
+  More Accurate Grounding System Resistance Estimates},'' \emph{Proceedings.
+  International Conference on Power System Technology}, vol.~4, pp. 98--105,
+  2005. [Online]. Available:
+  \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1053512}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

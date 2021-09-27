@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.30)  24 SEP 2021 11:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.30)  27 SEP 2021 11:04
 entering extended mode
 **./wcnps2.tex
 (wcnps2.tex
@@ -1200,31 +1200,33 @@ Package pdftex.def Info: fig/soilmodel.pdf  used on input line 258.
 (pdftex.def)             Requested size: 201.60077pt x 113.52531pt.
  [3 <./fig/Sistema230kV-eps-converted-to.pdf> <./fig/SistTesteCorte.pdf> <./fig
 /soilmodel.pdf>]
-<./fig/FaultInterfError.pdf, id=193, 500.87125pt x 556.0775pt>
+Underfull \vbox (badness 7468) has occurred while \output is active []
+
+ [4]
+<./fig/FaultInterfError.pdf, id=210, 500.87125pt x 556.0775pt>
 File: ./fig/FaultInterfError.pdf Graphic file (type pdf)
 <use ./fig/FaultInterfError.pdf>
-Package pdftex.def Info: ./fig/FaultInterfError.pdf  used on input line 384.
+Package pdftex.def Info: ./fig/FaultInterfError.pdf  used on input line 386.
 (pdftex.def)             Requested size: 277.20154pt x 307.76967pt.
 
-Overfull \hbox (25.20154pt too wide) in paragraph at lines 384--385
+Overfull \hbox (25.20154pt too wide) in paragraph at lines 386--387
  [] 
  []
 
-[4]
-<./fig/FaultInterf.pdf, id=210, 500.87125pt x 556.0775pt>
+<./fig/FaultInterf.pdf, id=211, 500.87125pt x 556.0775pt>
 File: ./fig/FaultInterf.pdf Graphic file (type pdf)
 <use ./fig/FaultInterf.pdf>
-Package pdftex.def Info: ./fig/FaultInterf.pdf  used on input line 392.
+Package pdftex.def Info: ./fig/FaultInterf.pdf  used on input line 394.
 (pdftex.def)             Requested size: 277.20154pt x 307.76967pt.
 
-Overfull \hbox (25.20154pt too wide) in paragraph at lines 392--393
+Overfull \hbox (25.20154pt too wide) in paragraph at lines 394--395
  [] 
  []
 
-<./fig/dispersao.pdf, id=214, 375.4025pt x 375.4025pt>
+<./fig/dispersao.pdf, id=215, 375.4025pt x 375.4025pt>
 File: ./fig/dispersao.pdf Graphic file (type pdf)
 <use ./fig/dispersao.pdf>
-Package pdftex.def Info: ./fig/dispersao.pdf  used on input line 435.
+Package pdftex.def Info: ./fig/dispersao.pdf  used on input line 437.
 (pdftex.def)             Requested size: 176.39923pt x 176.3991pt.
 [5 <./fig/FaultInterfError.pdf> <./fig/FaultInterf.pdf>] (wcnps2.bbl)
 
@@ -1244,10 +1246,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 26957 strings out of 478864
- 485046 string characters out of 2858517
- 906389 words of memory out of 3000000
- 44330 multiletter control sequences out of 15000+600000
+ 26960 strings out of 478864
+ 485115 string characters out of 2858517
+ 906422 words of memory out of 3000000
+ 44332 multiletter control sequences out of 15000+600000
  529011 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,89p,848b,923s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1271,9 +1273,9 @@ fb><C:/Users/caiom/AppData/Roaming/MiKTeX/fonts/type1/bera/fveb8a.pfb><C:/Users
 ta/Roaming/MiKTeX/fonts/type1/bera/fver8a.pfb><C:/Users/caiom/AppData/Roaming/M
 iKTeX/fonts/type1/bera/fver8a.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
 msfonts/symbols/msbm10.pfb>
-Output written on wcnps2.pdf (6 pages, 307317 bytes).
+Output written on wcnps2.pdf (6 pages, 310514 bytes).
 PDF statistics:
- 450 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
+ 456 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.30)  22 SEP 2021 15:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.30)  27 SEP 2021 11:02
 entering extended mode
 **./wcnps.tex
 (wcnps.tex
@@ -1178,11 +1178,11 @@ Package pdftex.def Info: fig/Hummel2.pdf  used on input line 396.
 
 pdfTeX warning: pdflatex.exe (file ./fig/SistTesteCorte.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<fig/SistTesteCorte.pdf, id=196, 369.7815pt x 312.92911pt>
+<fig/SistTesteCorte.pdf, id=196, 341.35529pt x 227.53004pt>
 File: fig/SistTesteCorte.pdf Graphic file (type pdf)
 <use fig/SistTesteCorte.pdf>
 Package pdftex.def Info: fig/SistTesteCorte.pdf  used on input line 434.
-(pdftex.def)             Requested size: 201.60077pt x 170.61221pt.
+(pdftex.def)             Requested size: 201.60077pt x 134.38043pt.
 LaTeX Font Info:    Trying to load font information for TS1+fve on input line 4
 51.
 (C:\Users\caiom\AppData\Roaming\MiKTeX\tex/latex/bera\ts1fve.fd
@@ -1195,18 +1195,12 @@ LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
 pdfTeX warning: pdflatex.exe (file ./fig/Hummel2.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
 >]
-<fig/soilmodel.pdf, id=242, 500.87125pt x 282.05376pt>
-File: fig/soilmodel.pdf Graphic file (type pdf)
-<use fig/soilmodel.pdf>
-Package pdftex.def Info: fig/soilmodel.pdf  used on input line 485.
-(pdftex.def)             Requested size: 201.60077pt x 113.52531pt.
- [5 <./fig/SistTesteCorte.pdf> <./fig/soilmodel.pdf>]
-<fig/Impedance.pdf, id=292, 500.87125pt x 417.56pt>
+<fig/Impedance.pdf, id=243, 500.87125pt x 834.11626pt>
 File: fig/Impedance.pdf Graphic file (type pdf)
 <use fig/Impedance.pdf>
-Package pdftex.def Info: fig/Impedance.pdf  used on input line 540.
-(pdftex.def)             Requested size: 201.60077pt x 168.06595pt.
- (wcnps.bbl [6 <./fig/Impedance.pdf>])
+Package pdftex.def Info: fig/Impedance.pdf  used on input line 549.
+(pdftex.def)             Requested size: 201.60077pt x 335.72792pt.
+ [5 <./fig/SistTesteCorte.pdf> <./fig/Impedance.pdf>] (wcnps.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1218,44 +1212,42 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7
-
-] (wcnps.aux)
+[6] (wcnps.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 27010 strings out of 478864
- 485494 string characters out of 2858517
- 915013 words of memory out of 3000000
- 44358 multiletter control sequences out of 15000+600000
- 534233 words of font info for 162 fonts, out of 8000000 for 9000
+ 26984 strings out of 478864
+ 485090 string characters out of 2858517
+ 914810 words of memory out of 3000000
+ 44343 multiletter control sequences out of 15000+600000
+ 532398 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,89p,1026b,923s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmbx6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmbx7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.
-pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
-sfonts/cmextra/cmmib8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><
-C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fil
-es/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-C:/Users/caiom/AppData/Roaming/MiKTeX/fonts/type1/bera/fveb8a.pfb><C:/Users/cai
-om/AppData/Roaming/MiKTeX/fonts/type1/bera/fveb8a.pfb><C:/Users/caiom/AppData/R
-oaming/MiKTeX/fonts/type1/bera/fver8a.pfb><C:/Users/caiom/AppData/Roaming/MiKTe
-X/fonts/type1/bera/fver8a.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/symbols/msam10.pfb>
-Output written on wcnps.pdf (7 pages, 407743 bytes).
+/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6
+.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Progr
+am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/User
+s/caiom/AppData/Roaming/MiKTeX/fonts/type1/bera/fveb8a.pfb><C:/Users/caiom/AppD
+ata/Roaming/MiKTeX/fonts/type1/bera/fveb8a.pfb><C:/Users/caiom/AppData/Roaming/
+MiKTeX/fonts/type1/bera/fver8a.pfb><C:/Users/caiom/AppData/Roaming/MiKTeX/fonts
+/type1/bera/fver8a.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb>
+Output written on wcnps.pdf (6 pages, 432619 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 412 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

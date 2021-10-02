@@ -1,0 +1,739 @@
+%% pscc2022_template.tex, V1.1, 2019/03/11
+%% by Mario Paolone
+%% This is a Latex template to prepare submissions for the PSCC 2022 conference. 
+%% The template demonstrates the use of the class IEEEtran4PSCC.cls and is mostly
+%% based on the file bare_conf.tex (V1.4a) by Michael Shell.
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall PSCC or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the PSCC.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.Latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: pscc2022_template.tex, IEEEtran4PSCC.cls
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work.                 ***
+
+
+\documentclass{IEEEtran4PSCC}
+% The automatically selected options are the format (US letter) and conference mode.
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/Latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from Latex to pdfLatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% 'compressed/ranged'. e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/Latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+   \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/tex-archive/macros/Latex/required/graphics/
+% Another good source of documentation is 'Using Imported Graphics in
+% LaTeX2e' by Keith Reckdahl which can be found at:
+% http://www.ctan.org/tex-archive/info/epsLatex/
+%
+% Latex, and pdfLatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdfLatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in 'jaggedy'/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+\usepackage{xcolor}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/Latex/required/amsLatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+% \usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/Latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/Latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/Latex/required/tools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's 'caption=false' package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/Latex/contrib/subfig/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/Latex/base/
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., '\begin{figure*}[!b]' is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/Latex/contrib/sttools/
+% Do not use the stfloats baselinefloat ability as IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/tex-archive/macros/Latex/contrib/dblfloatfix/
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+% \usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/Latex/contrib/url/
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as psLatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage[bookmarks=false]{hyperref}
+\usepackage{amsmath}
+\usepackage{stfloats}
+
+% Set footer
+\makeatletter
+\let\old@ps@headings\ps@headings
+\let\old@ps@IEEEtitlepagestyle\ps@IEEEtitlepagestyle
+\def\psccfooter#1{%
+    \def\ps@headings{%
+        \old@ps@headings%
+        \def\@oddfoot{\strut\hfill#1\hfill\strut}%
+        \def\@evenfoot{\strut\hfill#1\hfill\strut}%
+    }%
+    \def\ps@IEEEtitlepagestyle{%
+        \old@ps@IEEEtitlepagestyle%
+        \def\@oddfoot{\strut\hfill#1\hfill\strut}%
+        \def\@evenfoot{\strut\hfill#1\hfill\strut}%
+    }%
+    \ps@headings%
+}
+\makeatother
+
+\psccfooter{%
+        \parbox{\textwidth}{\hrulefill \\ \small{22nd Power Systems Computation Conference} \hfill \begin{minipage}{0.2\textwidth}\centering \vspace*{4pt} \includegraphics[scale=0.06]{PSCC_logo.png}\\\small{PSCC 2022} \end{minipage} \hfill \small{Porto, Portugal --- June 27 -- July 1, 2022}}%
+}
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Total AC Interferences Between a Power Line Subject to a Single-Phase Fault and a Nearby Pipeline with Multilayered Soil}
+
+
+%% To specify the authors when (number of affiliations <= 2)
+\author{
+\IEEEauthorblockN{Caio M. Moraes\\ Gustavo H. de Sá Matos \IEEEauthorrefmark{1}\\ Amauri G. Martins-Britto \\ Kleber M. Silva}
+\IEEEauthorblockA{Department of Electrical Engineering \\
+University of Brasília, UnB\\
+Brasília, Brazil\\
+\{moraes.caio@aluno., amaurigm@, klebermelo@\}unb.br, gustavodesamatos@gmail.com\IEEEauthorrefmark{1}}
+}
+
+
+%% To specify the authors when (number of affiliations > 2)
+% \author{\IEEEauthorblockN{Author n.1\IEEEauthorrefmark{1},
+% Author n.2\IEEEauthorrefmark{2},
+% Author n.3\IEEEauthorrefmark{3}, 
+% Author n.4\IEEEauthorrefmark{3} and
+% Author n.5\IEEEauthorrefmark{4}}
+% \IEEEauthorblockA{\IEEEauthorrefmark{1} Department Name of Organization A\\
+% Name of the organization A,
+% Address A\\ Emails if wanted}
+% \IEEEauthorblockA{\IEEEauthorrefmark{2} Department Name of Organization B\\
+% Name of the organization B,
+% Address B\\ Emails if wanted}
+% \IEEEauthorblockA{\IEEEauthorrefmark{3} Department Name of Organization C\\
+% Name of the organization C,
+% Address C\\ Emails if wanted}
+% \IEEEauthorblockA{\IEEEauthorrefmark{4}Department Name of Organization D\\
+% Name of the organization D,
+% Address D\\ Emails if wanted}
+% }
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+This paper describes the problem of electromagnetic interferences between power lines and metallic structures, caused by inductive and conductive coupling mechanisms, and the main risks to which personnel and facilities are exposed. An EMTP-based implementation is proposed to predict induced voltage levels on a target circuit, due to interferences caused by overhead power lines under steady-state nominal load as well as fault conditions, using generalized formulas to represent the N-layered soil. Results are tested by means of a case study of a real right-of-way shared and comparisons with results obtained using industry-standard software. Results show that the proposed method is accurate, with errors smaller than 8\%. Stress voltage values in the interfered pipeline are the order of 50 kV, exposing the structure  coating to risk of breakdown, which may lead to corrosion and pipeline failure. A mitigation is designed and proven to reduce voltage values to safe levels, in compliance with the nominal limits from the manufacturer.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Electromagnetic interferences, Electromagnetic Transient Program (EMTP), pipelines, single-phase fault and TLs.
+\end{IEEEkeywords}
+
+
+% Use this to place sponsorships
+
+
+\section{Introduction}
+
+
+Due to the trend of sharing right-of-ways with other facilities, forming the so called utility corridors, and the energy levels involved, transmission lines (TLs) may induce currents in nearby metal structures that are not designed to conduct electricity. This effect may raise risks to metallic installations neighboring the TLs through three types of electromagnetic interference (EMI) mechanisms: inductive, conductive and capacitive couplings \cite{CIGREWG36}.
+
+EMIs are influenced by current levels flowing through TL conductors, length of exposure, soil characteristics and constructive aspects of the facilities involved \cite{CIGREWG36}. 
+
+Serious design errors may occur if these EMI are not properly addressed, exposing personnel and installations to risks, which justifies the efforts in developing reliable and realistic simulation models.
+
+EMI studies addressed in literature generally represent the soil as semi-infinite and homogeneous structure or represent N-layered soils by equivalent homogeneous models. This  approach is reported to yield inaccuracies in a variety of practical cases, due to the multilayered characteristic of natural soils. Moreover, to the best of the author's knowledge, there is no report in the specialized EMI literature accounting for arbitrary multilayered soil models within the EMTP-based paradigm \cite{Qi2013,Wu2017,Alexandru2020}.
+
+This paper presents an EMTP-based implementation for inductive and conductive coupling studies caused by a TL under nominal load and phase-to-ground fault conditions with multilayered soil models.
+
+Self and mutual impedance calculations are based on a generalized solution for overhead and buried conductors considering N-layered soils, proposed by Tsimiatros et al \cite{Tsiamitros2008a}.
+
+To properly account for earth conduction effects, the generalized N-layered Green's function, proposed by He et al. \cite{He2012} and Li et al. \cite{Li2006}, is used to represent the ground potential rise along the interfered structure, due to currents flowing into the soil under fault conditions.
+
+The proposed implementation is leveraged to analyze the case of a real right-of-way in Brazil, shared between a 138 kV TL and an underground metallic pipeline. A 3-layered soil model is determined from local resistivity measurements. The proposed method is used to calculate the resulting stress voltages due to a phase-to-ground fault. 
+
+The obtained results are compared with CDEGS and present NRMSD errors of less than 8\% in the cases analyzed. Stress voltages in the pipeline coating reached values close to 50 kV, which subjects the installation to risks that must be addressed according to safety standards. 
+
+Then, further simulations are performed to design a mitigation solution to reduce stress voltage levels along the interfered pipeline, which is demonstrated to reduce the initial stress voltage approximately in 50\%, thus ensuring compliance with industry standards.
+
+\section{Mathematical Model}
+
+\subsection{Inductive coupling}
+
+Currents flowing in an energized conductor produces a time-varying magnetic field, as shown in Fig. \ref{fig:InductiveCoupling}. This time-varying magnetic field causes electromotive forces (EMFs) and its induces voltage and current on a metallic structure laid parallelly to the energized conductor. This electromagnetic phenomenon is known as inductive coupling \cite{CIGREWG36}.
+
+The inductive influence of a transmission line conductor on a nearby pipeline depends on the current magnitude, distance between structures, exposure length, soil resistivity, as well as the characteristics of installations involved \cite{CIGREWG36}.
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/induc_coup.pdf}
+		\caption{Inductive coupling phenomenon, adapted from \cite{Martins-Britto2020}.}
+		\label{fig:InductiveCoupling}
+	\end{center}
+\end{figure}
+
+The induced EMF ($E$) is given by \cite{CIGREWG36}:
+
+\begin{equation}
+		E = Z_{m} \times I
+\end{equation}
+
+\noindent in which $Z_{m}$ is the mutual impedance matrix of system, in ohms.meter; $I$ is the current in the energized conductor, in ampères; and $E$ is the EMF in the target metallic structure, in volts per meter.
+
+\subsection{Mutual impedance for N-layered soil}
+
+\begin{figure*}[b]
+	\hrulefill
+	\begin{equation}\label{eq:Zij}
+		\begin{aligned}
+			Z_{i,j} = {} & \frac{j\omega\mu_{m}}{2\pi}\int_{0}^{\infty} \frac{cos(uy_{i,j})}{\bar\alpha_{m}} \times \left\{2^{m-l}\frac{(\mu_{1}\mu_{2}\dots\mu_{m-1})(\bar\alpha_{1}\bar\alpha_{2}\dots\bar\alpha_{m})(e^{-\bar\alpha_{l}d_{l}}e^{-\bar\alpha_{l+1}d_{l+1}}\dots e^{-\bar\alpha_{m}d_{m}})}{(\mu_{1}\mu_{2}\dots\mu_{l-1})(\bar\alpha_{1}\bar\alpha_{2}\dots\bar\alpha_{l})}\cdot\frac{\bar{F_{1}}\bar{F_{2}}}{D\bar{T}D_{0}}\right\}du,	\\
+			\bar{F_{1}} = {} & [D\bar{T}D_{m} e^{\bar{\alpha}_{m}(d_{m}-h_{1})} + D\bar{T}N_{m}e^{-\bar{\alpha}_{m}(d_{m}-h_{1})}], \\			
+			\bar{F_{2}} = {} & [T\bar{D}D_{l-1}e^{\bar{\alpha}_{1}h_{2}} + T\bar{D}N_{l-1}e^{-\bar{\alpha}_{1}h_{2}}].
+		\end{aligned}
+	\end{equation}
+\end{figure*}
+
+
+The mutual impedance, described by each element of matrix $Z_{m}$, are calculated based on a generalized solution proposed by Tsiamitros et al. \cite{Tsiamitros2008a}. The generalized solution is a wide solution in comparison to the well-known Carson's \cite{Carson1926}, Nakagawa's \cite{Nakagawa} and Pollaczek's \cite{Pollaczek1926} formulas due to cover complex configurations composed of both overhead and buried conductors on N-layered earth. 
+
+Fig. \ref{fig:NlayeredSoil} illustrates two conductors $i$ and $j$ in an N-layer earth structure, in each $i^{th}$ earth layer has permeability ($\mu_{i}$), permittivity ($\epsilon_{i}$), conductivity ($\sigma_{i}$) and thickness ($d_{i}$). The conductors are assumed buried in the $m^{th}$ and $l^{th}$ layer of the N-layer earth, respectively. The per unit length mutual impedance $Z_{i,j}$, is calculated from (\ref{eq:Zij}), in which $\omega = 2\pi f$ is the angular velocity, in radians per seconds; $h_{1}$ and $h_{2}$ are relative height to superior layers $m$ and $l$, respectively, in meters; $y_{i,j}$ is the horizontal distance between the conductor $i$ and $j$, in meters; and $\bar{\alpha}_{i} = \sqrt{u^2 + \bar{\gamma}_{i}^{2}}$, $\bar{\gamma}_{i}^{2} = j\omega\mu_{i}(\sigma_{i} + j\omega\epsilon_{i})$, which $i = 0,1,2,\dots,N$ \cite{Tsiamitros2008a}.
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/multilayered_soil.pdf}
+		\caption{Two underground conductors in N-layered soil.}
+		\label{fig:NlayeredSoil}
+	\end{center}
+\end{figure}
+
+The terms $D\bar{T}N_{i}$, $D\bar{T}D_{i}$, $T\bar{D}N_{k}$ and $T\bar{D}D_{k}$, given in (\ref{eq:DTN})-(\ref{eq:TDN}), relate the electromagnetic and geometrical characteristics of the succendent layers, in which $i = 0,1,2,\dots,N$ and $k = 0,1,2,\dots,m$. The first letters of the terms TD ("Top to Down") and DT ("Down to Top") denotes the direction of the recursive formulas and the latter D ("Denominator") and N ("Numerator") denotes which usually appears the terms during the analysis \cite{Tsiamitros2008a}.
+
+\begin{equation}\label{eq:DTN}
+	\begin{aligned}
+		D\bar{T}N_{i} = {} & (\mu_{i+1}\bar\alpha_{i} - \mu_{i}\bar\alpha_{i+1})D\bar{T}D_{i+1} \\
+		& + (\mu_{i+1}\bar\alpha_{i} + \mu_{i}\bar\alpha_{i+1})D\bar{T}N_{i+1}e^{-2\bar\alpha_{i+1}d_{i+1}},
+	\end{aligned}
+\end{equation}  
+
+\begin{equation}
+	\begin{aligned}
+		D\bar{T}D_{i} = {} & (\mu_{i+1}\bar\alpha_{i} + \mu_{i}\bar\alpha_{i+1})D\bar{T}D_{i+1} \\
+		& + (\mu_{i+1}\bar\alpha_{i} - \mu_{i}\bar\alpha_{i+1})D\bar{T}N_{i+1}e^{-2\bar\alpha_{i+1}d_{i+1}},
+	\end{aligned}
+\end{equation} 
+
+\begin{equation}
+	D\bar{T}N_{N} = 0,
+\end{equation}
+
+\begin{equation}
+	D\bar{T}D_{N} = 1,
+\end{equation}
+
+\begin{equation}
+	T\bar{D}D_{-1} = 1,
+\end{equation}
+
+\begin{equation}
+	T\bar{D}N_{-1} = 0,
+\end{equation}
+
+\begin{equation}
+	\begin{aligned}
+		T\bar{D}D_{k-1} = {} & (\mu_{k-1}\bar\alpha_{k} + \mu_{k}\bar\alpha_{k-1})T\bar{D}D_{k-2} \\
+		& + (\mu_{k-1}\bar\alpha_{k} - \mu_{k}\bar\alpha_{k-1})T\bar{D}N_{k-2}e^{-2\bar\alpha_{k-1}d_{k-1}},
+	\end{aligned}
+\end{equation} 
+
+\begin{equation}\label{eq:TDN}
+	\begin{aligned}
+		T\bar{D}N_{k-1} = {} & (\mu_{k-1}\bar\alpha_{k} - \mu_{k}\bar\alpha_{k-1})T\bar{D}D_{k-2} \\
+		& + (\mu_{k-1}\bar\alpha_{k} + \mu_{k}\bar\alpha_{k-1})T\bar{D}N_{k-2}e^{-2\bar\alpha_{k-1}d_{k-1}}.
+	\end{aligned}
+\end{equation}
+
+
+
+
+The coefficients described in (\ref{eq:DTN})-(\ref{eq:TDN}) are determined by a recursive function dependent on earth layer and positions of conductor $i$ and $j$, which determines integrate final form in (\ref{eq:Zij}). 
+
+For calculate self impedance of conductor $i$ using (\ref{eq:Zij}), is just necessary set $m = l$ and replace the horizontal distance with cable outer radius and $h_{2}$ with $h_{1}$ \cite{Tsiamitros2008a}.
+
+The numerical solution for improper integral, presented in (\ref{eq:Zij}), is reported in \cite{Shampine2008}, using adaptive quadrature.
+
+
+
+\subsection{Conductive coupling}
+
+The conductive coupling is a ground potential rise (GPR) caused by current injection into the soil by a transmission line or substation during fault condition which involves the earth, as shown in Fig. \ref{fig:ConductiveCoupling} \cite{CIGREWG36}.
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/condu_coup.pdf}
+		\caption{Conductive coupling phenomenon, adapted from \cite{Martins-Britto2020}.}
+		\label{fig:ConductiveCoupling}
+	\end{center}
+\end{figure} 
+
+The current flowing into earth through the transmission line grounding counterpoises produces a GPR, which appears in the form of voltage gradient around the grounding conductors. If a target structure is inside the region affected by the GPR, voltages may rise and be hazardous for the installation.
+
+\begin{figure*} [t]
+
+	\begin{equation}\label{eq:Green}
+		\hat{G}_{i,j}(P,O) =  \frac{\rho_{i}}{4\pi} \left( \int_{0}^{\infty}A_{i,j}(\lambda)\hat{J}_{0}(\lambda r) e^{-\lambda z}d\lambda  + \int_{0}^{\infty} B_{i,j}(\lambda)\hat{J}_{0}(\lambda r) e^{\lambda z}d\lambda +  \int_{0}^{\infty} \delta(ij)\hat{J}_{0}(\lambda r) e^{-\lambda |z|}d\lambda \right)
+	\end{equation}
+	\hrulefill
+\end{figure*}
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/green_nla.pdf}
+		\caption{Point source at $i^{th}$ layer with observation point at $j^{th}$.}
+		\label{fig:Greens}
+	\end{center}
+\end{figure}
+
+This EMI is influenced by short-circuit levels, quantity and type of shield wires, distance between the installations, grounding electrode geometry and soil resistivity \cite{CIGREWG36}.
+
+Martins-Britto \cite{Martins-Britto2020} proposed a circuit model for account conductive coupling in buried conductors using Green's function, proposed by He et al. \cite{He2012} and Li et al. \cite{Li2006}, which calculate a GPR in stratified soil. The circuit model considers a source voltage controlled by current connected to conductors coating impedance \cite{Martins-Britto2020}.
+
+According to the principle of superposition, the ground potential rise $U_{P}$ in a target point $P$ caused by  the sum of current injection $I$ into soil in an observation point $O_{j}$, is given by \cite{Li2006}:
+
+\begin{equation}
+	U_{P} = \sum_{j=1}^{N} \hat{G}(P,O_{j})\cdot I_{j},
+\end{equation} 
+
+\noindent in which $U_{P}$ is the potential rise at target point $P$, in volts; $O_{j}$ are the spatial coordinates of the $j^{th}$ observation point $O$; and $\hat{G}(P,O_{j})$ is a special function that describes the potential produced at point $P$ by a unit point current source located at point $O_{j}$, known as Green's function \cite{Li2006,Martins-Britto2020}.
+
+\subsection{Green's function for N-layered soil}
+
+The Green's function in an earth structure with $N$ horizontal layers is reported in \cite{He2012,Li2006}. If the source point is located in the $i^{th}$ layer and the observation point is in $j^{th}$, Green's function general form is written in (\ref{eq:Green}), in which $r = \sqrt{(x_{O} - x_{P})^{2} + (y_{O} - y_{P})^{2}}$ is the radius in $xy$ plane; $z = z_{O} - z_{P}$ is the depth distance between point $O$ and $P$; $\rho_{i}$ is the resistivity of the $i^{th}$ layer, in ohms.meter; $\hat{J}_{0}$ is the Bessel function of the first kind and order zero; and $\delta(ij)$ is the Kronecker delta, defined as equal to 1 if $i=j$ and to 0 otherwise \cite{Li2006}.
+
+Green's function coefficients $A_{i,j}$ and $B_{i,j}$ are determined by boundary conditions between surrounding earth layers, also air layer (0-layer) and deep layer ($N$-layer), as described in:
+
+\begin{equation}
+	\hat{G}_{i,j}(r,z)\vert_{z = H_{j} - d} = \hat{G}_{i,j+1}(r,z)\vert_{z = H_{j} - d},
+\end{equation}
+
+\begin{equation}
+	\frac{1}{\rho_{j}}\frac{\partial \hat{G}_{i,j}(r,z)}{\partial z}\bigg\vert_{z = H_{j} - d} = \frac{1}{\rho_{j+1}}\frac{\partial \hat{G}_{i,j+1}(r,z)}{\partial z}\bigg\vert_{z = H_{j} - d},
+\end{equation}
+
+\begin{equation}
+	\hat{G}_{i,N}(r,z)\vert_{z\rightarrow \infty} = 0,
+\end{equation}
+
+\begin{equation}
+	\frac{\partial \hat{G}_{i,0}(r,z)}{\partial z}\bigg\vert_{z\rightarrow \infty} = 0,
+\end{equation}
+
+\noindent in which $i=1,2,\dots,N$ and $H_{0} = 0$.
+
+\subsection{Stress voltage}
+
+The target conductor located on earth and nearby a transmission line is subjected to two distinct electromagnetic influences under fault conditions. The total voltage transferred to the interfered conductor is the potential difference between the voltage caused by inductive coupling and by conductive coupling, or \cite{IEEEStd80}:
+
+\begin{equation} \label{eq:Vs}
+	V_{S} = E_{T} - U_{P},
+\end{equation}  
+
+\noindent in which $V_{S}$ is the total stress voltage, in volts; $E_{T}$ is the potential of the target conductor resulting from inductive coupling, in volts; and $U_{P}$ is the local earth potential rise, in volts.
+
+\section{Description of the Real Case Scenario}\label{sec:ScenarioDescription}
+
+Fig. \ref{fig:Right-of-Way} illustrates a 1.2 km shared right-of-way composed by a 138 kV transmission line and an underground pipeline, in an industrial area of São Paulo, Brazil. Under nominal load condition, the double-circuit transmission line is energized with ABC/ABC sequence, 60 Hz frequency and current of 780 A per phase. In the path analyzed, the transmission line is constituted of 13 towers, which each is grounded through 15 $\Omega$ electrodes, and 2 substations in extremities, which each is grounded through 1 $\Omega$ electrodes. The transmission line side view and the conductor coordinates are presented in Fig. \ref{fig:TowerGeometry}.
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/right-of-way.pdf}
+		\caption{Shared right-of-way between transmission line and pipeline in Brazil.}
+		\label{fig:Right-of-Way}
+	\end{center}
+\end{figure}
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/mutual_impedance.pdf}
+		\caption{System geometry.}
+		\label{fig:TowerGeometry}
+	\end{center}
+\end{figure}
+ 
+The underground pipeline is constructed in 14" diameter carbon steel and is located in 1.2 meters above ground. The pipeline is grounded in its extremities through 10 $\Omega$ resistances. The characteristics of transmission line conductors and the pipeline are presented in Table \ref{tab:ConductorsCharacteristics}.
+
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.3}
+	\centering
+	\caption{Specification and characteristics of system conductors}
+	\footnotesize
+	\begin{tabular}{cccc}
+		\hline
+		\textbf{Conductor}         & \textbf{\boldmath{$r_{out}$ [m]}} & \textbf{\boldmath{$r_{in}$ {[}m{]}}} & \textbf{\boldmath{$R_{DC}${[}$\Omega/km${]}}} \\ \hline
+		{ACSR Grosbeak}     & 0.0125705                        & 0.0046355                        & 0.0924806                          \\
+		{Steel 3/8" EHS-CG} & 0.004572                         & -                                & 3.42313                            \\
+		{Pipe 14"}          & 0.1778                           & 0.168275                         & 0.099516                          \\ \hline
+	\end{tabular}
+	\label{tab:ConductorsCharacteristics}
+\end{table}
+
+The soil is modeled in a 3-layer structure based on apparent resistivities measurements in the right-of-way location. The specifications of the layers resistivities and thickness are presented in Table \ref{tab:SoilParameters}.
+
+ 
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.3}
+	\centering
+	\caption{Soil parameters}
+	\footnotesize
+	\begin{tabular}{ccc}
+		\hline
+		\textbf{Layer}         & \textbf{Resistivity [\boldmath{$\Omega$}.m]} & \textbf{Thickness [m]}  \\ \hline
+		1     & 488.71                        & 1.73                       \\ 
+		2     & 2074.66                         & 8.99                               \\
+		3     & 451.41                           & $\infty$                         \\ \hline
+	\end{tabular}
+	\label{tab:SoilParameters}
+\end{table}
+
+\section{Real Case Study Under Nominal Load Conditions}
+
+\subsection{Nominal load EMTP equivalent circuit}
+
+Due to the shared right-of-way is composed of obliquities, crossings and parallelisms, the right-of-way is subdivided and, for each subdivided segment, is calculated a parallalel equivalent segment, as described in detal in \cite{Moraes2020}. The transmission line is modeled as a series of Line Constants (LCCs) blocks, in which is inserted the parallel segment parameters, respectively. Fig. \ref{fig:NLcircuit} presents the simplified circuit for nominal load simulation, which source of Transient Analysis of Control Systems (TACS) represents sum of the EMFs in phase conductors and shield wires. The current probe of TACS is placed to measure current in each LCC out and the current values are used to build EMFs sources in the interfered conductor, represented in the inferior part of Fig. \ref{fig:NLcircuit}.
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/NL_circuit.pdf}
+		\caption{Nominal load EMTP simplified model representation.}
+		\label{fig:NLcircuit}
+	\end{center}
+\end{figure}
+
+It is important to notice that this proposed model do not consider the interferences in the transmission line caused by the pipeline coupling influences. However, a low current flows along pipeline compared to the transmission line currents, then the pipeline influences on transmission line is considered negligible. 
+
+\subsection{Nominal load simulation results}
+
+Fig. \ref{fig:NLvoltage} shows induced voltage along the pipeline using the proposed model, as well as comparative responses with the EMI reference software CDEGS \cite{Dawalibi1984a}. 
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/NL_voltage.pdf}
+		\caption{Induced voltage along pipeline under nominal load conditions.}
+		\label{fig:NLvoltage}
+	\end{center}
+\end{figure}
+
+Results shows that the proposed model agreed with the reference software, presenting a 7.35\% normalized root-mean-square deviation (NRMSD).
+
+Due to the grounding resistance in pipeline extremities, the induced voltage do not exceed the safety limit of 15 V in steady-state regime \cite{NACEInternational2007}. Grounding resistances provides a safe path to the induced currents to earth, which prevent risks to the interfered installation. 
+
+\section{Real Case Study Under Fault Conditions}
+
+In order to study the ground potential rise and total stress voltage, is applied a phase-to-ground fault to the system presented in Section \ref{sec:ScenarioDescription}.
+
+\subsection{Fault regime EMTP equivalent circuit}
+
+The transient regime is caused by a phase-to-ground fault located at 7\# tower. A 0.001 $\Omega$ resistance value is chosen to represent a short-circuit between the phase B conductor and earth.
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/Fault_circuit.pdf}
+		\caption{EMTP simplified model representation for fault regime study.}
+		\label{fig:FaultCircuit}
+	\end{center}
+\end{figure}
+
+Fig. \ref{fig:FaultCircuit} shows the simplified equivalent circuit for fault conditions. The model is constructed as in nominal load condition, described in the previous section. However, others sources of TACS are connected to the pipeline coating impedance to represent the ground potencial rise due to the conductive coupling. The current probe of TACS measure the current flowing through each tower grounding impedance to earth.
+
+\subsection{Results from fault conditions simulation}
+
+The total stress voltage, the potential resulting from inductive coupling and the local earth potential rise due to the phase-to-ground fault are presented in Fig. \ref{fig:Faultvoltage}.
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/Fault_voltage.pdf}
+		\caption{Pipeline voltage due to: (a) inductive coupling; (b) GPR; and (c) total stress.}
+		\label{fig:Faultvoltage}
+	\end{center}
+\end{figure}
+
+The obtained results for ground potential rise and total stress voltage agreed with the reference software, with 1.42\% and 1.21\% of NRMSD, respectively. The induced voltage presented 21.17\% of deviation. However, measure the deviation from relative error is more appropriated due to the voltage behavior tend to a constant value. Considering relative error, the induced voltage presented a deviation of 5.5\%.
+
+The total stress voltage along the pipeline reaches 43.9 kV nearby fault location, which may cause breakdown of the dielectric of the coating layer, exposing the metal to electrochemical corrosion \cite{NACEInternational2007}. Modern pipeline coatings are designed to withstand a voltage limit of 25 kV \cite{NACEInternational2007}.
+
+The currents flowing to shield wire and to the ground through tower grounding are shown in Fig. \ref{fig:Faultcurrent}. The higher currents are presented in the faulted tower (7\# tower). Great values of voltage are observed in virtue of the magnitudes of short-circuit contribution currents, as well as the currents injected to the soil provides the potential rise to the nearby pipeline.   
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/Fault_current.pdf}
+		\caption{(a) Grounding currents; and (b) currents flowing in the shield wire.}
+		\label{fig:Faultcurrent}
+	\end{center}
+\end{figure}
+
+\section{Mitigation Study}
+
+As the total stress in steady-state fault regime extrapolated standard limits, which may present risks to the pipeline coating, a mitigation strategy is proposed. The proposed mitigation consists of connect the pipeline in specific points to the earth through grounding electrodes with low resistances values ($\leq 10$ $\Omega$). This method is used to transfer the ground potential rise to the metal pipe, then the difference in (\ref{eq:Vs}) will reduce and, consequently, the total stress in this specific points will reduce. 
+
+In the case present in this paper, the hazardous region is located at 450 to 650 meters on the pipeline path. In the hazardous region, for each 40 meters is connected a 1 $\Omega$ grounding resistance between the pipeline and earth, resulting 5 electrodes in total. Fig. \ref{fig:Mitvoltage} present the comparison between the pipeline voltages after and before mitigation.    
+
+\begin{figure}[hbt]
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{./fig/Mit_voltage2.pdf}
+		\caption{Comparison of pipeline voltages after and before mitigation due to: (a) inductive coupling; (b) GPR; and (c) total stress.}
+		\label{fig:Mitvoltage}
+	\end{center}
+\end{figure}
+
+Is observed that the proposed mitigation reduce the stress voltage to 21 kV meeting the safety criteria adopted in pipeline industry \cite{NACEInternational2007}. 
+
+It is important to notice that the mitigation method decreases the stress voltages in intended location. However, in regions out of the mitigation the potential in the pipeline rises. Also, the induced voltage due to inductive coupling reaches 33 kV, approximately 6.6 times superior to the original case.
+
+Then, obtained responses using the mitigation strategy discussed is valid, although is interesting known that this strategy implies other complications and its may be lead to other hazardous situations to the installation and people involved.
+
+\section{Conclusions}
+
+This work presents a EMTP-based circuit approach to predict total stress voltage in a pipeline due to a transmission line phase-to-ground fault. The proposed method is based on formulations which considers multilayered soils without approximations or uniform equivalents. 
+
+To validate the proposed methodology, a real shared right-of-way composed of an underground pipeline and a double-circuit 138 kV transmission line is modeled, under nominal conditions and fault conditions. 
+
+Results show that the methodology is valid and accurated under both nominal and fault conditions, presenting 7.35\% of deviation compared to an electromagnetic influences industry-standard software.
+
+Under nominal conditions, peak of induced voltage reaches 6 V and its considered a safe value to the facilities and employees involved. However, in steady-state fault regime, the stress voltage reaches 43 kV, which may be hazardous for the pipeline coating and disagree with the nominal limits established for the industry. 
+
+For this reason, further studies was simulated and a mitigation is designed to the real case presented. The method consisted in connect grounding electrodes in the region of the pipeline which reaches hazardous values. The results obtained proved that the mitigation method is valid, which decreased 47\% of the peak values leading the stress voltage under to the 25 kV safe limit. However, is important to notice that this mitigation method rises the stress voltage out of the mitigated region, which may implies in others hazardous situations.        
+
+\bibliographystyle{IEEEtran}
+\nocite{*}
+\bibliography{refs}
+
+\end{document}
+
+

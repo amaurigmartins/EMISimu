@@ -319,7 +319,7 @@
 \IEEEauthorblockA{Department of Electrical Engineering \\
 University of Brasília, UnB\\
 Brasília, Brazil\\
-\{moraes.caio@aluno., amaurigm@, klebermelo@\}unb.br, gustavodesamatos@gmail.com\IEEEauthorrefmark{1}}
+\{caiomoraes@lapse., amaurigm@, klebermelo@\}unb.br, gustavodesamatos@gmail.com\IEEEauthorrefmark{1}}
 }
 
 
@@ -350,11 +350,11 @@ Brasília, Brazil\\
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-This paper describes the problem of electromagnetic interferences between power lines and metallic structures, caused by inductive and conductive coupling mechanisms, and the main risks to which personnel and facilities are exposed. An EMTP-based implementation is proposed to predict induced voltage levels on a target circuit, due to interferences caused by overhead power lines under steady-state nominal load as well as fault conditions, using generalized formulas to represent the N-layered soil. Results are tested by means of a case study of a real right-of-way shared and comparisons with results obtained using industry-standard software. Results show that the proposed method is accurate, with errors smaller than 8\%. Stress voltage values in the interfered pipeline are the order of 50 kV, exposing the structure  coating to risk of breakdown, which may lead to corrosion and pipeline failure. A mitigation is designed and proven to reduce voltage values to safe levels, in compliance with the nominal limits from the manufacturer.
+This paper describes the problem of electromagnetic interferences between power lines and metallic structures, caused by inductive and conductive coupling mechanisms, and the main risks to which personnel and facilities are exposed. An EMTP-based implementation is proposed to predict induced voltage levels on a target circuit, due to interferences caused by overhead power lines under steady-state nominal load, as well as fault conditions, using generalized formulas to represent the N-layered soil. Results are tested by means of a case study of a real shared right-of-way project and comparisons with results obtained using industry-standard software. Results show that the proposed method is accurate, with errors smaller than 8\%. Stress voltage values in the interfered pipeline are the order of 50 kV, exposing the structure  coating to risk of breakdown, which may lead to corrosion and pipeline failure. A mitigation is designed and proven to reduce voltage values to safe levels, in compliance with the nominal limits from the manufacturer.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Electromagnetic interferences, Electromagnetic Transient Program (EMTP), pipelines, single-phase fault and TLs.
+Electromagnetic interferences, Electromagnetic Transient Program (EMTP), pipelines, single-phase fault and transmission lines.
 \end{IEEEkeywords}
 
 
@@ -364,13 +364,14 @@ Electromagnetic interferences, Electromagnetic Transient Program (EMTP), pipelin
 \section{Introduction}
 
 
-Due to the trend of sharing right-of-ways with other facilities, forming the so called utility corridors, and the energy levels involved, transmission lines (TLs) may induce currents in nearby metal structures that are not designed to conduct electricity. This effect may raise risks to metallic installations neighboring the TLs through three types of electromagnetic interference (EMI) mechanisms: inductive, conductive and capacitive couplings \cite{CIGREWG36}.
+Overhead transmission lines (TLs) are large structures and
+require large right-of-ways which often extend for several hundred kilometers. Due to the trend of sharing space with other facilities, forming the so called utility corridors, and the energy levels involved,  TLs may induce currents in nearby metal structures that are not designed to conduct electricity. This effect may raise risks to metallic installations neighboring the TLs through three types of electromagnetic interference (EMI) mechanisms: inductive, conductive and capacitive couplings \cite{CIGREWG36}.
 
 EMIs are influenced by current levels flowing through TL conductors, length of exposure, soil characteristics and constructive aspects of the facilities involved \cite{CIGREWG36}. 
 
 Serious design errors may occur if these EMI are not properly addressed, exposing personnel and installations to risks, which justifies the efforts in developing reliable and realistic simulation models.
 
-EMI studies addressed in literature generally represent the soil as semi-infinite and homogeneous structure or represent N-layered soils by equivalent homogeneous models. This  approach is reported to yield inaccuracies in a variety of practical cases, due to the multilayered characteristic of natural soils. Moreover, to the best of the author's knowledge, there is no report in the specialized EMI literature accounting for arbitrary multilayered soil models within the EMTP-based paradigm \cite{Qi2013,Wu2017,Alexandru2020}.
+EMI studies reported in the literature generally represent the soil as semi-infinite and homogeneous structure or represent N-layered soils by equivalent homogeneous models. This  approach is reported to yield inaccuracies in a variety of practical cases, due to the multilayered characteristic of natural soils  \cite{Qi2013,Wu2017,Alexandru2020}. Moreover, to the best of the author's knowledge, there is no report in the specialized EMI literature accounting for arbitrary multilayered soil models within the EMTP-based paradigm.
 
 This paper presents an EMTP-based implementation for inductive and conductive coupling studies caused by a TL under nominal load and phase-to-ground fault conditions with multilayered soil models.
 
@@ -380,7 +381,7 @@ To properly account for earth conduction effects, the generalized N-layered Gree
 
 The proposed implementation is leveraged to analyze the case of a real right-of-way in Brazil, shared between a 138 kV TL and an underground metallic pipeline. A 3-layered soil model is determined from local resistivity measurements. The proposed method is used to calculate the resulting stress voltages due to a phase-to-ground fault. 
 
-The obtained results are compared with CDEGS and present NRMSD errors of less than 8\% in the cases analyzed. Stress voltages in the pipeline coating reached values close to 50 kV, which subjects the installation to risks that must be addressed according to safety standards. 
+The obtained results are compared with software CDEGS and present RMS errors of less than 8\% in the cases analyzed. Stress voltages in the pipeline coating yield values close to 50 kV, which subjects the installation to risks that must be addressed according to safety standards. 
 
 Then, further simulations are performed to design a mitigation solution to reduce stress voltage levels along the interfered pipeline, which is demonstrated to reduce the initial stress voltage approximately in 50\%, thus ensuring compliance with industry standards.
 
@@ -388,25 +389,26 @@ Then, further simulations are performed to design a mitigation solution to reduc
 
 \subsection{Inductive coupling}
 
-Currents flowing in an energized conductor produces a time-varying magnetic field, as shown in Fig. \ref{fig:InductiveCoupling}. This time-varying magnetic field causes electromotive forces (EMFs) and its induces voltage and current on a metallic structure laid parallelly to the energized conductor. This electromagnetic phenomenon is known as inductive coupling \cite{CIGREWG36}.
+Currents flowing in an energized conductor produces a time-varying magnetic field, as shown in Fig. \ref{fig:InductiveCoupling}. This time-varying magnetic field causes electromotive forces (EMFs) which, on their turn, induce voltages and currents on a metallic structure laid parallelly to the energized conductor. This electromagnetic phenomenon is known as inductive coupling \cite{CIGREWG36}.
 
 The inductive influence of a transmission line conductor on a nearby pipeline depends on the current magnitude, distance between structures, exposure length, soil resistivity, as well as the characteristics of installations involved \cite{CIGREWG36}.
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/induc_coup.pdf}
+		\includegraphics[width=1\columnwidth]{./fig/induc_coup2.pdf}
 		\caption{Inductive coupling phenomenon, adapted from \cite{Martins-Britto2020}.}
 		\label{fig:InductiveCoupling}
 	\end{center}
 \end{figure}
 
-The induced EMF ($E$) is given by \cite{CIGREWG36}:
+The induced EMF ($E$) is numerically given by \cite{CIGREWG36}:
 
 \begin{equation}
 		E = Z_{m} \times I
+		\label{eq:emf_eq}
 \end{equation}
 
-\noindent in which $Z_{m}$ is the mutual impedance matrix of system, in ohms.meter; $I$ is the current in the energized conductor, in ampères; and $E$ is the EMF in the target metallic structure, in volts per meter.
+\noindent in which $Z_{m}$ is the mutual impedance between the source and the target conductors, in ohms.meter; $I$ is the current in the energized conductor, in ampères; and $E$ is the EMF imposed to the target metallic structure, in volts per meter.
 
 \subsection{Mutual impedance for N-layered soil}
 
@@ -422,19 +424,19 @@ The induced EMF ($E$) is given by \cite{CIGREWG36}:
 \end{figure*}
 
 
-The mutual impedance, described by each element of matrix $Z_{m}$, are calculated based on a generalized solution proposed by Tsiamitros et al. \cite{Tsiamitros2008a}. The generalized solution is a wide solution in comparison to the well-known Carson's \cite{Carson1926}, Nakagawa's \cite{Nakagawa} and Pollaczek's \cite{Pollaczek1926} formulas due to cover complex configurations composed of both overhead and buried conductors on N-layered earth. 
+The mutual impedance, described by term $Z_{m}$ in \eqref{eq:emf_eq}, is calculated based on the generalized solution proposed by Tsiamitros et al. \cite{Tsiamitros2008a}, which extends the well-known Carson's \cite{Carson1926}, Nakagawa's \cite{Nakagawa} and Pollaczek's \cite{Pollaczek1926} original formulas and is reported to accurately handle complex configurations composed of both overhead and buried conductors in or above N-layered earth, as well as the displacement current effects, thus covering a frequency spectrum up to 1 MHz. 
 
-Fig. \ref{fig:NlayeredSoil} illustrates two conductors $i$ and $j$ in an N-layer earth structure, in each $i^{th}$ earth layer has permeability ($\mu_{i}$), permittivity ($\epsilon_{i}$), conductivity ($\sigma_{i}$) and thickness ($d_{i}$). The conductors are assumed buried in the $m^{th}$ and $l^{th}$ layer of the N-layer earth, respectively. The per unit length mutual impedance $Z_{i,j}$, is calculated from (\ref{eq:Zij}), in which $\omega = 2\pi f$ is the angular velocity, in radians per seconds; $h_{1}$ and $h_{2}$ are relative height to superior layers $m$ and $l$, respectively, in meters; $y_{i,j}$ is the horizontal distance between the conductor $i$ and $j$, in meters; and $\bar{\alpha}_{i} = \sqrt{u^2 + \bar{\gamma}_{i}^{2}}$, $\bar{\gamma}_{i}^{2} = j\omega\mu_{i}(\sigma_{i} + j\omega\epsilon_{i})$, which $i = 0,1,2,\dots,N$ \cite{Tsiamitros2008a}.
+Fig. \ref{fig:NlayeredSoil} illustrates two conductors $i$ and $j$ in an N-layered earth structure, in which each layer is described by the corresponding parameters permeability ($\mu_{i}$), permittivity ($\epsilon_{i}$), conductivity ($\sigma_{i}$) and thickness ($d_{i}$). Conductors are depicted as buried in the $m^{th}$ and $l^{th}$ layers of the N-layered earth, respectively, for illustration purposes, with no loss of generality. The per unit length mutual impedance $Z_m=Z_{i,j}$ is calculated from (\ref{eq:Zij}), in which $\omega = 2\pi f$ is the angular velocity, in radians per second; $h_{1}$ and $h_{2}$ are the relative vertical distances to the upper boundaries of layers $m$ and $l$, respectively, in meters; $y_{i,j}$ is the horizontal distance between  conductors $i$ and $j$, in meters; and $\bar{\alpha}_{i} = \sqrt{u^2 + \bar{\gamma}_{i}^{2}}$, $\bar{\gamma}_{i}^{2} = j\omega\mu_{i}(\sigma_{i} + j\omega\epsilon_{i})$, with $i = 0,1,2,\dots,N$ \cite{Tsiamitros2008a}.
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/multilayered_soil.pdf}
+		\includegraphics[width=1\columnwidth]{./fig/multilayered_soil2.pdf}
 		\caption{Two underground conductors in N-layered soil.}
 		\label{fig:NlayeredSoil}
 	\end{center}
 \end{figure}
 
-The terms $D\bar{T}N_{i}$, $D\bar{T}D_{i}$, $T\bar{D}N_{k}$ and $T\bar{D}D_{k}$, given in (\ref{eq:DTN})-(\ref{eq:TDN}), relate the electromagnetic and geometrical characteristics of the succendent layers, in which $i = 0,1,2,\dots,N$ and $k = 0,1,2,\dots,m$. The first letters of the terms TD ("Top to Down") and DT ("Down to Top") denotes the direction of the recursive formulas and the latter D ("Denominator") and N ("Numerator") denotes which usually appears the terms during the analysis \cite{Tsiamitros2008a}.
+Terms $D\bar{T}N_{i}$, $D\bar{T}D_{i}$, $T\bar{D}N_{k}$ and $T\bar{D}D_{k}$, given in (\ref{eq:DTN})-(\ref{eq:TDN}), relate the electromagnetic and geometric characteristics of the successive layers, in which $i = 0,1,2,\dots,N$ and $k = 0,1,2,\dots,m$. Following the same notation as \cite{Tsiamitros2008a}, the first characters of expressions TD (``Top to Down'') and DT (``Down to Top'') denote the direction of the recursive formulas, and the characters D (``Denominator'') and N (``Numerator'') indicate where each term usually appears during the formula expansion.
 
 \begin{equation}\label{eq:DTN}
 	\begin{aligned}
@@ -483,68 +485,68 @@ The terms $D\bar{T}N_{i}$, $D\bar{T}D_{i}$, $T\bar{D}N_{k}$ and $T\bar{D}D_{k}$,
 
 
 
-The coefficients described in (\ref{eq:DTN})-(\ref{eq:TDN}) are determined by a recursive function dependent on earth layer and positions of conductor $i$ and $j$, which determines integrate final form in (\ref{eq:Zij}). 
+Coefficients described in (\ref{eq:DTN})-(\ref{eq:TDN}) define a recursive function dependent on the earth layer and positions of conductors $i$ and $j$, which determines the final form of the integrand in (\ref{eq:Zij}). 
 
-For calculate self impedance of conductor $i$ using (\ref{eq:Zij}), is just necessary set $m = l$ and replace the horizontal distance with cable outer radius and $h_{2}$ with $h_{1}$ \cite{Tsiamitros2008a}.
+The same expressions are used to compute the self impedance of conductor $i$ using (\ref{eq:Zij}), by setting $m = l$ and replacing the horizontal distance with by the conductor effective radius and $h_{2}$ with $h_{1}$ \cite{Tsiamitros2008a}.
 
-The numerical solution for improper integral, presented in (\ref{eq:Zij}), is reported in \cite{Shampine2008}, using adaptive quadrature.
+The improper integral presented in (\ref{eq:Zij}) is solved numerically by using the adaptive quadrature method described in \cite{Shampine2008}.
 
 
 
 \subsection{Conductive coupling}
 
-The conductive coupling is a ground potential rise (GPR) caused by current injection into the soil by a transmission line or substation during fault condition which involves the earth, as shown in Fig. \ref{fig:ConductiveCoupling} \cite{CIGREWG36}.
+The conductive coupling phenomenon relates to the ground potential rise (GPR) caused by current injection into the soil the transmission line or substation grounding electrodes during fault conditions involving the earth, as represented in Fig. \ref{fig:ConductiveCoupling} \cite{CIGREWG36}.
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/condu_coup.pdf}
+		\includegraphics[width=1\columnwidth]{./fig/condu_coup2.pdf}
 		\caption{Conductive coupling phenomenon, adapted from \cite{Martins-Britto2020}.}
 		\label{fig:ConductiveCoupling}
 	\end{center}
 \end{figure} 
 
-The current flowing into earth through the transmission line grounding counterpoises produces a GPR, which appears in the form of voltage gradient around the grounding conductors. If a target structure is inside the region affected by the GPR, voltages may rise and be hazardous for the installation.
+The current flowing into earth through the transmission line grounding conductors, also known as counterpoises, produces a GPR, which appears in the form of voltage gradients around the grounding conductors. If a target structure is within the region affected by the GPR, potentially hazardous voltages may occur.
 
 \begin{figure*} [t]
 
 	\begin{equation}\label{eq:Green}
-		\hat{G}_{i,j}(P,O) =  \frac{\rho_{i}}{4\pi} \left( \int_{0}^{\infty}A_{i,j}(\lambda)\hat{J}_{0}(\lambda r) e^{-\lambda z}d\lambda  + \int_{0}^{\infty} B_{i,j}(\lambda)\hat{J}_{0}(\lambda r) e^{\lambda z}d\lambda +  \int_{0}^{\infty} \delta(ij)\hat{J}_{0}(\lambda r) e^{-\lambda |z|}d\lambda \right)
+		\hat{G}_{i,j}(P,O) =  \frac{1}{4\pi\hat{\sigma}_{j}} \left( \int_{0}^{\infty}A_{i,j}(\lambda)\hat{J}_{0}(\lambda r) e^{-\lambda z}d\lambda  + \int_{0}^{\infty} B_{i,j}(\lambda)\hat{J}_{0}(\lambda r) e^{\lambda z}d\lambda +  \int_{0}^{\infty} \delta(ij)\hat{J}_{0}(\lambda r) e^{-\lambda |z|}d\lambda \right)
 	\end{equation}
 	\hrulefill
 \end{figure*}
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/green_nla.pdf}
+		\includegraphics[width=1\columnwidth]{./fig/green_nla2.pdf}
 		\caption{Point source at $i^{th}$ layer with observation point at $j^{th}$.}
 		\label{fig:Greens}
 	\end{center}
 \end{figure}
 
-This EMI is influenced by short-circuit levels, quantity and type of shield wires, distance between the installations, grounding electrode geometry and soil resistivity \cite{CIGREWG36}.
+Conductive EMI is influenced by short-circuit levels, quantity and type of shield wires, distance between the installations, grounding electrode geometry and soil properties \cite{CIGREWG36}.
 
-Martins-Britto \cite{Martins-Britto2020} proposed a circuit model for account conductive coupling in buried conductors using Green's function, proposed by He et al. \cite{He2012} and Li et al. \cite{Li2006}, which calculate a GPR in stratified soil. The circuit model considers a source voltage controlled by current connected to conductors coating impedance \cite{Martins-Britto2020}.
+In a previous work \cite{Martins-Britto2020}, the authors proposed an enhanced circuit model to account for conductive coupling in underground conductors. This approach is based on using controlled voltage sources driven by the corresponding Green's functions, as derived by He et al. \cite{He2012} and Li et al. \cite{Li2006}, which accurately express the voltage scalar potentials for N-layered media. Then, each voltage source is controlled by the currents injected into the soil by each tower within the EMI region of interest, connected to conductor coating impedance at each circuit node \cite{Martins-Britto2020}.
 
-According to the principle of superposition, the ground potential rise $U_{P}$ in a target point $P$ caused by  the sum of current injection $I$ into soil in an observation point $O_{j}$, is given by \cite{Li2006}:
+According to the principle of superposition, the ground potential rise $U_{P}$ at an observation point $O$, caused by the sum of all currents $I_j$ injected into the soil at each source point $P_{j}$, is given by \cite{Li2006}:
 
 \begin{equation}
-	U_{P} = \sum_{j=1}^{N} \hat{G}(P,O_{j})\cdot I_{j},
+	U_{P} = \sum_{j=1}^{N} \hat{G}(P_{j},O)\cdot I_{j},
 \end{equation} 
 
-\noindent in which $U_{P}$ is the potential rise at target point $P$, in volts; $O_{j}$ are the spatial coordinates of the $j^{th}$ observation point $O$; and $\hat{G}(P,O_{j})$ is a special function that describes the potential produced at point $P$ by a unit point current source located at point $O_{j}$, known as Green's function \cite{Li2006,Martins-Britto2020}.
+\noindent in which $U_{P}$ is the potential rise at target point $O$, in volts; $P_{j}$ are the spatial coordinates of the $j^{th}$ source point $P$; and $\hat{G}(P_{j},O)$ is a special function that describes the potential produced at point $O$ by a unit point current source located at point $P_{j}$, known as Green's function \cite{Li2006,Martins-Britto2020}.
 
 \subsection{Green's function for N-layered soil}
 
-The Green's function in an earth structure with $N$ horizontal layers is reported in \cite{He2012,Li2006}. If the source point is located in the $i^{th}$ layer and the observation point is in $j^{th}$, Green's function general form is written in (\ref{eq:Green}), in which $r = \sqrt{(x_{O} - x_{P})^{2} + (y_{O} - y_{P})^{2}}$ is the radius in $xy$ plane; $z = z_{O} - z_{P}$ is the depth distance between point $O$ and $P$; $\rho_{i}$ is the resistivity of the $i^{th}$ layer, in ohms.meter; $\hat{J}_{0}$ is the Bessel function of the first kind and order zero; and $\delta(ij)$ is the Kronecker delta, defined as equal to 1 if $i=j$ and to 0 otherwise \cite{Li2006}.
+The Green's function representing an earth structure with $N$ horizontal layers is developed in \cite{He2012,Li2006}. If the source point is located in the $i^{th}$ layer and the observation point is in the $j^{th}$ layer, then the Green's function general form is written as in (\ref{eq:Green}), in which $r = \sqrt{(x_{O} - x_{P})^{2} + (y_{O} - y_{P})^{2}}$ is the radius in $xy$ plane; $z = z_{O} - z_{P}$ is the vertical distance between points $O$ and $P$; $\hat\sigma_{j} = \sigma_{0} + i\omega\epsilon_{j}$ is the complex conductivity of the $j^{th}$ layer, in siemens per meter; $\hat{J}_{0}$ is the Bessel function of the first kind and order zero; and $\delta(ij)$ is the Kronecker delta, defined as equal to 1 if $i=j$ and to 0 otherwise \cite{Li2006}.
 
-Green's function coefficients $A_{i,j}$ and $B_{i,j}$ are determined by boundary conditions between surrounding earth layers, also air layer (0-layer) and deep layer ($N$-layer), as described in:
+Green's function coefficients $A_{i,j}$ and $B_{i,j}$ are determined by the boundary conditions between surrounding earth layers, including the air layer above the soil surface (0-layer) and the deepest soil layer ($N$-layer), which are given as:
 
 \begin{equation}
-	\hat{G}_{i,j}(r,z)\vert_{z = H_{j} - d} = \hat{G}_{i,j+1}(r,z)\vert_{z = H_{j} - d},
+	\hat{G}_{i,j-1}(r,z)\vert_{z = H_{j - 1}} = \hat{G}_{i,j}(r,z)\vert_{z = H_{j-1}},
 \end{equation}
 
 \begin{equation}
-	\frac{1}{\rho_{j}}\frac{\partial \hat{G}_{i,j}(r,z)}{\partial z}\bigg\vert_{z = H_{j} - d} = \frac{1}{\rho_{j+1}}\frac{\partial \hat{G}_{i,j+1}(r,z)}{\partial z}\bigg\vert_{z = H_{j} - d},
+	\hat\sigma_{j-1}\frac{\partial \hat{G}_{i,j-1}(r,z)}{\partial z}\bigg\vert_{z = H_{j-1}} = \hat\sigma_{j}\frac{\partial \hat{G}_{i,j}(r,z)}{\partial z}\bigg\vert_{z = H_{j-1}},
 \end{equation}
 
 \begin{equation}
@@ -552,14 +554,14 @@ Green's function coefficients $A_{i,j}$ and $B_{i,j}$ are determined by boundary
 \end{equation}
 
 \begin{equation}
-	\frac{\partial \hat{G}_{i,0}(r,z)}{\partial z}\bigg\vert_{z\rightarrow \infty} = 0,
+	\frac{\partial \hat{G}_{i,0}(r,z)}{\partial z}\bigg\vert_{z\rightarrow -\infty} = 0,
 \end{equation}
 
-\noindent in which $i=1,2,\dots,N$ and $H_{0} = 0$.
+\noindent in which $i=1,2,\dots,N$ and $H_{0} = 0$. With the appropriate coefficients available, integrals in (\ref{eq:Green}) are solved numerically using adaptive quadratures \cite{Shampine2008}. In reference \cite{Martins-Britto2020}, Appendix A, it is provided a computer program devised to parse soil stratification data provided by the user and to compute the Green's functions values for arbitrary multilayered horizontal soils by employing the described methods. 
 
 \subsection{Stress voltage}
 
-The target conductor located on earth and nearby a transmission line is subjected to two distinct electromagnetic influences under fault conditions. The total voltage transferred to the interfered conductor is the potential difference between the voltage caused by inductive coupling and by conductive coupling, or \cite{IEEEStd80}:
+An underground conductor close to a transmission line is subjected to two distinct electromagnetic effects under fault conditions, due to inductive and conductive couplings taking place simultaneously. The total voltage transferred to the interfered conductor is the potential difference between the inner metal and the external GPR, or \cite{IEEEStd80}:
 
 \begin{equation} \label{eq:Vs}
 	V_{S} = E_{T} - U_{P},
@@ -567,27 +569,27 @@ The target conductor located on earth and nearby a transmission line is subjecte
 
 \noindent in which $V_{S}$ is the total stress voltage, in volts; $E_{T}$ is the potential of the target conductor resulting from inductive coupling, in volts; and $U_{P}$ is the local earth potential rise, in volts.
 
-\section{Description of the Real Case Scenario}\label{sec:ScenarioDescription}
+\section{Case Description}\label{sec:ScenarioDescription}
 
-Fig. \ref{fig:Right-of-Way} illustrates a 1.2 km shared right-of-way composed by a 138 kV transmission line and an underground pipeline, in an industrial area of São Paulo, Brazil. Under nominal load condition, the double-circuit transmission line is energized with ABC/ABC sequence, 60 Hz frequency and current of 780 A per phase. In the path analyzed, the transmission line is constituted of 13 towers, which each is grounded through 15 $\Omega$ electrodes, and 2 substations in extremities, which each is grounded through 1 $\Omega$ electrodes. The transmission line side view and the conductor coordinates are presented in Fig. \ref{fig:TowerGeometry}.
+Fig. \ref{fig:Right-of-Way} illustrates a 1.2 km shared right-of-way composed by a 138 kV transmission line and an underground pipeline, in an industrial area of São Paulo, Brazil. Under nominal load conditions, the double-circuit transmission line is energized with ABC/ABC sequence, frequency 60 Hz and current of 780 A per phase. In the EMI region of interest, the transmission line is composed of 13 towers, each of which with grounding resistances of 15 $\Omega$, and two terminal substations, with grounding resistances of 1 $\Omega$. The transmission line side view and the conductor coordinates are displayed in Fig. \ref{fig:TowerGeometry}.
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/right-of-way.pdf}
-		\caption{Shared right-of-way between transmission line and pipeline in Brazil.}
+		\includegraphics[width=1\columnwidth]{./fig/right-of-way2.pdf}
+		\caption{Shared right-of-way between a transmission line and a pipeline in Brazil.}
 		\label{fig:Right-of-Way}
 	\end{center}
 \end{figure}
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/mutual_impedance.pdf}
-		\caption{System geometry.}
+		\includegraphics[width=1\columnwidth]{./fig/mutual_impedance2.pdf}
+		\caption{System cross-section.}
 		\label{fig:TowerGeometry}
 	\end{center}
 \end{figure}
  
-The underground pipeline is constructed in 14" diameter carbon steel and is located in 1.2 meters above ground. The pipeline is grounded in its extremities through 10 $\Omega$ resistances. The characteristics of transmission line conductors and the pipeline are presented in Table \ref{tab:ConductorsCharacteristics}.
+The underground pipeline is constructed in 14" diameter carbon steel and buried 1.2 meters within the ground. The pipeline is grounded at its extremities through 10 $\Omega$ resistances. The characteristics of the transmission line conductors and the pipeline are presented in Table \ref{tab:ConductorsCharacteristics}.
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.3}
@@ -604,7 +606,7 @@ The underground pipeline is constructed in 14" diameter carbon steel and is loca
 	\label{tab:ConductorsCharacteristics}
 \end{table}
 
-The soil is modeled in a 3-layer structure based on apparent resistivities measurements in the right-of-way location. The specifications of the layers resistivities and thickness are presented in Table \ref{tab:SoilParameters}.
+The soil is modeled as a 3-layered structure based on apparent resistivity measurements performed at the right-of-way location. The specifications of the layer resistivities and thicknesses are given in Table \ref{tab:SoilParameters}.
 
  
 \begin{table}[h]
@@ -622,113 +624,116 @@ The soil is modeled in a 3-layer structure based on apparent resistivities measu
 	\label{tab:SoilParameters}
 \end{table}
 
-\section{Real Case Study Under Nominal Load Conditions}
+\section{Case Study Under Nominal Load Conditions}
+
+First, a simple EMI inductive study is carried out in order to demonstrate the validity of the proposed circuit model.
 
 \subsection{Nominal load EMTP equivalent circuit}
 
-Due to the shared right-of-way is composed of obliquities, crossings and parallelisms, the right-of-way is subdivided and, for each subdivided segment, is calculated a parallalel equivalent segment, as described in detal in \cite{Moraes2020}. The transmission line is modeled as a series of Line Constants (LCCs) blocks, in which is inserted the parallel segment parameters, respectively. Fig. \ref{fig:NLcircuit} presents the simplified circuit for nominal load simulation, which source of Transient Analysis of Control Systems (TACS) represents sum of the EMFs in phase conductors and shield wires. The current probe of TACS is placed to measure current in each LCC out and the current values are used to build EMFs sources in the interfered conductor, represented in the inferior part of Fig. \ref{fig:NLcircuit}.
+Due to the system geometry being composed of obliquities, crossings and parallelisms, the right-of-way is subdivided into smaller sections and, for each subdivision, it is calculated a parallel equivalent segment, as described in detail in \cite{Moraes2020}. The transmission line is modeled in the EMTP/ATP as a series of Line Constants (LCCs) objects,  which are constructed with the corresponding parallel segment parameters. Fig. \ref{fig:NLcircuit} presents the simplified circuit used for inductive simulations under nominal load conditions, in which the objects labeled as TACS are the controled voltage sources native of ATP, representing the sum of the EMFs produced by phase conductors and shield wires. The current probes of the TACS sources are placed to measure the series current at each LCC output terminal and the current values are used to build the EMF sources distributed along the interfered conductor, represented in the inferior part of Fig. \ref{fig:NLcircuit}.
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/NL_circuit.pdf}
+		\includegraphics[width=1\columnwidth]{./fig/NL_circuit2.pdf}
 		\caption{Nominal load EMTP simplified model representation.}
 		\label{fig:NLcircuit}
 	\end{center}
 \end{figure}
 
-It is important to notice that this proposed model do not consider the interferences in the transmission line caused by the pipeline coupling influences. However, a low current flows along pipeline compared to the transmission line currents, then the pipeline influences on transmission line is considered negligible. 
-
 \subsection{Nominal load simulation results}
 
-Fig. \ref{fig:NLvoltage} shows induced voltage along the pipeline using the proposed model, as well as comparative responses with the EMI reference software CDEGS \cite{Dawalibi1984a}. 
+Fig. \ref{fig:NLvoltage} shows the induced voltage along the pipeline using the proposed model, as well as the comparison with the EMI reference software CDEGS \cite{Dawalibi1984a}. 
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/NL_voltage.pdf}
-		\caption{Induced voltage along pipeline under nominal load conditions.}
+		\includegraphics[width=1\columnwidth]{./fig/NL_voltage2.pdf}
+		\caption{Induced voltage along the pipeline under nominal load conditions.}
 		\label{fig:NLvoltage}
 	\end{center}
 \end{figure}
 
-Results shows that the proposed model agreed with the reference software, presenting a 7.35\% normalized root-mean-square deviation (NRMSD).
+Results show that the proposed model agrees with the reference software, presenting an RMS error of 7.35\%, which is
+mainly explained by the different line models and impedance formulations used in each approach.
 
-Due to the grounding resistance in pipeline extremities, the induced voltage do not exceed the safety limit of 15 V in steady-state regime \cite{NACEInternational2007}. Grounding resistances provides a safe path to the induced currents to earth, which prevent risks to the interfered installation. 
+Due to the grounding resistance at the pipeline extremities, the induced voltage does not exceed the safety limit of 15 V in steady-state regime \cite{NACEInternational2007}. Grounding resistances provide a safe path to the induced currents flow back into the earth, thus preventing risks to the interfered installation. 
 
-\section{Real Case Study Under Fault Conditions}
+As the proposed circuit model is considered to be validated, the next section follows with the simulation of a more complex scenario, consisting of a possible fault situation and its impacts on the nearby pipeline.
 
-In order to study the ground potential rise and total stress voltage, is applied a phase-to-ground fault to the system presented in Section \ref{sec:ScenarioDescription}.
+\section{Case Study Under Fault Conditions}
+
+In order to study the ground potential rise and the total stress voltage, a phase-to-ground fault is applied to the system presented in Section \ref{sec:ScenarioDescription}.
 
 \subsection{Fault regime EMTP equivalent circuit}
 
-The transient regime is caused by a phase-to-ground fault located at 7\# tower. A 0.001 $\Omega$ resistance value is chosen to represent a short-circuit between the phase B conductor and earth.
+The phase-to-ground fault is assumed to occur at tower \#7. A resistance value of 0.001 $\Omega$  is chosen to represent a short-circuit between the phase B conductor and the shield wire.
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/Fault_circuit.pdf}
+		\includegraphics[width=1\columnwidth]{./fig/Fault_circuit2.pdf}
 		\caption{EMTP simplified model representation for fault regime study.}
 		\label{fig:FaultCircuit}
 	\end{center}
 \end{figure}
 
-Fig. \ref{fig:FaultCircuit} shows the simplified equivalent circuit for fault conditions. The model is constructed as in nominal load condition, described in the previous section. However, others sources of TACS are connected to the pipeline coating impedance to represent the ground potencial rise due to the conductive coupling. The current probe of TACS measure the current flowing through each tower grounding impedance to earth.
+Fig. \ref{fig:FaultCircuit} shows the simplified equivalent circuit for fault simulations. The model is constructed by following the same procedure described in the preceding section. However, additional TACS sources are connected to the pipeline coating impedance to represent the ground potential rise due to conductive coupling. The current probe of the TACS sources measures the current flowing through each tower grounding impedance to the local earth.
 
-\subsection{Results from fault conditions simulation}
+\subsection{Fault condition simulation results}
 
-The total stress voltage, the potential resulting from inductive coupling and the local earth potential rise due to the phase-to-ground fault are presented in Fig. \ref{fig:Faultvoltage}.
+The potential resulting from inductive coupling, the local ground potential rise and the resulting stress voltage distribution due to the phase-to-ground fault simulated are presented in Fig. \ref{fig:Faultvoltage}.
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/Fault_voltage.pdf}
+		\includegraphics[width=1\columnwidth]{./fig/Fault_voltage2.pdf}
 		\caption{Pipeline voltage due to: (a) inductive coupling; (b) GPR; and (c) total stress.}
 		\label{fig:Faultvoltage}
 	\end{center}
 \end{figure}
 
-The obtained results for ground potential rise and total stress voltage agreed with the reference software, with 1.42\% and 1.21\% of NRMSD, respectively. The induced voltage presented 21.17\% of deviation. However, measure the deviation from relative error is more appropriated due to the voltage behavior tend to a constant value. Considering relative error, the induced voltage presented a deviation of 5.5\%.
+The obtained results agree with the reference software, with RMS errors of 1.42\% and 1.21\%, respectively. The inductive  voltage presented a RMS error of 21.17\%. However, since both curves present the same shape with a nearly constant offset, it is relevant to observe also the average relative error. In this case, the inductive coupling voltage presents a deviation of 5.5\%.
 
-The total stress voltage along the pipeline reaches 43.9 kV nearby fault location, which may cause breakdown of the dielectric of the coating layer, exposing the metal to electrochemical corrosion \cite{NACEInternational2007}. Modern pipeline coatings are designed to withstand a voltage limit of 25 kV \cite{NACEInternational2007}.
+The total stress voltage along the pipeline reaches 43.9 kV close to the fault location, which may cause dielectric breakdown of the coating layer, exposing the metal to electrochemical corrosion \cite{NACEInternational2007}. Modern pipeline coating materials, such as the 3-Layer Polyethylene (3LPE), are designed to withstand voltages up to 25 kV, according to manufacturer's information \cite{NACEInternational2007}.
 
-The currents flowing to shield wire and to the ground through tower grounding are shown in Fig. \ref{fig:Faultcurrent}. The higher currents are presented in the faulted tower (7\# tower). Great values of voltage are observed in virtue of the magnitudes of short-circuit contribution currents, as well as the currents injected to the soil provides the potential rise to the nearby pipeline.   
+Fig. \ref{fig:Faultcurrent} shows the currents flowing in the shield wires and through the tower groundings. The largest values occur in the vicinities of the faulted tower, which justifies the shape of the GPR curve shown in Fig.\ref{fig:Faultvoltage}-b.   
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/Fault_current.pdf}
-		\caption{(a) Grounding currents; and (b) currents flowing in the shield wire.}
+		\includegraphics[width=1\columnwidth]{./fig/Fault_current2.pdf}
+		\caption{(a) Ground currents; and (b) currents flowing through the shield wire.}
 		\label{fig:Faultcurrent}
 	\end{center}
 \end{figure}
 
 \section{Mitigation Study}
 
-As the total stress in steady-state fault regime extrapolated standard limits, which may present risks to the pipeline coating, a mitigation strategy is proposed. The proposed mitigation consists of connect the pipeline in specific points to the earth through grounding electrodes with low resistances values ($\leq 10$ $\Omega$). This method is used to transfer the ground potential rise to the metal pipe, then the difference in (\ref{eq:Vs}) will reduce and, consequently, the total stress in this specific points will reduce. 
+As the total stress under fault conditions far exceeds safety limits, which may present risks to the pipeline integrity, a mitigation design is proposed. The proposed mitigation consists of connecting the pipeline to the earth at regularly-spaced points using an adequately sized grounding conductor ($\leq 10$ $\Omega$). This method is used to transfer the external ground potential rise to the inner metal, thus reducing the difference in (\ref{eq:Vs}) and, consequently, decreasing the resulting stress voltages. 
 
-In the case present in this paper, the hazardous region is located at 450 to 650 meters on the pipeline path. In the hazardous region, for each 40 meters is connected a 1 $\Omega$ grounding resistance between the pipeline and earth, resulting 5 electrodes in total. Fig. \ref{fig:Mitvoltage} present the comparison between the pipeline voltages after and before mitigation.    
+In the case shown in this paper, the hazardous region is located from 450 to 650 meters along the pipeline path. Within this zone, the pipeline is grounded at every 40 m through 1 $\Omega$ resistors. Fig. \ref{fig:Mitvoltage} presents the comparison between the pipeline voltages before and after the mitigation.    
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=1\columnwidth]{./fig/Mit_voltage.pdf}
-		\caption{Comparison of pipeline voltages after and before mitigation due to: (a) inductive coupling; (b) GPR; and (c) total stress.}
+		\includegraphics[width=1\columnwidth]{./fig/Mit_voltage2.pdf}
+		\caption{Comparison of pipeline voltages before and after the mitigation due to: (a) inductive coupling; (b) GPR; and (c) total stress.}
 		\label{fig:Mitvoltage}
 	\end{center}
 \end{figure}
 
-Is observed that the proposed mitigation reduce the stress voltage to 21 kV meeting the safety criteria adopted in pipeline industry \cite{NACEInternational2007}. 
+Is observed that the proposed mitigation design reduces the maximum stress voltage to 21 kV, thus meeting the safety criteria adopted in pipeline industry \cite{NACEInternational2007}. 
 
-It is important to notice that the mitigation method decreases the stress voltages in intended location. However, in regions out of the mitigation the potential in the pipeline rises. Also, the induced voltage due to inductive coupling reaches 33 kV, approximately 6.6 times superior to the original case.
-
-Then, obtained responses using the mitigation strategy discussed is valid, although is interesting known that this strategy implies other complications and its may be lead to other hazardous situations to the installation and people involved.
+It is important to notice that the mitigation method is efficient to reduce the stress voltages in the intended location. However, for regions outside the mitigation influence, the pipeline potential may rise. This is related to the inner pipeline voltage reaching 33 kV, approximately 6.6 times superior to the original case, which is exactly the equipotential condition sought in grounding designs.
 
 \section{Conclusions}
 
-This work presents a EMTP-based circuit approach to predict total stress voltage in a pipeline due to a transmission line phase-to-ground fault. The proposed method is based on formulations which considers multilayered soils without approximations or uniform equivalents. 
+This work presented an EMTP-based circuit approach to predict total stress voltages in a pipeline due to a transmission line phase-to-ground faults. The proposed method is based on formulations which effectively represent multilayered soils without approximations or uniform equivalents. 
 
-To validate the proposed methodology, a real shared right-of-way composed of an underground pipeline and a double-circuit 138 kV transmission line is modeled, under nominal conditions and fault conditions. 
+To validate the proposed methodology, a real case of right-of-way shared between an underground pipeline and a double-circuit 138 kV transmission line was modeled and tested, under nominal and fault conditions. 
 
-Results show that the methodology is valid and accurated under both nominal and fault conditions, presenting 7.35\% of deviation compared to an electromagnetic influences industry-standard software.
+Results showed that the methodology is valid and accurate under both nominal and fault condition scenarios, presenting a maximum error of 7.35\% in comparison with  EMI analysis industry-standard software.
 
-Under nominal conditions, peak of induced voltage reaches 6 V and its considered a safe value to the facilities and employees involved. However, in steady-state fault regime, the stress voltage reaches 43 kV, which may be hazardous for the pipeline coating and disagree with the nominal limits established for the industry. 
+Under nominal conditions, the maximum induced voltage reached 6 V, being considered a safe value to the facilities and personnel involved. However, under phase-to-ground fault conditions, the stress voltage reached almost 44 kV, which may be hazardous for the pipeline coating and without conformity with the nominal limits established for the industry. 
 
-For this reason, further studies was simulated and a mitigation is designed to the real case presented. The method consisted in connect grounding electrodes in the region of the pipeline which reaches hazardous values. The results obtained proved that the mitigation method is valid, which decreased 47\% of the peak values leading the stress voltage under to the 25 kV safe limit. However, is important to notice that this mitigation method rises the stress voltage out of the mitigated region, which may implies in others hazardous situations.        
+For this reason, further studies were carried out and a mitigation was designed to handle the case under study. The method consisted of grounding the pipeline along the hazardous zone. The results obtained proved that the mitigation method is efficient, having decreased  the original voltages in 47\%, leading the final stress to below the 25 kV safe limit. 
+
+This work offered relevant insights of how resourceful the EMTP-based EMI simulation techniques can be when applied to problems of practical relevance to the industry, especially when one is concerned with the safety of facilities and personnel involved.
 
 \bibliographystyle{IEEEtran}
 \nocite{*}

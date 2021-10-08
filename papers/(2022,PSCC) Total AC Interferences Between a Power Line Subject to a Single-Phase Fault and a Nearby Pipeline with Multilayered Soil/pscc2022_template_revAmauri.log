@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.30)  3 OCT 2021 20:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.30)  8 OCT 2021 10:26
 entering extended mode
 **./pscc2022_template_revAmauri.tex
 (pscc2022_template_revAmauri.tex
@@ -440,120 +440,120 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 349.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 349.
-<PSCC_logo.png, id=13, 416.55624pt x 415.5525pt>
+<PSCC_logo.png, id=12, 416.55624pt x 415.5525pt>
 File: PSCC_logo.png Graphic file (type png)
 <use PSCC_logo.png>
-Package pdftex.def Info: PSCC_logo.png  used on input line 393.
+Package pdftex.def Info: PSCC_logo.png  used on input line 386.
 (pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 393.
+(Font)              <9> on input line 386.
 
 [1{C:/Users/caiom/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
 
  <./PSCC_logo.png>]
-<./fig/induc_coup2.pdf, id=35, 355.56839pt x 298.716pt>
+<./fig/induc_coup2.pdf, id=37, 355.56839pt x 298.716pt>
 File: ./fig/induc_coup2.pdf Graphic file (type pdf)
 <use ./fig/induc_coup2.pdf>
-Package pdftex.def Info: ./fig/induc_coup2.pdf  used on input line 398.
+Package pdftex.def Info: ./fig/induc_coup2.pdf  used on input line 399.
 (pdftex.def)             Requested size: 252.0pt x 211.70695pt.
-<./fig/multilayered_soil2.pdf, id=46, 469.755pt x 374.39874pt>
+<./fig/multilayered_soil2.pdf, id=48, 469.755pt x 374.39874pt>
 File: ./fig/multilayered_soil2.pdf Graphic file (type pdf)
 <use ./fig/multilayered_soil2.pdf>
-Package pdftex.def Info: ./fig/multilayered_soil2.pdf  used on input line 433.
+Package pdftex.def Info: ./fig/multilayered_soil2.pdf  used on input line 434.
 (pdftex.def)             Requested size: 252.0pt x 200.84692pt.
-File: PSCC_logo.png Graphic file (type png)
-<use PSCC_logo.png>
-Package pdftex.def Info: PSCC_logo.png  used on input line 453.
-(pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
- [2 <./fig/induc_coup2.pdf> <./fig/multilayered_soil2.pdf>]
-Underfull \hbox (badness 1888) in paragraph at lines 490--491
+
+Underfull \hbox (badness 1888) in paragraph at lines 491--492
 []\OT1/ptm/m/n/10 The same ex-pres-sions are used to com-pute the self
  []
 
-<./fig/condu_coup2.pdf, id=197, 469.755pt x 374.39874pt>
+File: PSCC_logo.png Graphic file (type png)
+<use PSCC_logo.png>
+Package pdftex.def Info: PSCC_logo.png  used on input line 497.
+(pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
+[2 <./fig/induc_coup2.pdf>]
+<./fig/condu_coup2.pdf, id=117, 469.755pt x 374.39874pt>
 File: ./fig/condu_coup2.pdf Graphic file (type pdf)
 <use ./fig/condu_coup2.pdf>
-Package pdftex.def Info: ./fig/condu_coup2.pdf  used on input line 502.
+Package pdftex.def Info: ./fig/condu_coup2.pdf  used on input line 503.
 (pdftex.def)             Requested size: 252.0pt x 200.84692pt.
-<./fig/green_nla2.pdf, id=199, 469.755pt x 374.39874pt>
+<./fig/green_nla2.pdf, id=119, 469.755pt x 374.39874pt>
 File: ./fig/green_nla2.pdf Graphic file (type pdf)
 <use ./fig/green_nla2.pdf>
-Package pdftex.def Info: ./fig/green_nla2.pdf  used on input line 520.
+Package pdftex.def Info: ./fig/green_nla2.pdf  used on input line 521.
 (pdftex.def)             Requested size: 252.0pt x 200.84692pt.
 File: PSCC_logo.png Graphic file (type png)
 <use PSCC_logo.png>
-Package pdftex.def Info: PSCC_logo.png  used on input line 550.
+Package pdftex.def Info: PSCC_logo.png  used on input line 576.
 (pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
-[3 <./fig/condu_coup2.pdf>]
-<./fig/right-of-way2.pdf, id=267, 845.1575pt x 597.45204pt>
+ [3]
+<./fig/right-of-way2.pdf, id=155, 845.1575pt x 597.45204pt>
 File: ./fig/right-of-way2.pdf Graphic file (type pdf)
 <use ./fig/right-of-way2.pdf>
-Package pdftex.def Info: ./fig/right-of-way2.pdf  used on input line 578.
+Package pdftex.def Info: ./fig/right-of-way2.pdf  used on input line 579.
 (pdftex.def)             Requested size: 252.0pt x 178.14302pt.
-<./fig/mutual_impedance2.pdf, id=268, 312.92911pt x 270.2898pt>
+<./fig/mutual_impedance2.pdf, id=156, 312.92911pt x 270.2898pt>
 File: ./fig/mutual_impedance2.pdf Graphic file (type pdf)
 <use ./fig/mutual_impedance2.pdf>
-Package pdftex.def Info: ./fig/mutual_impedance2.pdf  used on input line 586.
+Package pdftex.def Info: ./fig/mutual_impedance2.pdf  used on input line 587.
 (pdftex.def)             Requested size: 252.0pt x 217.66325pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-File: PSCC_logo.png Graphic file (type png)
-<use PSCC_logo.png>
-Package pdftex.def Info: PSCC_logo.png  used on input line 634.
-(pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
-[4 <./fig/green_nla2.pdf> <./fig/right-of-way2.pdf, page is rotated 90 degrees>
-]
-<./fig/NL_circuit2.pdf, id=407, 298.716pt x 130.8087pt>
+<./fig/NL_circuit2.pdf, id=162, 298.716pt x 130.8087pt>
 File: ./fig/NL_circuit2.pdf Graphic file (type pdf)
 <use ./fig/NL_circuit2.pdf>
-Package pdftex.def Info: ./fig/NL_circuit2.pdf  used on input line 637.
+Package pdftex.def Info: ./fig/NL_circuit2.pdf  used on input line 638.
 (pdftex.def)             Requested size: 252.0pt x 110.35558pt.
-<./fig/NL_voltage2.pdf, id=410, 500.87125pt x 279.0425pt>
+<./fig/NL_voltage2.pdf, id=165, 500.87125pt x 279.0425pt>
 File: ./fig/NL_voltage2.pdf Graphic file (type pdf)
 <use ./fig/NL_voltage2.pdf>
-Package pdftex.def Info: ./fig/NL_voltage2.pdf  used on input line 649.
+Package pdftex.def Info: ./fig/NL_voltage2.pdf  used on input line 650.
 (pdftex.def)             Requested size: 252.0pt x 140.39375pt.
-<./fig/Fault_circuit2.pdf, id=413, 312.92911pt x 170.67764pt>
-File: ./fig/Fault_circuit2.pdf Graphic file (type pdf)
-<use ./fig/Fault_circuit2.pdf>
-Package pdftex.def Info: ./fig/Fault_circuit2.pdf  used on input line 672.
-(pdftex.def)             Requested size: 252.0pt x 137.44597pt.
 File: PSCC_logo.png Graphic file (type png)
 <use PSCC_logo.png>
-Package pdftex.def Info: PSCC_logo.png  used on input line 683.
+Package pdftex.def Info: PSCC_logo.png  used on input line 662.
 (pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
- [5 <./fig/mutual_impedance2.pdf> <./fig/NL_circuit2.pdf> <./fig/NL_voltage2.pd
-f>]
-<./fig/Fault_voltage2.pdf, id=516, 500.87125pt x 556.0775pt>
+ [4 <./fig/multilayered_soil2.pdf> <./fig/condu_coup2.pdf>]
+<./fig/Fault_circuit2.pdf, id=308, 312.92911pt x 170.67764pt>
+File: ./fig/Fault_circuit2.pdf Graphic file (type pdf)
+<use ./fig/Fault_circuit2.pdf>
+Package pdftex.def Info: ./fig/Fault_circuit2.pdf  used on input line 673.
+(pdftex.def)             Requested size: 252.0pt x 137.44597pt.
+<./fig/Fault_voltage2.pdf, id=311, 500.87125pt x 556.0775pt>
 File: ./fig/Fault_voltage2.pdf Graphic file (type pdf)
 <use ./fig/Fault_voltage2.pdf>
-Package pdftex.def Info: ./fig/Fault_voltage2.pdf  used on input line 686.
+Package pdftex.def Info: ./fig/Fault_voltage2.pdf  used on input line 687.
 (pdftex.def)             Requested size: 252.0pt x 279.7775pt.
-<./fig/Fault_current2.pdf, id=521, 500.87125pt x 417.56pt>
+File: PSCC_logo.png Graphic file (type png)
+<use PSCC_logo.png>
+Package pdftex.def Info: PSCC_logo.png  used on input line 694.
+(pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
+ [5 <./fig/green_nla2.pdf> <./fig/right-of-way2.pdf, page is rotated 90 degrees
+> <./fig/mutual_impedance2.pdf> <./fig/NL_circuit2.pdf>]
+<./fig/Fault_current2.pdf, id=514, 500.87125pt x 417.56pt>
 File: ./fig/Fault_current2.pdf Graphic file (type pdf)
 <use ./fig/Fault_current2.pdf>
-Package pdftex.def Info: ./fig/Fault_current2.pdf  used on input line 700.
+Package pdftex.def Info: ./fig/Fault_current2.pdf  used on input line 701.
 (pdftex.def)             Requested size: 252.0pt x 210.08562pt.
-<./fig/Mit_voltage2.pdf, id=524, 500.87125pt x 556.0775pt>
+<./fig/Mit_voltage2.pdf, id=517, 500.87125pt x 556.0775pt>
 File: ./fig/Mit_voltage2.pdf Graphic file (type pdf)
 <use ./fig/Mit_voltage2.pdf>
-Package pdftex.def Info: ./fig/Mit_voltage2.pdf  used on input line 714.
+Package pdftex.def Info: ./fig/Mit_voltage2.pdf  used on input line 715.
 (pdftex.def)             Requested size: 252.0pt x 279.7775pt.
 File: PSCC_logo.png Graphic file (type png)
 <use PSCC_logo.png>
 Package pdftex.def Info: PSCC_logo.png  used on input line 723.
 (pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
- [6 <./fig/Fault_circuit2.pdf> <./fig/Fault_voltage2.pdf> <./fig/Fault_current2
-.pdf>] (pscc2022_template_revAmauri.bbl
+ [6 <./fig/NL_voltage2.pdf> <./fig/Fault_circuit2.pdf> <./fig/Fault_voltage2.pd
+f> <./fig/Fault_current2.pdf>] (pscc2022_template_revAmauri.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 73--78
 \OT1/ptm/m/n/8 / / www . researchgate . net / publication / 342916469[]Realisti
 c[]Modeling[]of[]
  []
 
-)
+File: PSCC_logo.png Graphic file (type png)
+<use PSCC_logo.png>
+Package pdftex.def Info: PSCC_logo.png  used on input line 119.
+(pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
+[7 <./fig/Mit_voltage2.pdf>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -567,38 +567,40 @@ Before submitting the final camera ready copy, remember to:
 
 File: PSCC_logo.png Graphic file (type png)
 <use PSCC_logo.png>
-Package pdftex.def Info: PSCC_logo.png  used on input line 742.
+Package pdftex.def Info: PSCC_logo.png  used on input line 743.
 (pdftex.def)             Requested size: 24.9923pt x 24.93207pt.
-[7 <./fig/Mit_voltage2.pdf>] (pscc2022_template_revAmauri.aux) ) 
+[8
+
+] (pscc2022_template_revAmauri.aux) ) 
 Here is how much of TeX's memory you used:
- 9979 strings out of 478864
- 151295 string characters out of 2858517
- 485378 words of memory out of 3000000
- 27689 multiletter control sequences out of 15000+600000
+ 9982 strings out of 478864
+ 152094 string characters out of 2858517
+ 489378 words of memory out of 3000000
+ 27690 multiletter control sequences out of 15000+600000
  446350 words of font info for 104 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 60i,14n,66p,1089b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Program Fil
-es/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfont
-s/cmextra/cmmib6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmext
-ra/cmmib8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program F
-iles/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
-/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pscc2022_template_revAmauri.pdf (7 pages, 1701590 bytes).
+ 60i,14n,66p,1089b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/b
+ase/8r.enc}<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C
+:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
+les/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Program F
+iles/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb>
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program F
+iles/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/f
+onts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/
+utmbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Progr
+am Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on pscc2022_template_revAmauri.pdf (8 pages, 1703366 bytes).
 PDF statistics:
- 716 PDF objects out of 1000 (max. 8388607)
- 72 named destinations out of 1000 (max. 500000)
+ 724 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

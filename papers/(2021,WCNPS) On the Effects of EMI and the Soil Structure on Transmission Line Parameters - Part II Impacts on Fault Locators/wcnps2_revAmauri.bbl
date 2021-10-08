@@ -56,10 +56,13 @@ F.~Dawalibi and C.~Blattner, ``{Earth Resistivity Measurement Interpretation
   \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4112522}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Moraes2021}
-C.~M. Moraes, A.~G. Martins-Britto, F.~V. Lopes, and K.~M. Silva, ``{On the
-  Effects of EMI and the Soil Structure on Transmission Line Parameters - Part
-  I : Theoretical Model},'' \emph{WCNPS 2021: 6th Workshop on Communication
-  Networks and Power Systems}, 2021.
+\bibitem{Southey2005}
+\BIBentryALTinterwordspacing
+R.~Southey and F.~Dawalibi, ``{Improving the Reliability of Power Systems with
+  More Accurate Grounding System Resistance Estimates},'' \emph{Proceedings.
+  International Conference on Power System Technology}, vol.~4, pp. 98--105,
+  2005. [Online]. Available:
+  \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1053512}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

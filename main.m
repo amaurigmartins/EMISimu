@@ -12,7 +12,7 @@ app.ATPSolverPath.Text = 'C:\ATP\tools\runATP.exe';
 app.GTPPLOTPath.Text = 'C:\ATP\tools\GTPPL32.exe';
 
 % PL42MAT path (%ATPPATH%\tools\Pl42mat.exe):
-app.PL42MATPath.Text = 'C:\ATP\tools\Pl42mat.exe';
+app.PL42MATPath.Text = [pwd '\util\Pl42mat.exe'];
 
 %% Project data
 
@@ -20,7 +20,7 @@ app.PL42MATPath.Text = 'C:\ATP\tools\Pl42mat.exe';
 app.Workingdirectory.Text = 'D:\Mestrado\EMISimu';
 
 % enter the project directory name here
-app.ProjectID.Text = 'WCNPS2021';
+app.ProjectID.Text = 'TestSizeATP';
 
 % Project description:
 app.Projectdescription.Text = 'Simple interference case between a power line and a pipeline.';
@@ -58,7 +58,7 @@ initialize_Variables;
 initialize_CouplingRegions;
 
 % build LCC cards
-% makeAllLCCFiles(app);
+makeAllLCCFiles(app);
 
 % build main ATP card
 makeAllMainATPFiles(app);
@@ -76,8 +76,8 @@ end
 
 % Results
 makeAllInducedVoltagePlots(app)
-fname=strcat(getProjectID(app),'_CBswitching_study','.mat');
-plotTLCurrent(fname,1,1,'Energization Circuit 1')
+% fname=strcat(getProjectID(app),'_CBswitching_study','.mat');
+% plotTLCurrent(fname,1,1,'Energization Circuit 1')
 
 disp('All done!');
 

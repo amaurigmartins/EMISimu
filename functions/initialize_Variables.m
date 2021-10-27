@@ -158,8 +158,8 @@ app.UITableSoilRes.Data = num2cell(app.UITableSoilRes.Data);
 
 %% Convert Geometry Coordinates File
 
-target_coordinates_file= load(app.TargetCoordFile.Text);
-source_coordinates_file=load(app.SourceCoordFile.Text);
+target_coordinates_file= load(fullfile(getWorkingDirectory(app),getProjectID(app),app.TargetCoordFile.Text));
+source_coordinates_file=load(fullfile(getWorkingDirectory(app),getProjectID(app),app.SourceCoordFile.Text));
 
 app.SourceCoordX.Data = num2cell(source_coordinates_file(:,1));
 app.SourceCoordY.Data = num2cell(source_coordinates_file(:,2));

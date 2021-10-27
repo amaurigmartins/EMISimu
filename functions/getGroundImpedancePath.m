@@ -1,3 +1,5 @@
 function out = getGroundImpedancePath(app)
-out = app.GroundImpedanceFile.Text;
+projID=getProjectID(app);
+wdir=getWorkingDirectory(app);
+out = fullfile(wdir,projID,app.GroundImpedanceFile.Text);
 end

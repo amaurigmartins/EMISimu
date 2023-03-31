@@ -4,7 +4,7 @@
 
 % RMS LL amplitude [V]:
 % app.RMSLLamplitudeC1T1.Value = 88000;
-app.RMSLLamplitudeC1T1.Value = 88000;
+app.RMSLLamplitudeC1T1.Value = 90;
 % Frequency [Hz]:
 app.FrequencyC1T1.Value = 60;
 
@@ -12,14 +12,14 @@ app.FrequencyC1T1.Value = 60;
 app.PhaseangleC1T1.Value = 0;
 
 % Thevenin Eq.:
-app.R0S1T1.Value = 0; %R0 [ohm/m]
-app.L0S1T1.Value = 30.387; %L0 [mH/m]
-app.R1S1T1.Value = 0; %R+ [ohm/m]
-app.L1S1T1.Value = 10.409; %L+ [mH/m]
-% app.R0S1T1.Value = 1e-5; %R0 [ohm/m]
-% app.L0S1T1.Value = 0; %L0 [mH/m]
-% app.R1S1T1.Value = 1e-5; %R+ [ohm/m]
-% app.L1S1T1.Value = 0; %L+ [mH/m]
+% app.R0S1T1.Value = 0; %R0 [ohm/m]
+% app.L0S1T1.Value = 30.387; %L0 [mH/m]
+% app.R1S1T1.Value = 0; %R+ [ohm/m]
+% app.L1S1T1.Value = 10.409; %L+ [mH/m]
+app.R0S1T1.Value = 1e-5; %R0 [ohm/m]
+app.L0S1T1.Value = 0; %L0 [mH/m]
+app.R1S1T1.Value = 1e-5; %R+ [ohm/m]
+app.L1S1T1.Value = 0; %L+ [mH/m]
 
 %% CIRCUIT 2 DATA (IF EXIST):
 

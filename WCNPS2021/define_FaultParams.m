@@ -17,7 +17,7 @@ app.Faultincidenceangle.Value = 90;
 % Fault Type:
 % Types: 0 - NONE, 1 - AG, 2 - BG, 3 - CG, 4 - AB, 5 - BC, 
 % 6 - CA, 7 - ABG, 8 - BCG, 9 - CAG, 10 - ABC, 11 - ABCG.
-app.FaultType.Text = '1 - AG';
+app.FaultType.Text = '10 - ABC';
 
 % Frequency [Hz]:
 app.Freq.Value = 60;
@@ -26,7 +26,7 @@ app.Freq.Value = 60;
 app.Cyclesbeforefault.Value = 0.5;
 
 % Phase-to-phase resistance [Ohms]:
-app.Phasetophaseresistance.Value = 1e5;
+app.Phasetophaseresistance.Value = 1e-5;
 
 % Phase-to-ground resistance [Ohms]:
 app.Phasetogroundresistance.Value = 1e-5;

@@ -11,7 +11,7 @@ app.TranspositionScheme.Text = 'untransposed';
 %% Ground impedances
 
 % Ground impedances data (.csv) per section (R L C) [Ohms mH uF]:
-app.GroundImpedanceFile.Text = 'D:\Mestrado\EMISimu\WCNPS2021\ground_impedance_data.csv';
+app.GroundImpedanceFile.Text = 'ground_impedance_data.csv';
 
 %% Shield wires
 

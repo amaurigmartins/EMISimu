@@ -399,7 +399,7 @@ LCC_matrix = [deq Leq TR(:,11) TR(:,10) TR(:,8) TR(:,12)];
 
 if ~isempty(idx_int)
     for i = 1: size(idx_int,1)
-        LCC_matrix(idx_int(i,2)-1:end,1) = -LCC_matrix(idx_int(i,2)-1:end,1);
+        LCC_matrix(idx_int(i,2)+1:end,1) = -LCC_matrix(idx_int(i,2)+1:end,1);
     end
 end
 

@@ -11,7 +11,7 @@ app.Tmax.Value = 0.1;
 %% DEFINE TYPE OF STUDY
 
 % (nominal load, fault, energization, CB switching)
-app.TransientType.Text = 'CB switching';
+app.TransientType.Text = 'fault';
 
 % Source type:
 % Current or Voltage Source?

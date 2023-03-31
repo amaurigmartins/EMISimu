@@ -5,6 +5,8 @@ num_phase = getNumPhases(app);
 num_shield = getNumShieldWires(app);
 num_target = getNumTargets(app);
 
+sw_detached = getDetachedSWindex(app);
+
 seq_target = 'ABCDEFGHIJKLMNOPQRSTUWVXYZ';
 
 seq_in='ABC';
@@ -21,7 +23,7 @@ for i = 1: num_phase
     out = strcat(out,strphase,'\n');
 end
 
-if num_shield ~= 0
+if num_shield ~= 0 && sw_detached
    strshield = sprintf('BRANCH  0%04d 0%04dM',sec-1,sec);
    out = strcat(out,strshield,'\n');
 end

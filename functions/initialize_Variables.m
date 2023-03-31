@@ -117,6 +117,7 @@ for thisattset = 1: numAttSets
         attsetdata{j,7} = string(0);
         attsetdata{j,8} = string(0);
         attsetdata{j,9} = string(0);
+        attsetdata{j,10}= string(0);
     end
     
     if nsh > 0
@@ -130,6 +131,11 @@ for thisattset = 1: numAttSets
             attsetdata{j+ nph,7} = string(0);
             attsetdata{j+ nph,8} = string(0);
             attsetdata{j+ nph,9} = string(0);
+            if strcmp(app.AttSet(thisattset).ShieldWire(j).KronReduction.Text,'Yes')
+                attsetdata{j+ nph,10} = string(1);
+            else
+                attsetdata{j+ nph,10} = string(0);
+            end           
         end
     end
     
@@ -144,10 +150,11 @@ for thisattset = 1: numAttSets
             attsetdata{j+ nph + nsh,7} = string(app.AttSet(thisattset).Target(j).CoatingResistivity.Value);
             attsetdata{j+ nph + nsh,8} = string(app.AttSet(thisattset).Target(j).CoatingThickness.Value);
             attsetdata{j+ nph + nsh,9} = string(app.AttSet(thisattset).Target(j).CoatingRelativePermeability.Value);
+            attsetdata{j+ nph + nsh,10} = string(0);
         end
     end
     
-    structArray = cell2struct(attsetdata, {'conductor', 'bundled', 'bundle_spac','horizontal','vertical','type','coat_resistivity','coat_thickness','coat_relPermeability'},2);
+    structArray = cell2struct(attsetdata, {'conductor', 'bundled', 'bundle_spac','horizontal','vertical','type','coat_resistivity','coat_thickness','coat_relPermeability','kronReduction'},2);
     app.UITableAttSets.Data(thisattset)=cellstr(jsonencode(structArray));
 end
 
@@ -272,6 +279,8 @@ else  % Other Studies
 end
 
 
+
+        
 
 
 

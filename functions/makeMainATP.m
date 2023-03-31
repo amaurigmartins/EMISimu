@@ -28,18 +28,22 @@ out=strcat(out, '$VINTAGE,1\n');
 % if ~isVoltageSource(app)
 %     out = strcat(out, writeTerminalGroundCard(app));
 % end
+sw_detached = getDetachedSWindex(app);
 
 ntw=getNumTowers(app);
 tower2LCCnum = TowNum2LCC(app,1:ntw);
 nsec = getNumSections(app);
-     % tower ground impedances
-for i=1:ntw
-    out=strcat(out, writeTowGroundCard(app,getGroundImpedance(app,i),tower2LCCnum(i),fault_sec));
+% tower ground impedances
+if sw_detached
+    for i=1:ntw
+        out=strcat(out, writeTowGroundCard(app,getGroundImpedance(app,i),tower2LCCnum(i),fault_sec));
+    end
+    % substation ground impedances + neutral connections
+    out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,1),1));
+    out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,2),2));
+else
+    out=strcat(out, writeTowGroundCard(app,[1e-5 0 0],fault_sec,fault_sec));
 end
-     % substation ground impedances + neutral connections
-out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,1),1));
-out=strcat(out, writeSEGroundCard(app,getSEImpedance(app,2),2));
-
      % fault components
 out=strcat(out, writeFaultBranchComponents(app));
     % Load impedances (if exist)
@@ -74,7 +78,7 @@ out=strcat(out, writePhaseCurrProbesCard(app,2));
 % CB Switch (if exist)
 out=strcat(out, writeCBSwitch(app));
 
-if outputShWireCurr(app)
+if outputShWireCurr(app) && sw_detached
     for i=0:nsec
         if ismember(i,listOfShWires)
             measure_status=1;

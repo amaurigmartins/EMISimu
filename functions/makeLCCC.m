@@ -1,10 +1,4 @@
-function [out] = makeLCCC(app,sec,varargin)
-
-if nargin == 2
-    OutZoneData = [];
-elseif nargin == 3
-    OutZoneData = varargin{1};
-end
+function [out] = makeLCCC(app,sec)
 
 lmodel=getLineModel(app);
  

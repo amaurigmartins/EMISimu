@@ -48,11 +48,17 @@ if nsw>0
         y0=str2double(attdata(nph+i,5));
         tmpcoords=calcConductorCoords(app,x0,y0,nc,s);
         for k=1:nc
-            thisrow=[nph+1 TD Rdc KTYPE 2*Rout tmpcoords(k,1) tmpcoords(k,2) tmpcoords(k,2) Leq];
+            if str2double(attdata(nph+i,10)) % Kron Reduction
+                thisrow=[0 TD Rdc KTYPE 2*Rout tmpcoords(k,1) tmpcoords(k,2) tmpcoords(k,2) Leq];
+            else
+                thisrow=[nph+1 TD Rdc KTYPE 2*Rout tmpcoords(k,1) tmpcoords(k,2) tmpcoords(k,2) Leq];              
+            end
             out=vertcat(out,thisrow);
         end
     end
 end
+
+ind_nsw = getDetachedSWindex(app);
 
 if ntg>0
     for i=1:ntg
@@ -63,11 +69,6 @@ if ntg>0
         y0=abs(str2double(attdata(nph+nsw+i,5)));
         tmpcoords=calcConductorCoords(app,x0,y0,nc,s);
         Rdc = pipeRdc(Rin,Rout,10,1000);
-        if nsw > 0
-            ind_nsw = 1;
-        else
-            ind_nsw = 0;
-        end
         for k=1:nc
             thisrow=[nph+ind_nsw+i TD Rdc KTYPE 2*Rout tmpcoords(k,1) tmpcoords(k,2) tmpcoords(k,2) Leq];
             out=vertcat(out,thisrow);
